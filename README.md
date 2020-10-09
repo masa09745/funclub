@@ -64,14 +64,24 @@
 ### Association
 - belongs_to :schedule
 - has_many :stock_details
+- has_many :orders
 
 
 ## Stock_details table
-| Column      | Type       | Options     |
-| ----------- |----------- | ----------- |
-| schedule_id | references | null: false |
+| Column      | Type       | Options                        |
+| ----------- |----------- | ------------------------------ |
+| schedule_id | references | null: false, foreign_key: true |
 
 ### Association
 - belongs_to :stock
 
 
+## Orders table
+| Column   | Type       | Options                        |
+| -------- |----------- | ------------------------------ |
+| user_id  | references | null: false, foreign_key: true |
+| stock_id | references | null: false, foreign_key: true |
+
+### Association
+- belongs_to :user
+- belongs_to :stock
