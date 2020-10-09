@@ -63,8 +63,8 @@
 
 ### Association
 - belongs_to :schedule
-- has_many :stock_details
-- has_many :orders
+- has_many   :stock_details
+- has_many   :orders
 
 
 ## Stock_details table
@@ -85,3 +85,15 @@
 ### Association
 - belongs_to :user
 - belongs_to :stock
+- has_many   :tickets
+
+
+## Tickets table
+| Column   | Type       | Options                        |
+| -------- |----------- | ------------------------------ |
+| row      | string     | null: true                     |
+| number   | string     | null: true                     |
+| order_id | references | null: false, foreign_key: true |
+
+## Association
+-belongs_to :order
