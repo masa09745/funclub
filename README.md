@@ -43,7 +43,7 @@
 | name   | string     | null: false |
 
 
-## Schedule table
+## Schedules table
 | Column     | Type       | Options     |
 | ---------- |----------- | ----------- |
 | opponent   | string     | null: false |
@@ -51,7 +51,6 @@
 
 ### Association
 - has_many :stocks
-
 
 
 ## Stocks table
@@ -64,3 +63,15 @@
 
 ### Association
 - belongs_to :schedule
+- has_many :stock_details
+
+
+## Stock_details table
+| Column      | Type       | Options     |
+| ----------- |----------- | ----------- |
+| schedule_id | references | null: false |
+
+### Association
+- belongs_to :stock
+
+
