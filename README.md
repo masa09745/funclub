@@ -1,7 +1,7 @@
 # README
 
 # DB設計
-## usersテーブル
+## users table
 | Column    | Type   | Options     |
 | --------- | ------ | ----------- |
 | name      | string | null: false |
@@ -26,7 +26,7 @@
 - belongs_to :user
 
 
-## Cardsテーブル
+## Cards table
 | Column      | Type       | Options                        |
 | ----------- |----------- | ------------------------------ |
 | customer_id | string     | null: false                    |
@@ -35,3 +35,12 @@
 
 ### Association
 - belongs_to :user
+
+
+## Teams table
+| Column | Type       | Options     |
+| ------ |----------- | ----------- |
+| name   | string     | null: false |
+
+
+## 
