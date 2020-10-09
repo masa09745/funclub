@@ -43,4 +43,13 @@
 | name   | string     | null: false |
 
 
-## 
+## Stocks table
+| Column      | Type       | Options                        |
+| ----------- |----------- | ------------------------------ |
+| grade       | string     | null: false                    |
+| price       | int        | null: false                    |
+| remain      | int        | null: false,                   |
+| schedule_id | references | null: false, foreign_key: true |
+
+### Association
+- belongs_to :schedule
