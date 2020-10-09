@@ -43,6 +43,17 @@
 | name   | string     | null: false |
 
 
+## Schedule table
+| Column     | Type       | Options     |
+| ---------- |----------- | ----------- |
+| opponent   | string     | null: false |
+| match_date | string     | null: false |
+
+### Association
+- has_many :stocks
+
+
+
 ## Stocks table
 | Column      | Type       | Options                        |
 | ----------- |----------- | ------------------------------ |
