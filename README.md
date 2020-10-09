@@ -1,7 +1,7 @@
 # README
 
 # DB設計
-## users table
+## Users table
 | Column    | Type   | Options     |
 | --------- | ------ | ----------- |
 | name      | string | null: false |
@@ -15,7 +15,7 @@
 - has_many :cards
 
 
-## sns_credential table
+## Sns_credential table
 | Column   | Type       | Options                        |
 | -------- | ---------- | ------------------------------ |
 | provider | string     | null: false                    |
