@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_10_121317) do
+ActiveRecord::Schema.define(version: 2020_10_10_121658) do
 
   create_table "orders", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
@@ -26,6 +26,15 @@ ActiveRecord::Schema.define(version: 2020_10_10_121317) do
     t.datetime "match_date", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "sns_credentials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "provider"
+    t.string "uid"
+    t.bigint "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_sns_credentials_on_user_id"
   end
 
   create_table "stock_details", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -76,6 +85,7 @@ ActiveRecord::Schema.define(version: 2020_10_10_121317) do
 
   add_foreign_key "orders", "stocks"
   add_foreign_key "orders", "users"
+  add_foreign_key "sns_credentials", "users"
   add_foreign_key "stock_details", "stocks"
   add_foreign_key "stocks", "schedules"
   add_foreign_key "tickets", "orders"
