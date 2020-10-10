@@ -23,8 +23,10 @@ ActiveRecord::Schema.define(version: 2020_10_10_120110) do
     t.string "grade", null: false
     t.integer "price", null: false
     t.integer "remain", null: false
+    t.bigint "schedule_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["schedule_id"], name: "index_stocks_on_schedule_id"
   end
 
   create_table "teams", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -47,4 +49,5 @@ ActiveRecord::Schema.define(version: 2020_10_10_120110) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "stocks", "schedules"
 end
