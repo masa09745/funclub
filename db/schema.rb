@@ -73,9 +73,11 @@ ActiveRecord::Schema.define(version: 2020_10_10_121944) do
     t.string "row"
     t.string "number"
     t.bigint "order_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["order_id"], name: "index_tickets_on_order_id"
+    t.index ["user_id"], name: "index_tickets_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -99,4 +101,5 @@ ActiveRecord::Schema.define(version: 2020_10_10_121944) do
   add_foreign_key "stock_details", "stocks"
   add_foreign_key "stocks", "schedules"
   add_foreign_key "tickets", "orders"
+  add_foreign_key "tickets", "users"
 end
