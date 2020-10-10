@@ -112,6 +112,8 @@
 | row      | string     | null: true                     |
 | number   | string     | null: true                     |
 | order_id | references | null: false, foreign_key: true |
+| user_id  | references | null: false, foreign_key: true |
 
 ## Association
--belongs_to :order
+- belongs_to :order
+- belongs_to :user
