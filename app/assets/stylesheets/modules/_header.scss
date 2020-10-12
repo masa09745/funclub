@@ -3,5 +3,19 @@
 }
 
 .header--main{
-  margin-bottom: 25px;
+  padding: 10px 20px;
+}
+
+.header__inner{
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+
+  &--left{
+    width: 200px;
+  }
+
+  &--right{
+    width: 500px;
+  }
 }
