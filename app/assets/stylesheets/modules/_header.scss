@@ -5,18 +5,20 @@
 .header--main{
   padding: 25px 50px;
 }
-.header__upr{
+.header__items{
   height: 60%;
   margin: 10px;
   border-bottom: solid 2px #666;
   display: flex;
   justify-content: space-between;
+}
 
-  &__logo{
-    font-size: 45px;
-    height: 50px;
-    margin-bottom: 8px;
-  }
+.header__child-items{
+  width: 300px;
+  height: 100%;
+  padding: 15px;
+  text-align: center;
+  line-height: 58px;
 }
 
 .header__lwr{
@@ -31,4 +33,8 @@
   list-style: none;
   display: flex;
   justify-content: space-between;
+}
+
+.logo{
+  font-size: 45px;
 }
