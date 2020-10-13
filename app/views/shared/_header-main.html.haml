@@ -1,6 +1,21 @@
 %header.header.header--main
-  .header__inner
-    .header__inner--left
-      = link_to root_path,  class: "logo" do
-        FUNCLUB
-    .header__inner--right
+  .header__upr
+    =link_to root_path, class:"header__upr__logo" do
+      FUN CLUB
+    .header__upr__box
+      =link_to "#", class:"header__upr__box-new" do
+        新規登録
+      =link_to "#", class:"header__upr__box-login" do
+        ログイン
+  .header__lwr
+    %li.header__lwr__menus
+      %ul.header__lwr__menu
+        トップページ
+      %ul.header__lwr__menu
+        スケジュール
+      %ul.header__lwr__menu
+        選手一覧
+      %ul.header__lwr__menu
+        スタジアム
+
+
