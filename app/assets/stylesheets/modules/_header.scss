@@ -1,12 +1,13 @@
 .header{
-  height: 200px;
+  height: 150px;
 }
 
 .header--main{
-  padding: 25px 50px;
+  padding: 0 50px;
+  margin:  25px 0;
 }
 .header__items{
-  height: 60%;
+  height: 50%;
   margin: 10px;
   border-bottom: solid 2px #666;
   display: flex;
@@ -15,32 +16,32 @@
 
 .header__child-items{
   width: 300px;
-  height: 100%;
-  padding: 15px;
+  line-height: 73px;
   text-align: center;
-  line-height: 58px;
 }
 
 .header__child-new{
   margin-right: 20px;
 }
 
-.header__lwr{
-  height: 40%;
+.header__menus{
+  height: 50%;
   width: 650px;
-  margin: 10px auto;
+  margin: 0 auto;
   padding: 0 50px;
-
 }
 
-.header__lwr__menus{
-  list-style: none;
+.header__child-menus{
+  font-size: 20px;
   display: flex;
   justify-content: space-between;
+  padding: 0;
+  margin: 0;
 }
 
 .logo{
   font-size: 45px;
+  display: inline-block;
 }
 
 

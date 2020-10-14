@@ -12,19 +12,23 @@
               ログアウト
       - else
         .header__child-item
-          =link_to "#", class:"btn btn-lg btn-outline-dark header__child-new", rorle:"button" do
+          =link_to "#", class:"btn btn-outline-dark header__child-new", rorle:"button"do
             新規登録
-          =link_to "#", class:"btn btn-lg btn-dark header__child-login", rorle:"button" do
+          =link_to "#", class:"btn btn-dark header__child-login", rorle:"button"do
             ログイン
-  .header__lwr
-    %li.header__lwr__menus
-      %ul.header__lwr__menu
-        トップページ
-      %ul.header__lwr__menu
-        スケジュール
-      %ul.header__lwr__menu
-        選手一覧
-      %ul.header__lwr__menu
-        スタジアム
+  .header__menus
+    %ul.header__child-menus
+      %li.header__child-menu
+        =link_to root_path, class:"header__child-home" do
+          トップページ
+      %li.header__child-menu
+        =link_to "#", class:"header__child-schedule" do
+          スケジュール
+      %li.header__child-menu
+        =link_to "#", class:"header__child-member" do
+          選手一覧
+      %li.header__child-menu
+        =link_to "#", class:"header__child-venue" do
+          スタジアム
 
 
