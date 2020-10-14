@@ -5,15 +5,16 @@
     .header__child-items
       - if user_signed_in?
         .header__child-item
-          =link_to "#", class:"header__child-mypage" do
-            マイページ
-          =link_to "#", class:"header__child-logout" do
-            ログアウト
+          %buton.btn
+            =link_to "#", class:"header__child-mypage" do
+              マイページ
+            =link_to "#", class:"header__child-logout" do
+              ログアウト
       - else
         .header__child-item
-          =link_to "#", class:"header__child-new" do
+          =link_to "#", class:"btn btn-lg btn-outline-dark header__child-new", rorle:"button" do
             新規登録
-          =link_to "#", class:"header__child-login" do
+          =link_to "#", class:"btn btn-lg btn-dark header__child-login", rorle:"button" do
             ログイン
   .header__lwr
     %li.header__lwr__menus
