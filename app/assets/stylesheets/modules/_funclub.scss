@@ -8,8 +8,7 @@
   border-bottom: solid #666;
 }
 
-.funclub__child-content{
+.funclub__child-item{
   display: flex;
-}
-.funclub__child-match{
+  justify-content: space-between;
 }

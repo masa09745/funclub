@@ -2,14 +2,17 @@
   = render "shared/header-main"
   %section.funclub--main
     %h1.funclub__index
-      今週の試合
-    .funclub__child-contents
-      .funclub__child-content
-        .funclub__child-match
-        .funclub__child-match
-        .funclub__child-match
-        .funclub__child-match
-        .funclub__child-match
-        .funclub__child-match
-        .funclub__child-match
+      最近の試合
+    .funclub__child-items
+      .funclub__child-item
+        =link_to "#", class:"funclub__child-match" do
+          =render "shared/match-index"
+        =link_to "#", class:"funclub__child-match" do
+          =render "shared/match-index"
+        =link_to "#", class:"funclub__child-match" do
+          =render "shared/match-index"
+        =link_to "#", class:"funclub__child-match" do
+          =render "shared/match-index"
+        =link_to "#", class:"funclub__child-match" do
+          =render "shared/match-index"
   =render "shared/footer-main"
