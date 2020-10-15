@@ -15,10 +15,12 @@
           =link_to "#", class:"funclub__child-match" do
             =render "shared/match-index"
     %section.funclub--contents
-      %section.funclub--diary
-        %h1.funclub__index
-          選手日記
-      %section.funclub--infomation
-        %h1.funclub__index
-          お知らせ
+      .funclub__child-content
+        .funclub__child-diary
+          %h1.funclub__index
+            選手日記
+      .funclub__child-content
+        .funclub__child-information
+          %h1.funclub__index
+            お知らせ
   =render "shared/footer-main"
