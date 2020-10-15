@@ -1,3 +1,15 @@
-.funclub-main{
-  height: 100px;
+.funclub--main{
+  min-width: 300px;
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+.funclub__index{
+  border-bottom: solid #666;
+}
+
+.funclub__child-content{
+  display: flex;
+}
+.funclub__child-match{
 }
