@@ -1,0 +1,46 @@
+.header{
+  height: 150px;
+}
+
+.header--main{
+  padding: 0 50px;
+  margin:  25px 0;
+}
+.header__items{
+  height: 50%;
+  margin: 10px;
+  border-bottom: solid 2px #666;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header__child-items{
+  width: 300px;
+  line-height: 73px;
+  text-align: center;
+}
+
+.header__child-new{
+  margin-right: 20px;
+}
+
+.header__menus{
+  height: 50%;
+  width: 650px;
+  margin: 0 auto;
+  padding: 0 50px;
+}
+
+.header__child-menus{
+  font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  margin: 0;
+}
+
+.logo{
+  font-size: 45px;
+}
+
+

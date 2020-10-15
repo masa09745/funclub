@@ -1,0 +1,34 @@
+%header.header.header--main
+  .header__items
+    =link_to root_path, class:"logo header__child-items" do
+      FUN CLUB
+    .header__child-items
+      - if user_signed_in?
+        .header__child-item
+          %buton.btn
+            =link_to "#", class:"header__child-mypage" do
+              マイページ
+            =link_to "#", class:"header__child-logout" do
+              ログアウト
+      - else
+        .header__child-item
+          =link_to "#", class:"btn btn-outline-dark header__child-new", rorle:"button"do
+            新規登録
+          =link_to "#", class:"btn btn-dark header__child-login", rorle:"button"do
+            ログイン
+  .header__menus
+    %ul.header__child-menus
+      %li.header__child-menu
+        =link_to root_path, class:"header__child-home" do
+          トップページ
+      %li.header__child-menu
+        =link_to "#", class:"header__child-schedule" do
+          スケジュール
+      %li.header__child-menu
+        =link_to "#", class:"header__child-member" do
+          選手一覧
+      %li.header__child-menu
+        =link_to "#", class:"header__child-venue" do
+          スタジアム
+
+
