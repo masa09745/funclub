@@ -1,0 +1,37 @@
+.funclub--main{
+  min-width: 300px;
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+.funclub--schedule{
+  margin-bottom: 30px;
+}
+
+.funclub__index{
+  border-bottom: solid #666;
+}
+
+.funclub__child-item{
+  display: flex;
+  justify-content: space-between;
+}
+
+.funclub__child-match{
+  width: 100px;
+}
+
+.funclub--contents{
+  display: flex;
+  justify-content: space-between;
+}
+
+.funclub__child-diary{
+  width: 200px;
+  height: 300px;
+}
+
+.funclub__child-information{
+  width: 300px;
+  height: 350px;
+}
