@@ -1,6 +1,16 @@
 .match--index{
 }
-
-.match__child-componet{
+.match__child-date{
   margin: 0;
+  text-align: center;
+}
+.match__child-time{
+  font-size: 15px;
+  margin: 0;
+  text-align: center;
+  border-bottom: solid 1px;
+}
+.match__child-opponent{
+  font-size: 25px;
+  text-align: center;
 }
