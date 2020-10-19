@@ -1,9 +1,12 @@
 class ApplicationController < ActionController::Base
-  before_action :basic_auth
+  before_action :basic_auth, if: :production?
   protect_from_forgery with: :exeption
 
 
   private
+  def production?
+    Rails.env.production?
+  end
 
   def basic_auth
     authenticate_request_with_thhp_basic do |username, password|
