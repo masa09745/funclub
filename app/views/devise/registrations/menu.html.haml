@@ -4,10 +4,8 @@
     %h1.user__menus--title
       %p.user__title.text-center 新規登録
     .user__child-menus
-      .user__child-menu.bg-dark
-        =link_to users_sign_up_step1_path, class: 'user__child-menu--mail text-white ' do
-          メールアドレスで登録
-      .user__child-menu.bg-danger
-        =link_to '#', class: 'user__child-menu--google text-white' do
-          googleアカウントで登録
+      =link_to users_sign_up_step1_path, class: 'btn btn-dark user__child-menu--mail' do
+        メールアドレスで登録
+      =link_to '#', class: 'btn btn-danger user__child-menu--google' do
+        googleアカウントで登録
   = render 'shared/footer-main'
