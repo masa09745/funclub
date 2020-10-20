@@ -1,2 +1,14 @@
 .user-wrapper
   = render 'devise/shared/header-user'
+  .user__menus
+    %h1.user
+    .user__child-menus
+      .user__child-menu
+        =link_to root_path, class: "user__child-menu--mail" do
+          メールアドレスで登録
+      .user__child-menu
+        =link_to "#", class:"user__child-menu--google" do
+          googleアカウントで登録
+      .user__child-menu
+        =link_to '#', class: 'user__child-menu--fasebook' do
+          fasebookアカウントで登録
