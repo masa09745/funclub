@@ -5,5 +5,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def menu
   end
 
+  
+
 
 end
