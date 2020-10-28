@@ -1,7 +1,19 @@
 .form-items
-  .form__child-items
+  .form__child-items.form-group.col-md-7
     %label.form__child-name
       氏名
-  .form__child-items
-  .form__child-items
-  .form__child-items
+    %input.form-control{type:"email" }
+  .form__child-items.form-group.col-md-7
+    %label.form__child-kana
+      氏名(カナ)
+    %input.form-control
+  .form__child-items.form-group.col-md-7
+    %label.form__child-mail
+      メールアドレス
+    %input.form-control
+  .form__child-items.form-group.col-md-6
+    %label.form__child-password
+      パスワード
+    %input.form-control{type:"password"}
+  %button.btn{type:"submit"}
+    次へ
