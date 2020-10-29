@@ -7,8 +7,8 @@ Rails.application.routes.draw do
   devise_scope :user do
     get 'users/menu', to: 'users/registrations#menu'
     get 'users/sign_up/step1', to: 'users/registrations#new'
-    get 'users/sign_up/credit', to: 'users/registration#credit'
-    get 'users/sign_up/confirmation', to: 'users/registration#confirmation'
+    get 'users/sign_up/step2', to: 'users/registrations#credit'
+    get 'users/sign_up/final', to: 'users/registrations#confirmation'
   end
 
   resources :users, only: :show
