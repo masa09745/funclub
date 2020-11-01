@@ -10,10 +10,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def step2
-    session[:name] = user_params[:name]
-    session[:name_kana] = user_params[:name_kana]
-    session[:email] = user_params[:email]
-    session[:password] = user_params[:password]
+    session[:user] = user_params
+    @user = User.new
   end
 
   def final
