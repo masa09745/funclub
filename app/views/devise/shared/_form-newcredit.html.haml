@@ -1,24 +1,25 @@
-.form-cards
-  .form__child-cards.form-group.col-md-8
-    %label.form__child-number
-      カード番号
-    %input.form-control.col-md-7
-    %small.text-muted
-      ハイフン(-)を除く数字のみを入力してください
-  .form__child-cards.form-group.col-md-8
-    %label.form__child-expire
-      有効期限
-    .form-row
-      .col
-        %input.form-control{placeholder: "月/Month"}
-      %p.slash /
-      .col
-        %input.form-control{placeholder: "年/Year"}
-  .form__child-cards.form-group.col-md-10
-    %label.form__child-cvc
-      CVC
-    %input.form-control.col-md-4{type:"password"}
-    %small.text-muted
-      カード裏面の3桁もしくは4桁の数字を入力してください
-  %button.btn{type:"submit"}
-    次へ
+=form_with url:users_sign_up_final_path, method: :get, local: true do |f|
+  .form-cards
+    .form__child-cards.form-group.col-md-8
+      %label.form__child-number
+        カード番号
+      %input.form-control.col-md-7
+      %small.text-muted
+        ハイフン(-)を除く数字のみを入力してください
+    .form__child-cards.form-group.col-md-8
+      %label.form__child-expire
+        有効期限
+      .form-row
+        .col
+          %input.form-control{placeholder: "月/Month"}
+        %p.slash /
+        .col
+          %input.form-control{placeholder: "年/Year"}
+    .form__child-cards.form-group.col-md-10
+      %label.form__child-cvc
+        CVC
+      %input.form-control.col-md-4{type:"password"}
+      %small.text-muted
+        カード裏面の3桁もしくは4桁の数字を入力してください
+    %button.btn
+      =f.submit "次へ"
