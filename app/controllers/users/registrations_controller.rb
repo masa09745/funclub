@@ -15,6 +15,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def final
+
   end
 
   private
