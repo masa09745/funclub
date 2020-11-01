@@ -8,7 +8,8 @@ Rails.application.routes.draw do
     get 'users/menu', to: 'users/registrations#menu'
     get 'users/sign_up/step1', to: 'users/registrations#step1'
     get 'users/sign_up/step2', to: 'users/registrations#step2'
-    get 'users/sign_up/final', to: 'users/registrations#final'
+    get 'users/sign_up/step3', to: 'users/registrations#step3'
+    patch 'users/sign_up/final', to: 'users/registrations#final'
   end
 
   resources :users, only: :show

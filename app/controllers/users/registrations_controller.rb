@@ -14,20 +14,25 @@ class Users::RegistrationsController < Devise::RegistrationsController
     @user = User.new
   end
 
-  def final
+  def step3
+    @user = User.new(session[:user])
 
+
+    if @user.save!
+      session[:id] = @user.id
+      sign_in User.find(session[:id]) unless user_signed_in?
+      session[:user].clear
+    end
+    
   end
+
+  def final
+  end
+
 
   private
 
   def user_params
-    params.require(:user).permit(
-      :name,
-      :name_kana,
-      :email,
-      :password
-    )
+    params.require(:user).permit(:name, :name_kana, :email, :password)
   end
-
-
 end
