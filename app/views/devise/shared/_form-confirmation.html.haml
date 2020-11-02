@@ -15,10 +15,12 @@
     .NewUser__child-email
       = "#{session[:user]["email"]}"
   .NewUser__child-confirmations
-    .NewUser__child-password
-      %p ※パスワードは個人情報のため表示しておりません。
+    %p.NewUser__child-text
+      ※パスワードは個人情報のため表示しておりません。
 .NewUser__registration
   = form_with model:@user, url:users_sign_up_final_path, local: true do |f|
+    %p.NewUser__child-text
+      登録内容に間違いがなければ登録ボタンを押してください
     .NewUser__child-registration
       =f.submit "登録"
 
