@@ -8,7 +8,7 @@
           %buton.btn
             =link_to "#", class:"header__child-mypage" do
               マイページ
-            =link_to "#", class:"header__child-logout" do
+            =link_to destroy_user_session_path, method: :delete,  class:"header__child-logout" do
               ログアウト
       - else
         .header__child-item
