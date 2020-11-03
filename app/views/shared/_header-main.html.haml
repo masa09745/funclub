@@ -12,9 +12,9 @@
               ログアウト
       - else
         .header__child-item
-          =link_to users_menu_path, class:"btn btn-outline-dark header__child-new", role:"button" do
+          =link_to users_sign_up_menu_path, class:"btn btn-outline-dark header__child-new", role:"button" do
             新規登録
-          =link_to new_user_session_path, class:"btn btn-dark header__child-login", role: "button" do
+          =link_to users_sign_in_menu_path, class:"btn btn-dark header__child-login", role: "button" do
             ログイン
   .header__menus
     %ul.header__child-menus
