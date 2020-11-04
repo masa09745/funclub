@@ -1,2 +1,7 @@
-.user-wrapper
-  = render 'devise/shared/header-user'
+.ExistUser-wrapper
+  =render "devise/shared/header-user"
+  .ExistUser--main
+    %h1.ExistUser__index
+      ログイン
+    =render "devise/shared/form-existuser"
+  =render "shared/footer-main"
