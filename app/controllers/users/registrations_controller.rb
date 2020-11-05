@@ -1,8 +1,5 @@
 class Users::RegistrationsController < Devise::RegistrationsController
 
-  def menu
-  end
-
   def step1
     @user = User.new
   end

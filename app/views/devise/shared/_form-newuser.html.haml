@@ -1,5 +1,5 @@
-= form_with model: @user, url: users_sign_up_step2_path, method: :get, local: true do |f|
-  .form-items
+.form-items
+  = form_with model: @user, url: users_sign_up_step2_path, method: :get, local: true do |f|
     .form__child-items.form-group.col-md-7
       %label.form__child-name
         氏名
