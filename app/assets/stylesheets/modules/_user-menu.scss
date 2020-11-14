@@ -1,23 +1,36 @@
-.NewUser__menus{
+.NewUser-menus{
   padding-top: 200px;
   min-width: 300px;
   max-width: 650px;
   margin: 0 auto;
 }
 
-.NewUser__menus--title{
+.NewUser-menus__title{
   border-bottom: solid 3px #666666;
   margin: 0 50px 0 ;
   padding: 5px;
 }
 
-.NewUser__title{
+.NewUser-title{
   margin: 0;
 }
 
 .NewUser__child-menus{
-  font-size: 20px;
-  width: 450px;
+  width: 400px;
   margin: 30px auto;
   text-align: center;
 }
+
+.NewUser__child-mail{
+  font-size: 25px;
+  width: 100%;
+  display: block;
+}
+
+.NewUser__child-google{
+  font-size: 25px;
+  margin-top: 15px;
+  width: 100%;
+  display: block;
+}
+
