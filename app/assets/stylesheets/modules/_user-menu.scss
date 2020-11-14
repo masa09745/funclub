@@ -1,30 +1,23 @@
-.user__menus{
+.NewUser__menus{
   padding-top: 200px;
   min-width: 300px;
   max-width: 650px;
   margin: 0 auto;
 }
 
-.user__menus--title{
+.NewUser__menus--title{
   border-bottom: solid 3px #666666;
   margin: 0 50px 0 ;
   padding: 5px;
 }
 
-.user__title{
+.NewUser__title{
   margin: 0;
 }
 
-.user__child-menus{
+.NewUser__child-menus{
   font-size: 20px;
   width: 450px;
   margin: 30px auto;
   text-align: center;
-}
-
-.user__child-menu{
-  height: 50px;
-  margin-bottom: 20px;
-  border-radius: 0.5rem;
-  line-height: 50px;
 }
