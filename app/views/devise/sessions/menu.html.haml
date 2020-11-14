@@ -1,11 +1,11 @@
-.ExistUser-wrapper
+.user-wrapper
   = render 'devise/shared/header-user'
-  .ExistUser-menus
-    %h1.ExistUser-menus__title
-      %p.ExistUser-title ログイン
-    .ExistUser__child-menus
-      =link_to new_user_session_path, class: 'btn btn-dark btn-lg ExistUser__child-mail' do
+  .user-menus
+    %h1.title
+      %p.user-title ログイン
+    .user__child-menus
+      =link_to new_user_session_path, class: 'btn btn-dark btn-lg user__child-mail' do
         メールアドレスでログイン
-      =link_to '#', class: 'btn btn-danger btn-lg ExistUser__child-google' do
+      =link_to '#', class: 'btn btn-danger btn-lg user__child-google' do
         googleアカウントでログイン
   = render 'shared/footer-main'
