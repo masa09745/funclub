@@ -1,0 +1,35 @@
+.ExistUser-menus{
+  padding-top: 200px;
+  min-width: 300px;
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+.ExistUser-menus__title{
+  border-bottom: solid 3px #666666;
+  margin: 0 50px 0 ;
+  padding: 5px;
+}
+
+.ExistUser-title{
+  margin: 0;
+}
+
+.ExistUser__child-menus{
+  width: 400px;
+  margin: 30px auto;
+  text-align: center;
+}
+
+.ExistUser__child-mail{
+  font-size: 25px;
+  width: 100%;
+  display: block;
+}
+
+.ExistUser__child-google{
+  font-size: 25px;
+  margin-top: 15px;
+  width: 100%;
+  display: block;
+}
