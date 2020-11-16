@@ -1,5 +1,4 @@
 .header{
-  height: 150px;
   width: 100%;
   position: fixed;
   top: 0;
@@ -9,19 +8,18 @@
 
 .headerMain{
   padding: 0 50px;
-  margin:  15px 0;
 }
 
-.header--user{
+.headerUser{
   padding: 0 50px;
-  margin:  25px 0;
+  margin:  15px 0;
   line-height: 150px;
   text-align: center;
 }
 
 .headerMain__items{
-  height: 50%;
-  margin: 10px;
+  height: 80px;
+  padding: 10px;
   border-bottom: solid 2px #666;
   display: flex;
   justify-content: space-between;
@@ -29,7 +27,7 @@
 
 .headerMain__child-items{
   width: 300px;
-  line-height: 73px;
+  line-height: 58px;
   text-align: center;
 }
 
@@ -42,7 +40,7 @@
 }
 
 .headerMain__menus{
-  height: 50%;
+  height: 45px;
   width: 650px;
   margin: 0 auto;
   padding: 0 50px;
@@ -50,6 +48,7 @@
 
 .headerMain__child-menus{
   font-size: 20px;
+  line-height: 45px;
   display: flex;
   justify-content: space-between;
   padding: 0;

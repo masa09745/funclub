@@ -1,7 +1,8 @@
 %header.header.headerMain
   .headerMain__items
-    =link_to root_path, class:"logo headerMain__child-items" do
-      FUN CLUB
+    .headerMain__child-items
+      =link_to root_path, class: "logo" do
+        FUN CLUB
     .headerMain__child-items
       - if user_signed_in?
         .headerMain__child-item
