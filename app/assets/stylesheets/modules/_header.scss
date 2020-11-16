@@ -7,9 +7,9 @@
   z-index: 10;
 }
 
-.header--main{
+.headerMain{
   padding: 0 50px;
-  margin:  25px 0;
+  margin:  15px 0;
 }
 
 .header--user{
@@ -19,7 +19,7 @@
   text-align: center;
 }
 
-.header__items{
+.headerMain__items{
   height: 50%;
   margin: 10px;
   border-bottom: solid 2px #666;
@@ -27,13 +27,13 @@
   justify-content: space-between;
 }
 
-.header__child-items{
+.headerMain__child-items{
   width: 300px;
   line-height: 73px;
   text-align: center;
 }
 
-.header__child-new{
+.headerMain__child-new{
   margin-right: 20px;
 }
 
@@ -41,14 +41,14 @@
   margin-right: 20px;
 }
 
-.header__menus{
+.headerMain__menus{
   height: 50%;
   width: 650px;
   margin: 0 auto;
   padding: 0 50px;
 }
 
-.header__child-menus{
+.headerMain__child-menus{
   font-size: 20px;
   display: flex;
   justify-content: space-between;
