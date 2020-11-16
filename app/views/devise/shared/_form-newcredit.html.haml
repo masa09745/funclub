@@ -1,21 +1,21 @@
-=form_with url:users_sign_up_step3_path, method: :get, local: true, class: 'Form__Credit' do |f|
-  .form__child-cards.form-group.col-md-8
-    %label.form__child-number
+=form_with url:users_sign_up_step3_path, method: :get, local: true, class: 'user-forms' do |f|
+  .user__child-forms.form-group.col-md-12
+    %label
       カード番号
     %input.form-control.col-md-7
     %small.text-muted
       ハイフン(-)を除く数字のみを入力してください
-  .form__child-cards.form-group.col-md-8
-    %label.form__child-expire
+  .user__child-form.form-group.col-md-12
+    %label
       有効期限
     .form-row
-      .col
+      .col-md-4
         %input.form-control{placeholder: "月/Month"}
       %p.slash /
-      .col
+      .col-md-4
         %input.form-control{placeholder: "年/Year"}
-  .form__child-cards.form-group.col-md-10
-    %label.form__child-cvc
+  .user__child-form.form-group.col-md-12
+    %label
       CVC
     %input.form-control.col-md-4{type:"password"}
     %small.text-muted
