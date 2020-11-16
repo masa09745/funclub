@@ -1,18 +1,18 @@
-= form_with model: @user, url: users_sign_up_step2_path, method: :get, local: true, class: "NewUser__forms" do |f|
-  .NewUser__child-forms.form-group.col-md-7
-    %label.NewUser__child-form
+= form_with model: @user, url: users_sign_up_step2_path, method: :get, local: true, class:'user-forms' do |f|
+  .user__child-forms.form-group.col-md-6
+    %label
       氏名
     = f.text_field :name, class: "form-control"
-  .NewUser__child-form.form-group.col-md-7
-    %label.NewUser__child-form
+  .user__child-forms.form-group.col-md-8
+    %label
       氏名(カナ)
     = f.text_field :name_kana, class: "form-control"
-  .NewUser__child-form.form-group.col-md-7
-    %label.NewUser__child-form
+  .user__child-forms.form-group.col-md-7
+    %label
       メールアドレス
     = f.email_field :email, class: "form-control"
-  .NewUser__child-form.form-group.col-md-6
-    %label.NewUser__child-form
+  .user__child-forms.form-group.col-md-5
+    %label
       パスワード
     = f.password_field :password, class: "form-control"
   %button.btn
