@@ -1,8 +1,9 @@
 .schedule-wrapper
   =render "shared/header-main"
-  .schedule
+  .scheduleIndex
 
 
-- if can? :edit, current_user
+  - if can? :edit, current_user
+    =link_to new_schedule_path do
+      新規作成
 
-  admin権限です
