@@ -1,38 +1,40 @@
-.funclub--main{
+.funClub-wrapper{
+  background-color: #eeeeee;
+}
+
+.funClub{
   min-width: 300px;
-  max-width: 650px;
+  max-width: 1080px;
   margin: 0 auto;
-  padding-top: 200px;
+  padding-top: 150px;
+  background-color: #ffffff;
 }
 
-.funclub--schedule{
-  margin-bottom: 30px;
+.funClub__schedules{
+  padding: 0 20px;
 }
 
-.funclub__index{
-  border-bottom: solid #666;
-}
-
-.funclub__child-item{
+.funClub__child-schedule{
+  min-width: 300px;
+  max-width: 500px;
   display: flex;
+  justify-content: space-between;
+  margin: 10px auto 30px;
+}
+
+.funClub__contents{
+  padding: 0 20px;
   justify-content: space-between;
 }
 
-.funclub__child-match{
-  width: 100px;
-}
-
-.funclub--contents{
-  display: flex;
-  justify-content: space-between;
-}
-
-.funclub__child-diary{
-  width: 200px;
+.funClub__child-diary{
+  min-width: 300px;
+  max-width: 1080px;
   height: 300px;
 }
 
-.funclub__child-information{
-  width: 300px;
+.funClub__child-info{
+  min-width: 300px;
+  max-width: 1080px;
   height: 350px;
 }

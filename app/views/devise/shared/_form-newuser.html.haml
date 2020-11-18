@@ -1,20 +1,19 @@
-.form-items
-  = form_with model: @user, url: users_sign_up_step2_path, method: :get, local: true do |f|
-    .form__child-items.form-group.col-md-7
-      %label.form__child-name
-        氏名
-      = f.text_field :name, class: "form-control"
-    .form__child-items.form-group.col-md-7
-      %label.form__child-kana
-        氏名(カナ)
-      = f.text_field :name_kana, class: "form-control"
-    .form__child-items.form-group.col-md-7
-      %label.form__child-mail
-        メールアドレス
-      = f.email_field :email, class: "form-control"
-    .form__child-items.form-group.col-md-6
-      %label.form__child-password
-        パスワード
-      = f.password_field :password, class: "form-control"
-    %button.btn
-      =f.submit "次へ"
+= form_with model: @user, url: users_sign_up_step2_path, method: :get, local: true, class:'user-forms' do |f|
+  .user__child-forms.form-group.col-md-6
+    %label
+      氏名
+    = f.text_field :name, class: "form-control"
+  .user__child-forms.form-group.col-md-8
+    %label
+      氏名(カナ)
+    = f.text_field :name_kana, class: "form-control"
+  .user__child-forms.form-group.col-md-7
+    %label
+      メールアドレス
+    = f.email_field :email, class: "form-control"
+  .user__child-forms.form-group.col-md-5
+    %label
+      パスワード
+    = f.password_field :password, class: "form-control"
+  %button.btn
+    =f.submit "次へ"

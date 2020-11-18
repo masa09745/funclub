@@ -2,7 +2,7 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import "config/sanitize";
-@import "modules/funclub";
+@import "modules/funClub";
 @import "modules/match";
 @import "modules/header";
 @import "modules/footer";
@@ -12,12 +12,25 @@
 @import "modules/user-exist";
 
 
-
-a{
+a, a:hover {
   text-decoration: none;
-  color: #333;
+  color: #333333;
 }
 
 li{
   list-style: none;
+}
+
+.title{
+  border-bottom: solid 3px #666666;
+  margin: 0 50px 0 ;
+  padding: 5px;
+}
+
+.user-text{
+  font-size: 15px;
+}
+
+.user__child-forms{
+  margin-bottom: 15px;
 }

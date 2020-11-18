@@ -1,11 +1,11 @@
 .user-wrapper
   = render 'devise/shared/header-user'
-  .user__menus
-    %h1.user__menus--title
-      %p.user__title.text-center ログイン
+  .user-menus
+    %h1.title
+      %p.user-title ログイン
     .user__child-menus
-      =link_to new_user_session_path, class: 'btn btn-dark btn-lg btn-block user__child-menu--mail' do
+      =link_to new_user_session_path, class: 'btn btn-dark btn-lg user__child-mail' do
         メールアドレスでログイン
-      =link_to '#', class: 'btn btn-danger btn-lg btn-block user__child-menu--google' do
+      =link_to '#', class: 'btn btn-danger btn-lg user__child-google' do
         googleアカウントでログイン
   = render 'shared/footer-main'
