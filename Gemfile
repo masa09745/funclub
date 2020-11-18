@@ -57,12 +57,6 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem "haml-rails", "~> 2.0"
-gem 'devise'
-gem 'bootstrap', '~> 4.5.0'
-gem 'jquery-rails'
-gem 'font-awesome-sass', '~> 5.13.0'
-
 group :development, :test do
   gem 'capistrano'
   gem 'capistrano-rbenv'
@@ -70,3 +64,10 @@ group :development, :test do
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
 end
+
+gem "haml-rails", "~> 2.0"
+gem 'devise'
+gem 'bootstrap', '~> 4.5.0'
+gem 'jquery-rails'
+gem 'font-awesome-sass', '~> 5.13.0'
+gem 'cancancan'
