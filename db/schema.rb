@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_18_151812) do
+ActiveRecord::Schema.define(version: 2020_10_10_121944) do
 
   create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "customer", null: false
@@ -31,10 +31,11 @@ ActiveRecord::Schema.define(version: 2020_11_18_151812) do
   end
 
   create_table "schedules", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "opponent", null: false
     t.datetime "match_date", null: false
+    t.bigint "opponent_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["opponent_id"], name: "index_schedules_on_opponent_id"
   end
 
   create_table "sns_credentials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -85,12 +86,12 @@ ActiveRecord::Schema.define(version: 2020_11_18_151812) do
     t.string "name_kana"
     t.string "email"
     t.string "encrypted_password"
+    t.boolean "admin", default: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.boolean "admin", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -98,6 +99,7 @@ ActiveRecord::Schema.define(version: 2020_11_18_151812) do
   add_foreign_key "cards", "users"
   add_foreign_key "orders", "stocks"
   add_foreign_key "orders", "users"
+  add_foreign_key "schedules", "teams", column: "opponent_id"
   add_foreign_key "sns_credentials", "users"
   add_foreign_key "stock_details", "stocks"
   add_foreign_key "stocks", "schedules"
