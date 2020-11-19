@@ -1,0 +1,11 @@
+= form_with model:@schedule, local: true, class:'schedule-forms' do |f|
+  .schedule_child-form.form-group
+    %label
+      試合日時
+    = f.datetime_field :match_date, class: "form-control"
+  .schedule_child-form.form-group
+    %label
+      対戦相手
+    = f.collection_select :oppenent_id, @team, :id, :name, {prompt: '対戦相手を選んでください'}, {class:'form-control'}
+  %button.btn
+    = f.submit "作成"
