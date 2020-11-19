@@ -6,6 +6,6 @@
   .schedule_child-form.form-group
     %label
       対戦相手
-    = f.collection_select :oppenent_id, @team, :id, :name, {prompt: '対戦相手を選んでください'}, {class:'form-control'}
+    = f.collection_select :opponent_id, @team, :id, :name, {prompt: '対戦相手を選んでください'}, {class:'form-control'}
   %button.btn
     = f.submit "作成"

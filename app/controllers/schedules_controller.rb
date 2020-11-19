@@ -8,12 +8,16 @@ class SchedulesController < ApplicationController
   end
 
   def create
-    @schedule = Schedule.new(schedule_params)
-    
+    Schedule.create(schedule_params)
+      redirect_to root_path
+  end
 
-  
   def show
   end
 
-  
+  private
+
+  def schedule_params
+    params.require(:schedule).permit(:match_date, :opponent_id)
+  end
 end
