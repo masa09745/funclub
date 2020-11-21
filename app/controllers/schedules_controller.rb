@@ -1,6 +1,8 @@
 class SchedulesController < ApplicationController
   def index
-    @schedule = Schedule.all
+    from = Time.current.at_beginning_of_month
+    to = (from + 1.month)
+    @schedules = Schedule.includes(:team).where(match_date: from...to).order(match_date: :ASC)
   end
 
   def new

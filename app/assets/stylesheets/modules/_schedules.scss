@@ -1,5 +1,12 @@
 .scheduleIndex{
-  padding-top: 125px;
+  padding-top: 155px;
+  min-width: 450px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.scheduleIndex-month{
+  margin: 10px 50px 10px;
 }
 
 .scheduleNew{
@@ -8,6 +15,8 @@
   max-width: 800px;
   margin: 0 auto;
 }
+
+.scheduleIndex-month
 
 .schedule-forms{
   width: 650px;
