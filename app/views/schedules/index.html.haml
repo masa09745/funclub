@@ -9,12 +9,12 @@
     .scheduleIndex-month
       - @schedules.each do |schedule|
         .matchBox
-          .matchBox__child-date
+          %span.matchBox__child-date
             = l schedule.match_date, format: :day
-          .matchBox__child-time
-            %label 開始時間
-            = l schedule.match_date, format: :time
-          .matchBox__child-opponent
-            %label VS
-            = schedule.team.name
+          //.matchBox__child-time
+          // %label 開始時間
+          // = l schedule.match_date, format: :time
+          //.matchBox__child-opponent
+          //%label VS
+          //= schedule.team.name
 
