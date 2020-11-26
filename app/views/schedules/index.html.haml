@@ -1,20 +1,20 @@
 .schedule-wrapper
   =render "shared/header-main"
   .scheduleIndex
-    - if can? :edit, current_user
-      =link_to new_schedule_path do
-        新規作成
     %h1.title
       =l Time.current, format: :month
     .scheduleIndex-month
+      - if can? :edit, current_user
+        .scheduleIndex-add
+          =link_to new_schedule_path do
+            スケジュールを追加する
       - @schedules.each do |schedule|
-        .matchBox
-          %span.matchBox__child-date
-            = l schedule.match_date, format: :day
-          //.matchBox__child-time
-          // %label 開始時間
-          // = l schedule.match_date, format: :time
-          //.matchBox__child-opponent
-          //%label VS
-          //= schedule.team.name
+        .card
+          .card-body
+            %h5.card-title
+              = l schedule.match_date, format: :day
+            %h6.card-subtitle.mb-2.text-muted
+              =l schedule.match_date, format: :time
+            .cart-text
+              = schedule.team.name
 

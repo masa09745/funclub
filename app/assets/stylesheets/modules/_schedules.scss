@@ -8,21 +8,11 @@
 
 .scheduleIndex-month{
   margin: 10px 75px 10px;
-
 }
 
-.matchBox{
-  height: 100px;
-  margin-bottom: 10px;
-  border: solid 3px #eeeeee;
-  border-radius: 10px;
-  padding: 7px;
-  background-color: #eeeeee;
-}
-
-.matchBox__child-date{
-  font-size: 28px;
-  color: #fff;
+.scheduleIndex-add{
+  margin-bottom: 5px;
+  text-align: right;
 }
 
 .scheduleNew{
@@ -31,8 +21,12 @@
   max-width: 800px;
   margin: 0 auto;
 }
+.card{
+  width: 50%;
+  margin: 10px;
+}
 
-.scheduleIndex-month
+
 
 .schedule-forms{
   width: 650px;
