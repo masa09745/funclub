@@ -8,14 +8,16 @@
         .scheduleIndex-add
           =link_to new_schedule_path do
             スケジュールを追加する
-        .card-deck
+        .scheduleIndex-inner
           - @schedules.each do |schedule|
             .card
               .card-body
-                %h5.card-title
-                  = l schedule.match_date, format: :day
-                %h6.card-subtitle.mb-2.text-muted
-                  =l schedule.match_date, format: :time
-                .cart-text
+                .card-schedule
+                  .card-date
+                    = l schedule.match_date, format: :day
+                  .card-time
+                    =l schedule.match_date, format: :time
+                .card-text
+                  %span.vs VS
                   = schedule.team.name
 
