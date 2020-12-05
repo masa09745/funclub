@@ -17,36 +17,31 @@
 
 .scheduleIndex-inner{
   padding: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .card{
-  margin-bottom: 10px;
+  width: 200px;
+  margin-bottom: 13px;
 }
 
-.card-body{
-  display: flex;
+.cardDate{
+  font-size: 24px;
 }
 
-.card-schedule{
-  width: 30%;
+.cardTime{
+  font-size: 13px;
 }
 
-.card-date{
-  font-size: 25px;
+.cardOpponent{
+  font-size: 24px;
+  margin-bottom: 8px;
 }
 
-.card-time{
+.cardLink{
   font-size: 15px;
-}
-
-.vs{
-  margin-right: 10px;
-  font-size: 20px;
-}
-
-.card-text{
-  width: 70%;
-  font-size: 40px;
 }
 
 

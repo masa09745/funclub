@@ -12,12 +12,12 @@
           - @schedules.each do |schedule|
             .card
               .card-body
-                .card-schedule
-                  .card-date
+                .cardSchedule
+                  .cardDate
                     = l schedule.match_date, format: :day
-                  .card-time
+                  .cardTime
                     =l schedule.match_date, format: :time
-                .card-text
-                  %span.vs VS
+                .cardOpponent
                   = schedule.team.name
-
+                =link_to "", class:"btn btn-primary cardLink" do
+                  チケット購入
