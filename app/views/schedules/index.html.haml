@@ -1,0 +1,23 @@
+.schedule-wrapper
+  =render "shared/header-main"
+  .scheduleIndex
+    %h1.title
+      =l Time.current, format: :month
+    .scheduleIndex-month
+      - if can? :edit, current_user
+        .scheduleIndex-add
+          =link_to new_schedule_path do
+            スケジュールを追加する
+        .scheduleIndex-inner
+          - @schedules.each do |schedule|
+            .card
+              .card-body
+                .cardSchedule
+                  .cardDate
+                    = l schedule.match_date, format: :day
+                  .cardTime
+                    =l schedule.match_date, format: :time
+                .cardOpponent
+                  = schedule.team.name
+                =link_to "", class:"btn btn-primary cardLink" do
+                  チケット購入

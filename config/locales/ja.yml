@@ -1,0 +1,7 @@
+ja:
+  time:
+    formats:
+      default: "%Y/%m/%d"
+      month: "%m月"
+      day: "%-d日"
+      time : "%H:%M"
