@@ -31,5 +31,9 @@
       %li.headerMain__child-menu
         =link_to "#", class:"headerMain__child-venue" do
           スタジアム
+      - if can? :edit, current_user
+        %li.headerMain__child-menu
+          =link_to new_schedule_path, class:"headerMain__child-stock" do
+            在庫管理
 
 
