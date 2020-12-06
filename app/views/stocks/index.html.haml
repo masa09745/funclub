@@ -3,4 +3,8 @@
   .stockIndex
     %h1.title
       チケット在庫管理
-    = render "form-stock"
+    .stockIndex-list
+      - if can? :edit, current_user
+        .stockIndex-add
+          =link_to new_stock_path do
+            在庫を追加する
