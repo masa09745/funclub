@@ -1,13 +1,14 @@
 = form_with model: @schedule, class:'schedule-forms' do |f|
-  %table
-    %thead
-      %tr
-        %th 試合日時
-        %th 対戦相手
-    %tbody
-      %tr
-        %td
-          = f.datetime_field :match_date, class: "form-control"
-        %td
-          = f.collection_select :opponent_id, @team, :id, :name, {prompt: '対戦相手を選んでください'}, {class:'form-control'}
+  %label 対戦日時
+  = f.datetime_field :match_date, class: "form-control"
+  %label 対戦相手
+  = f.collection_select :opponent_id, @team, :id, :name, {prompt: '対戦相手を選んでください'}, {class:'form-control'}
+  %label 在庫作成
+  =f.fields_for :stocks do |i|
+    %label 席種
+    = i. select :grade, ['S','A','B','C'], {prompt: '席種を選んでください'}, {class: 'form-control'}
+    %label 金額
+    = i.text_field :price, class: 'form-control'
+    %label 設定座席数
+    = i.text_field :remain, class: 'form-control'
   = f.submit "作成"
