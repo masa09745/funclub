@@ -10,21 +10,21 @@
             在庫を追加する
       .StockIndex-inner
         - @stocks.each do |stock|
-          %table
-            %tr
-              %th 試合日時
-              %th 対戦相手
-              %th 席種
-              %th 金額
-              %th 在庫量
-            %tr
-              %td
+          %table.stockList
+            %tr.stockList__header
+              %th.stockList__child-header 試合日
+              %th.stockList__child-header 対戦相手
+              %th.stockList__child-header 席種
+              %th.stockList__child-header 金額
+              %th.stockList__child-header 在庫量
+            %tr.stockList__data
+              %td.stockList__child-data
                 = l stock.schedule.match_date
-              %td
+              %td.stockList__child-data
                 = stock.schedule.team.name
-              %td
+              %td.stockList__child-data
                 = stock.grade
-              %td
+              %td.stockList__child-data
                 = stock.price
-              %td
+              %td.stockList__child-data
                 = stock.remain
