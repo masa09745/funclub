@@ -8,3 +8,11 @@
         .stockIndex-add
           =link_to new_stock_path do
             在庫を追加する
+      .StockIndex-inner
+        - @stocks.each do |stock|
+          .
+          = l stock.schedule.match_date
+          = stock.schedule.team.name
+          = stock.grade
+          = stock.price
+          = stock.remain
