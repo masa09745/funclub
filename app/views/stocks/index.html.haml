@@ -29,7 +29,6 @@
               %td.stockList__child-remain
                 = stock.remain
               %td.stockList__child-links
-                = link_to "#", class: 'btn btn-primary stockList__child-edit' do
-                  編集
-                = link_to "#", class: 'btn btn-dark stockList__child-delete' do
-                  削除
+                = link_to "編集", edit_stock_path(@stocks), class: 'btn btn-primary stockList__child-edit'
+                = link_to "削除", stock_path(@stocks), method: :delete, class: 'btn btn-dark stockList__child-delete'
+

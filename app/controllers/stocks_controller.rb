@@ -4,5 +4,11 @@ class StocksController < ApplicationController
     @stocks = Stock.includes(schedule: :team)
   end
 
+  def edit
+  end
+
+  def destroy
+  end
+
 
 end
