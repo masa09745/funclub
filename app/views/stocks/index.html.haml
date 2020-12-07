@@ -9,22 +9,27 @@
           =link_to new_stock_path do
             在庫を追加する
       .StockIndex-inner
-        - @stocks.each do |stock|
-          %table.stockList
-            %tr.stockList__header
-              %th.stockList__child-header 試合日
-              %th.stockList__child-header 対戦相手
-              %th.stockList__child-header 席種
-              %th.stockList__child-header 金額
-              %th.stockList__child-header 在庫量
+        %table.stockList
+          %tr.stockList__header
+            %th.stockList__child-header 試合日
+            %th.stockList__child-header 対戦相手
+            %th.stockList__child-header 席種
+            %th.stockList__child-header 金額
+            %th.stockList__child-header 在庫量
+          - @stocks.each do |stock|
             %tr.stockList__data
-              %td.stockList__child-data
+              %td.stockList__child-date
                 = l stock.schedule.match_date
-              %td.stockList__child-data
+              %td.stockList__child-opponent
                 = stock.schedule.team.name
-              %td.stockList__child-data
+              %td.stockList__child-grade
                 = stock.grade
-              %td.stockList__child-data
+              %td.stockList__child-price
                 = stock.price
-              %td.stockList__child-data
+              %td.stockList__child-remain
                 = stock.remain
+              %td
+                = link_to "#" do
+                  編集
+                = link_to "#" do
+                  削除
