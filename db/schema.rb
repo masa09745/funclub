@@ -47,13 +47,6 @@ ActiveRecord::Schema.define(version: 2020_10_10_121944) do
     t.index ["user_id"], name: "index_sns_credentials_on_user_id"
   end
 
-  create_table "stock_details", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "stock_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["stock_id"], name: "index_stock_details_on_stock_id"
-  end
-
   create_table "stocks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "grade", null: false
     t.integer "price", null: false
@@ -101,7 +94,6 @@ ActiveRecord::Schema.define(version: 2020_10_10_121944) do
   add_foreign_key "orders", "users"
   add_foreign_key "schedules", "teams", column: "opponent_id"
   add_foreign_key "sns_credentials", "users"
-  add_foreign_key "stock_details", "stocks"
   add_foreign_key "stocks", "schedules"
   add_foreign_key "tickets", "orders"
   add_foreign_key "tickets", "users"
