@@ -28,8 +28,8 @@
                 = stock.price
               %td.stockList__child-remain
                 = stock.remain
-              %td
-                = link_to "#" do
+              %td.stockList__child-links
+                = link_to "#", class: 'btn btn-primary stockList__child-edit' do
                   編集
-                = link_to "#" do
+                = link_to "#", class: 'btn btn-dark stockList__child-delete' do
                   削除
