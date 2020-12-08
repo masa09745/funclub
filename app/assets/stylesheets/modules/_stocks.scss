@@ -15,18 +15,6 @@
   text-align: right;
 }
 
-.stockNew{
-  padding-top: 155px;
-  min-width: 450px;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.stock-forms{
-  width: 650px;
-  margin: 30px auto;
-}
-
 .stockList{
   padding: 15px;
 }
@@ -56,4 +44,21 @@
 }
 .stockList__child-edit{
   margin-right: 10px;
+}
+
+.stockEdit{
+  padding-top: 155px;
+  min-width: 450px;
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #ffffff;
+}
+
+.stockEdit-form{
+  margin: 10px 75px 10px;
+}
+
+.stockEdit-return{
+  margin-bottom: 5px;
+  text-align: right;
 }

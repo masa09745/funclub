@@ -1,0 +1,10 @@
+.stock-wrapper
+  = render "shared/header-main"
+  .stockEdit
+    %h1.title
+      チケット在庫編集
+    .stockEdit-form
+      - if can? :edit, current_user
+        .stockEdit-return
+          =link_to "在庫一覧へ戻る", stocks_path
+      =render "form-edit"
