@@ -5,12 +5,12 @@ class StocksController < ApplicationController
   end
 
   def edit
-    @stock = Stock.find_by(params[:id])
+    @stock = Stock.find(params[:id])
   end
 
   def update
-    @stock = Stock.find_by(params[:id])
-    @stock = update(stock_params)
+    @stock = Stock.find(params[:id])
+    @stock.update(stock_params)
     redirect_to stocks_path
   end
 
@@ -23,7 +23,7 @@ class StocksController < ApplicationController
   private
 
   def stock_params
-    params.require(:stock).permit(:price)
+    params.require(:stock).permit(:price,:remain)
   end
 
 end
