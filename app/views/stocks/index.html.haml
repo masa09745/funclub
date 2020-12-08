@@ -29,6 +29,6 @@
               %td.stockList__child-remain
                 = stock.remain
               %td.stockList__child-links
-                = link_to "編集", edit_stock_path(@stocks), class: 'btn btn-primary stockList__child-edit'
-                = link_to "削除", stock_path(@stocks), method: :delete, class: 'btn btn-dark stockList__child-delete'
+                = link_to "編集", edit_stock_path(stock), class: 'btn btn-primary stockList__child-edit'
+                = link_to "削除", stock_path(stock), method: :delete, data: {confirm: "本当に削除しますか？"}, class: 'btn btn-dark stockList__child-delete'
 
