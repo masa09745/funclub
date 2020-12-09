@@ -48,9 +48,9 @@ ActiveRecord::Schema.define(version: 2020_10_10_121944) do
   end
 
   create_table "stocks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "grade", null: false
-    t.integer "price", null: false
-    t.integer "remain", null: false
+    t.string "grade"
+    t.integer "price"
+    t.integer "remain"
     t.bigint "schedule_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
