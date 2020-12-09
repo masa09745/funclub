@@ -6,12 +6,13 @@ class SchedulesController < ApplicationController
   end
 
   def new
-    @schedule = Form::ScheduleCollection.new
+    @schedule = Schedule.new
+    stock = @schedule.stocks.build
     @team = Team.all
   end
 
   def create
-    @schedule = Form::ScheduleCollection.new(schedule_params)
+    @schedule = Schedule.new(schedule_params)
     if @schedule.save
       redirect_to root_path
     end
@@ -23,7 +24,12 @@ class SchedulesController < ApplicationController
   private
 
   def schedule_params
-    params.require(:form_schedule_collection).permit(schedules_attributes: [:match_date, :opponent_id])
+    params.require(:schedule).permit(:match_date, :opponent_id, stocks_attributes:[
+      :grade,
+      :price,
+      :remain
+      ]
+    )
   end
 
 end

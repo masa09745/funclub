@@ -1,14 +1,20 @@
-= form_with model: @schedule, url: schedules_path, class:'schedule-forms' do |f|
-  %table
-    %thead
-      %tr
-        %th 試合日時
-        %th 対戦相手
-    %tbody
-      = f.fields_for :schedules do |i|
-        %tr
-          %td
-            = i.datetime_field :match_date, class: "form-control"
-          %td
-            = i.collection_select :opponent_id, @team, :id, :name, {prompt: '対戦相手を選んでください'}, {class:'form-control'}
+= form_with model: @schedule, class:'schedule-forms' do |f|
+  .form-row
+    .form-group.col-md-6
+      %label 対戦日時
+      = f.datetime_field :match_date, class: "form-control"
+    .form-group.col-md-6
+      %label 対戦相手
+      = f.collection_select :opponent_id, @team, :id, :name, {prompt: '対戦相手を選んでください'}, {class:'form-control'}
+  =f.fields_for :stocks do |i|
+    .form-row
+      .form-group.col-md-4
+        %label 席種
+        = i. select :grade, ['S','A','B','C'], {prompt: '席種を選んでください'}, {class: 'form-control'}
+      .form-group.col-md-4
+        %label 金額
+        = i.text_field :price, class: 'form-control'
+      .form-group.col-md-4
+        %label 設定座席数
+        = i.text_field :remain, class: 'form-control'
   = f.submit "作成"

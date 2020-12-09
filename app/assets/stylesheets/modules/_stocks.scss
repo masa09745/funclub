@@ -1,0 +1,78 @@
+.stockIndex{
+  padding-top: 155px;
+  min-width: 450px;
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #ffffff;
+}
+
+.stockIndex-list{
+  margin: 10px 75px 10px;
+}
+
+.stockIndex-add{
+  margin-bottom: 5px;
+  text-align: right;
+}
+
+.stockList{
+  padding: 15px;
+}
+
+.stockList__child-date{
+  width: 20%;
+}
+
+.stockList__child-opponent{
+  width: 15%;
+}
+
+.stockList__child-grade{
+  width: 10%;
+}
+
+.stockList__child-price{
+  width: 15%;
+}
+
+.stockList__child-remain{
+  width: 10%;
+}
+
+.stockList__child-links{
+  width: 20%;
+}
+.stockList__child-edit{
+  margin-right: 10px;
+}
+
+.stockEdit{
+  padding-top: 155px;
+  min-width: 450px;
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #ffffff;
+}
+
+.stockEdit-form{
+  margin: 10px 75px 10px;
+}
+
+.stockEdit-return{
+  margin-bottom: 5px;
+  text-align: right;
+}
+
+.stockEdit__data{
+  display: flex;
+  margin-bottom: 12px;
+}
+
+.stockEdit__child-data{
+  width: 200px;
+}
+
+.test{
+  font-size: 20px;
+  padding: 0 5px;
+}
