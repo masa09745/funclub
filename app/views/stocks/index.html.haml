@@ -4,9 +4,6 @@
     %h1.title
       チケット在庫一覧
     .stockIndex-list
-      - if can? :edit, current_user
-        .stockIndex-add
-          =link_to "在庫を追加する", new_stock_path
       .StockIndex-inner
         %table.stockList
           %tr.stockList__header

@@ -1,9 +1,12 @@
 =form_with model: @stock, class: 'edit-forms' do |f|
   .form-row
-    .form-group.col-md-6
+    .form-group.com-md-4
+      %label 席種
+      = f. select :grade, ['S','A','B','C'], {prompt: '席種を選んでください'}, {class: 'form-control'}
+    .form-group.col-md-4
       %label 金額
       = f.text_field :price, class: 'form-control'
-    .form-group.col-md-6
+    .form-group.col-md-4
       %label 設定座席数
       = f.text_field :remain, class: 'form-control'
   =f.submit "更新"

@@ -23,7 +23,7 @@ class StocksController < ApplicationController
   private
 
   def stock_params
-    params.require(:stock).permit(:price,:remain)
+    params.require(:stock).permit(:grade, :price, :remain)
   end
 
 end
