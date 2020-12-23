@@ -32,10 +32,9 @@ ActiveRecord::Schema.define(version: 2020_10_10_121944) do
 
   create_table "schedules", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.datetime "match_date", null: false
-    t.bigint "opponent_id"
+    t.string "opponent"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["opponent_id"], name: "index_schedules_on_opponent_id"
   end
 
   create_table "sns_credentials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -55,12 +54,6 @@ ActiveRecord::Schema.define(version: 2020_10_10_121944) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["schedule_id"], name: "index_stocks_on_schedule_id"
-  end
-
-  create_table "teams", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "tickets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -92,7 +85,6 @@ ActiveRecord::Schema.define(version: 2020_10_10_121944) do
   add_foreign_key "cards", "users"
   add_foreign_key "orders", "stocks"
   add_foreign_key "orders", "users"
-  add_foreign_key "schedules", "teams", column: "opponent_id"
   add_foreign_key "sns_credentials", "users"
   add_foreign_key "stocks", "schedules"
   add_foreign_key "tickets", "orders"

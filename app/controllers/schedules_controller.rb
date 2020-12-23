@@ -2,13 +2,12 @@ class SchedulesController < ApplicationController
   def index
     from = Time.current.at_beginning_of_month
     to = (from + 1.month)
-    @schedules = Schedule.includes(:team).where(match_date: from...to).order(match_date: :ASC)
+    @schedules = Schedule.where(match_date: from...to).order(match_date: :ASC)
   end
 
   def new
     @schedule = Schedule.new
     stock = @schedule.stocks.build
-    @team = Team.all
   end
 
   def create
@@ -24,7 +23,7 @@ class SchedulesController < ApplicationController
   private
 
   def schedule_params
-    params.require(:schedule).permit(:match_date, :opponent_id, stocks_attributes:[
+    params.require(:schedule).permit(:match_date, :opponent, stocks_attributes:[
       :grade,
       :price,
       :remain
