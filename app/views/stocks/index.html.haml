@@ -1,3 +1,4 @@
+= javascript_pack_tag 'test','data-turbolinks-track': 'reload'
 .stock-wrapper
   = render "shared/header-main"
   .stockIndex
@@ -27,4 +28,7 @@
               %td.stockList__child-links
                 = link_to "編集", edit_stock_path(stock), class: 'btn btn-primary stockList__child-edit'
                 = link_to "削除", stock_path(stock), method: :delete, data: {confirm: "本当に削除しますか？"}, class: 'btn btn-dark stockList__child-delete'
+  #hello
+    %app
+    {{message}}
 
