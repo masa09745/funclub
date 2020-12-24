@@ -41,6 +41,6 @@ p {
   text-align: center;
 }
 td{
-  width: 100px;
+  width: 50px;
 }
 </style>
