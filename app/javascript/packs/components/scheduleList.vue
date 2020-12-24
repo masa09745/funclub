@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="managementIndex">
     <div class="scheduleList">
       <table>
         <tbody>
@@ -60,7 +60,5 @@ p {
 .scheduleId{
   width: 10%;
 }
-.scheduleDate{
-  width: 30%;
-}
+
 </style>
