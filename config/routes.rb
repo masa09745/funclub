@@ -20,7 +20,16 @@ Rails.application.routes.draw do
 
   resources :stocks
 
-  resources :admins
+  namespace :api, {format: 'json'} do
+    namespace :v1 do
+      resources :admins, only: [:index]
+    end
+  end
+
+  resources :managements
+
+
+  
 
   root to: "funclubs#index"
 

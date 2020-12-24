@@ -1,15 +1,36 @@
 <template>
   <div id="app">
-    <p>{{ message }}</p>
+    <table>
+      <tbody>
+        <tr>
+          <th>ID</th>
+          <th>match_date</th>
+          <th>opponent</th>
+        </tr>
+        <tr v-for="schedule in schedules" :key="schedule.id">
+          <td>{{ schedule.id }}</td>
+          <td>{{ schedule.match_date }}</td>
+          <td>{{ schedule.opponent }}</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </template>
 
 <script>
+
+import axios from 'axios'
+
 export default {
-  data: function () {
+  data() {
     return {
-      message: "App.vueのなかみ"
+      schedules: []
     }
+  },
+  mounted() {
+    axios
+      .get('/api/v1/admins.json')
+      .then(response => (this.schedules = response.data))
   }
 }
 </script>
@@ -18,5 +39,8 @@ export default {
 p {
   font-size: 2em;
   text-align: center;
+}
+td{
+  width: 100px;
 }
 </style>
