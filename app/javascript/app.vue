@@ -1,27 +1,38 @@
 <template>
   <div id="app">
-    <table>
-      <tbody>
-        <tr>
-          <th>ID</th>
-          <th>match_date</th>
-          <th>opponent</th>
-        </tr>
-        <tr v-for="schedule in schedules" :key="schedule.id">
-          <td>{{ schedule.id }}</td>
-          <td>{{ schedule.match_date }}</td>
-          <td>{{ schedule.opponent }}</td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="scheduleList">
+      <table>
+        <tbody>
+          <tr>
+            <th>ID</th>
+            <th>試合日時</th>
+            <th>対戦相手</th>
+          </tr>
+          <tr v-for="schedule in schedules" :key="schedule.id">
+            <td class="scheduleId">{{ schedule.id }}</td>
+            <td class="scheduleDate">{{ schedule.match_date | moment}}</td>
+            <td class="scheduleOpponent">{{ schedule.opponent }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
+
 </template>
 
 <script>
 
 import axios from 'axios'
+import moment from 'moment'
+
 
 export default {
+    filters: {
+      moment: function(match_date){
+        return moment(match_date).format('YYYY/MM/DD HH:mm')
+      }
+  },
+
   data() {
     return {
       schedules: []
@@ -40,7 +51,16 @@ p {
   font-size: 2em;
   text-align: center;
 }
-td{
-  width: 50px;
+.scheduleList{
+  width: 500px;
+  height: 500px;
+  padding: 30px;
+}
+
+.scheduleId{
+  width: 10%;
+}
+.scheduleDate{
+  width: 30%;
 }
 </style>
