@@ -7,9 +7,9 @@
           <th>対戦日</th>
           <th>対戦相手</th>
         </tr>
-        <tr class="matchDetails" v-for="stock in stocks" :key="stock.id">
-          <td class="matchDate">{{ stock.schedule.match_date | moment}}</td>
-          <td class="matchOpponent">{{ stock.schedule.opponent }}</td>
+        <tr class="matchDetails" v-for="schedule in schedules" :key="schedule.id">
+          <td class="matchDate">{{ schedule.match_date | moment}}</td>
+          <td class="matchOpponent">{{ schedule.opponent }}</td>
           <td class="matchLinks">
           <button class='btn btn-primary'>詳細</button>
           <button class='btn btn-dark'>削除</button>
@@ -34,13 +34,13 @@ export default {
 
   data() {
     return {
-      stocks: []
+      schedules: []
     }
   },
   mounted() {
     axios
-      .get('/api/v1/stocks.json')
-      .then(response => (this.stocks = response.data))
+      .get('/api/v1/schedules.json')
+      .then(response => (this.schedules = response.data))
   }
 }
 </script>

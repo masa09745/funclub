@@ -1,15 +1,15 @@
 <template>
   <div id="managementIndex">
-    <stockList></stockList>
+    <scheduleList></scheduleList>
   </div>
 </template>
 
 <script>
-  import StockList from './stockList.vue'
+import ScheduleList from './ScheduleList.vue'
 
 export default {
   components: {
-    StockList
+    ScheduleList
   }
 }
 </script>
