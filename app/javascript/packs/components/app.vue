@@ -1,5 +1,5 @@
 <template>
-  <div id="managementIndex">
+  <div id="managementContainer">
     <scheduleList></scheduleList>
   </div>
 </template>
@@ -15,12 +15,11 @@ export default {
 </script>
 
 <style scoped>
-#managementIndex{
+#managementContainer{
   padding-top: 155px;
   min-width: 450px;
-  max-width: 800px;
+  max-width: 1000px;
   margin: 0 auto;
   background-color: #ffffff;
-  display: flex;
 }
 </style>

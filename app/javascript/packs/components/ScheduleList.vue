@@ -1,22 +1,41 @@
 <template>
-  <div class="matchIndex">
-    <h1 class="title">スケジュール一覧</h1>
-    <table class="matchList">
-      <tbody>
-        <tr>
-          <th>対戦日</th>
-          <th>対戦相手</th>
-        </tr>
-        <tr class="matchDetails" v-for="schedule in schedules" :key="schedule.id">
-          <td class="matchDate">{{ schedule.match_date | moment}}</td>
-          <td class="matchOpponent">{{ schedule.opponent }}</td>
-          <td class="matchLinks">
-          <button class='btn btn-primary' @click="stockDetails(schedule.id)">在庫一覧</button>
-          <button class='btn btn-dark' @click="deleteSchedule(schedule.id)">削除</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+  <div class="managementIndex">
+    <div class="matchIndex">
+      <h1 class="title">スケジュール一覧</h1>
+      <table class="matchList">
+        <tbody>
+          <tr>
+            <th>対戦日</th>
+            <th>対戦相手</th>
+          </tr>
+          <tr class="matchDetails" v-for="schedule in schedules" :key="schedule.id">
+            <td class="matchDate">{{ schedule.match_date | moment}}</td>
+            <td class="matchOpponent">{{ schedule.opponent }}</td>
+            <td class="matchLinks">
+            <button class='btn btn-primary' @click="stockDetails(schedule.id)">在庫一覧</button>
+            <button class='btn btn-dark' @click="deleteSchedule(schedule.id)">削除</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="stockIndex" v-show="stockDetailBool">
+      <h1 class="title">在庫一覧</h1>
+      <table class="stockList">
+        <tbody>
+          <tr>
+            <th>席種</th>
+            <th>金額</th>
+            <th>在庫量</th>
+          </tr>
+          <tr class="stockDetails" v-for="stock in stocks" :key="stock.id" >
+            <td class="stockGrade">{{ stock.grade }}</td>
+            <td class="stockPrice">{{ stock.price }}</td>
+            <td class="stockRemain">{{ stock.remain }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </template>
 
@@ -37,6 +56,8 @@ export default {
 
   data() {
     return {
+      stocks: [],
+      stockDetailBool: false,
       schedules: []
     }
   },
@@ -47,6 +68,12 @@ export default {
     fetchSchedules(){
       axios.get('/api/v1/schedules.json')
       .then(response => (this.schedules = response.data))
+    },
+    stockDetails(id){
+      axios.get(`/api/v1/schedules/${id}`).then(res => {
+        this.stocks = res.data;
+        this.stockDetailBool = true;
+      });
     },
     deleteSchedule(id){
       axios.delete(`/api/v1/schedules/${id}`).then(res => {
@@ -59,16 +86,34 @@ export default {
 </script>
 
 <style scoped>
+.managementIndex{
+  display: flex;
+}
 .matchList{
-  width: 450px;
+  width: 400px;
   margin: 10px 50px 0;
 }
 
 .matchDate{
-  width: 32%
+  width: 25%
 }
 
 .matchOpponent{
-  width: 32%;
+  width: 25%;
 }
+
+.stockList{
+  width: 400px;
+  margin: 10px 50px 0;
+}
+.stockGrade{
+  width: 20%
+}
+.stockPrice{
+  width: 25%;
+}
+.stockRemain{
+  width: 25%;
+}
+
 </style>
