@@ -40,23 +40,19 @@ export default {
       schedules: []
     }
   },
-  mounted() {
-    axios
-      .get('/api/v1/schedules.json')
-      .then(response => (this.schedules = response.data))
+  mounted: function() {
+    this.fetchSchedules();
   },
   methods:{
+    fetchSchedules(){
+      axios.get('/api/v1/schedules.json')
+      .then(response => (this.schedules = response.data))
+    },
     deleteSchedule(id){
       axios.delete(`/api/v1/schedules/${id}`).then(res => {
         this.schedules = [];
+        this.fetchSchedules();
       })
-
-  .then(response => {
-    console.log(response)
-  })
-  .catch(({response}) => {
-    console.log(response)
-  });
     }
   }
 }
