@@ -1,23 +1,19 @@
 <template>
-  <div class="stockList">
-    <table>
+  <div class="matchIndex">
+    <h1 class="title">スケジュール一覧</h1>
+    <table class="matchList">
       <tbody>
         <tr>
           <th>対戦日</th>
           <th>対戦相手</th>
-          <th>席種</th>
-          <th>金額</th>
-          <th>残り座席数</th>
-          
         </tr>
-        <tr v-for="stock in stocks" :key="stock.id">
-          <td class="stockDate">{{ stock.schedule.match_date | moment }}</td>
-          <td class="stockOpponent">{{ stock.schedule.opponent }}</td>
-          <td class="stockGrade">{{ stock.grade}}</td>
-          <td class="stockPrice">{{ stock.price }}</td>
-          <td class="stockRemain">{{ stock.remain }}</td>
-
-
+        <tr class="matchDetails" v-for="stock in stocks" :key="stock.id">
+          <td class="matchDate">{{ stock.schedule.match_date | moment}}</td>
+          <td class="matchOpponent">{{ stock.schedule.opponent }}</td>
+          <td class="matchLinks">
+          <button class='btn btn-primary'>詳細</button>
+          <button class='btn btn-dark'>削除</button>
+          </td>
         </tr>
       </tbody>
     </table>
@@ -32,7 +28,7 @@ import moment from 'moment'
 export default {
   filters: {
     moment: function(match_date){
-      return moment(match_date).format('YYYY/MM/DD HH:mm')
+      return moment(match_date).format('YYYY/MM/DD')
     }
   },
 
@@ -50,23 +46,16 @@ export default {
 </script>
 
 <style scoped>
-.stockList{
-  width: 500px;
-  padding: 10px;
+.matchList{
+  width: 350px;
+  margin: 10px 65px 0;
 }
 
-.stockDate{
-  width: 30%;
-}
-.stockOpponent{
-  width: 20%;
+.matchDate{
+  width: 32%
 }
 
-.stockGrade{
-  width: 10%;
-}
-
-.stockPrice{
-  width: 20%;
+.matchOpponent{
+  width: 32%;
 }
 </style>

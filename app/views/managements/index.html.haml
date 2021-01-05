@@ -1,7 +1,2 @@
-.management-wrapper
-  = render "shared/header-main"
-  #manageIndex
-    - @schedules.each do |schedule|
-      .a
-        = l schedule.match_date
-        = schedule.opponent
+= javascript_pack_tag 'main'
+= render "shared/header-main"

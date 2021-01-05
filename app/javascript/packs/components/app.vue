@@ -1,19 +1,14 @@
 <template>
-  <div class="management-wrapper">
-    <headerManagement></headerManagement>
-    <div id="managementIndex">
-      <stockList></stockList>
-    </div>
+  <div id="managementIndex">
+    <stockList></stockList>
   </div>
 </template>
 
 <script>
-  import HeaderManagement from './HeaderManagement.vue'
   import StockList from './stockList.vue'
 
 export default {
   components: {
-    HeaderManagement,
     StockList
   }
 }
@@ -21,6 +16,11 @@ export default {
 
 <style scoped>
 #managementIndex{
+  padding-top: 155px;
+  min-width: 450px;
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #ffffff;
   display: flex;
 }
 </style>
