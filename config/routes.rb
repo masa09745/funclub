@@ -22,7 +22,7 @@ Rails.application.routes.draw do
 
   namespace :api, {format: 'json'} do
     namespace :v1 do
-      resources :schedules, only: [:index]
+      resources :schedules, only: [:index, :show, :destroy]
     end
   end
 

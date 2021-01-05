@@ -11,8 +11,8 @@
           <td class="matchDate">{{ schedule.match_date | moment}}</td>
           <td class="matchOpponent">{{ schedule.opponent }}</td>
           <td class="matchLinks">
-          <button class='btn btn-primary'>詳細</button>
-          <button class='btn btn-dark'>削除</button>
+          <button class='btn btn-primary' >詳細</button>
+          <button class='btn btn-dark' @click="deleteSchedule(schedule.id)">削除</button>
           </td>
         </tr>
       </tbody>
@@ -23,7 +23,10 @@
 <script>
 
 import axios from 'axios'
+import { csrfToken } from 'rails-ujs'
 import moment from 'moment'
+
+axios.defaults.headers.common['X-CSRF-TOKEN'] = csrfToken()
 
 export default {
   filters: {
@@ -41,6 +44,20 @@ export default {
     axios
       .get('/api/v1/schedules.json')
       .then(response => (this.schedules = response.data))
+  },
+  methods:{
+    deleteSchedule(id){
+      axios.delete(`/api/v1/schedules/${id}`).then(res => {
+        this.schedules = [];
+      })
+
+  .then(response => {
+    console.log(response)
+  })
+  .catch(({response}) => {
+    console.log(response)
+  });
+    }
   }
 }
 </script>
