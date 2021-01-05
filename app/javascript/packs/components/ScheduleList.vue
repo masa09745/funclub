@@ -11,7 +11,7 @@
           <td class="matchDate">{{ schedule.match_date | moment}}</td>
           <td class="matchOpponent">{{ schedule.opponent }}</td>
           <td class="matchLinks">
-          <button class='btn btn-primary' >詳細</button>
+          <button class='btn btn-primary' @click="stockDetails(schedule.id)">在庫一覧</button>
           <button class='btn btn-dark' @click="deleteSchedule(schedule.id)">削除</button>
           </td>
         </tr>
@@ -60,8 +60,8 @@ export default {
 
 <style scoped>
 .matchList{
-  width: 350px;
-  margin: 10px 65px 0;
+  width: 450px;
+  margin: 10px 50px 0;
 }
 
 .matchDate{
