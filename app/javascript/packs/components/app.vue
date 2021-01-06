@@ -1,15 +1,18 @@
 <template>
   <div id="managementContainer">
-    <scheduleList></scheduleList>
+    <management-index></management-index>
+    <management-form></management-form>
   </div>
 </template>
 
 <script>
-import ScheduleList from './ManagementIndex.vue'
+import ManagementIndex from './ManagementIndex.vue'
+import ManagementForm from './ManagementForm.vue'
 
 export default {
   components: {
-    ScheduleList
+    ManagementIndex,
+    ManagementForm
   }
 }
 </script>
