@@ -1,13 +1,14 @@
 <template>
   <div id="managementContainer">
-    <management-index></management-index>
-    <management-form></management-form>
+    <management-index/>
+    <management-form/>
+
   </div>
 </template>
 
 <script>
-import ManagementIndex from './ManagementIndex.vue'
-import ManagementForm from './ManagementForm.vue'
+import ManagementIndex from './components/ManagementIndex.vue'
+import ManagementForm from './components/ManagementForm'
 
 export default {
   components: {
