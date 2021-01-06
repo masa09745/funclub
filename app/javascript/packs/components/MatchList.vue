@@ -3,7 +3,7 @@
     <div class="matchDate">{{ schedule.match_date | moment}}</div>
     <div class="matchOpponent">{{ schedule.opponent }}</div>
     <div class="matchLinks">
-    <button class='btn btn-primary' @click="stockDetails(schedule.id)">在庫一覧</button>
+    <button class='btn btn-primary' @click="$emit('show',schedule.id)">在庫一覧</button>
     <button class='btn btn-dark' @click="$emit('remove',schedule.id)">削除</button>
     </div>
   </li>

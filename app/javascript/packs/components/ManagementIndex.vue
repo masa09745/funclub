@@ -3,7 +3,7 @@
     <div class="matchIndex">
       <h1 class="title">スケジュール一覧</h1>
       <ul class="matchList" v-if="schedules.length">
-        <MatchList v-for="schedule in schedules" :key="schedule.id" :schedule="schedule" @remove="deleteSchedule" />
+        <MatchList v-for="schedule in schedules" :key="schedule.id" :schedule="schedule" @remove="deleteSchedule" @show="stockDetails" />
       </ul>
     </div>
     <div class="stockIndex" v-show="stockDetailBool">
