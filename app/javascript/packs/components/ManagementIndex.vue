@@ -2,15 +2,8 @@
   <div class="managementIndex">
     <div class="matchIndex">
       <h1 class="title">スケジュール一覧</h1>
-      <ul class="matchList">
-        <li class="matchDetails" v-for="schedule in schedules" :key="schedule.id">
-          <div class="matchDate">{{ schedule.match_date | moment}}</div>
-          <div class="matchOpponent">{{ schedule.opponent }}</div>
-          <div class="matchLinks">
-          <button class='btn btn-primary' @click="stockDetails(schedule.id)">在庫一覧</button>
-          <button class='btn btn-dark' @click="deleteSchedule(schedule.id)">削除</button>
-          </div>
-        </li>
+      <ul class="matchList" v-if="schedules.length">
+        <MatchList v-for="schedule in schedules" :key="schedule.id" :schedule="schedule" @remove="deleteSchedule" />
       </ul>
     </div>
     <div class="stockIndex" v-show="stockDetailBool">
@@ -38,16 +31,14 @@
 import axios from 'axios'
 import { csrfToken } from 'rails-ujs'
 import moment from 'moment'
+import MatchList from './MatchList'
 
 axios.defaults.headers.common['X-CSRF-TOKEN'] = csrfToken()
 
 export default {
-  filters: {
-    moment: function(match_date){
-      return moment(match_date).format('YYYY/MM/DD')
-    }
+  components: {
+    MatchList
   },
-
   data() {
     return {
       stocks: {},
@@ -91,19 +82,6 @@ export default {
   width: 390px;
   margin: 10px auto 0;
   padding: 0;
-}
-
-.matchDetails{
-  height: 50px;
-  display: flex;
-  margin-bottom: 10px;
-  line-height: 50px;
-}
-.matchDate{
-  width: 30%
-}
-.matchOpponent{
-  width: 30%;
 }
 
 .stockIndex{
