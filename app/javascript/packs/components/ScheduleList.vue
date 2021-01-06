@@ -56,7 +56,7 @@ export default {
 
   data() {
     return {
-      stocks: [],
+      stocks: {},
       stockDetailBool: false,
       schedules: []
     }
@@ -66,8 +66,9 @@ export default {
   },
   methods:{
     fetchSchedules(){
-      axios.get('/api/v1/schedules.json')
-      .then(response => (this.schedules = response.data))
+      axios.get('/api/v1/schedules.json').then(res => {
+        this.schedules = res.data
+      });
     },
     stockDetails(id){
       axios.get(`/api/v1/schedules/${id}`).then(res => {
@@ -89,22 +90,26 @@ export default {
 .managementIndex{
   display: flex;
 }
+.matchIndex{
+  width: 500px;
+}
 .matchList{
-  width: 400px;
-  margin: 10px 50px 0;
+  width: 390px;
+  margin: 10px auto 0;
 }
-
 .matchDate{
-  width: 25%
+  width: 30%
 }
-
 .matchOpponent{
-  width: 25%;
+  width: 30%;
 }
 
+.stockIndex{
+  width: 500px;
+}
 .stockList{
-  width: 400px;
-  margin: 10px 50px 0;
+  width: 350px;
+  margin: 10px auto 0;
 }
 .stockGrade{
   width: 20%
