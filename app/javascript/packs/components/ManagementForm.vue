@@ -4,7 +4,6 @@
       <h3 class="title">スケジュール新規作成</h3>
       <b-form class="scheduleForm">
         <b-form-group label="試合日時" >
-          <datetime v-model="schedule.match_date" type=datetime ></datetime>
         </b-form-group>
         <b-form-group label="対戦相手">
           <b-form-select v-model="schedule.opponent" :options="opponents">
@@ -18,13 +17,9 @@
 </template>
 
 <script>
-import { Datetime } from 'vue-datetime'
-
 import axios from 'axios';
+
   export default {
-    components: {
-      datetime: Datetime
-    },
     data: function() {
       return {
         schedule: {
