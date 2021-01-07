@@ -7,10 +7,13 @@
     "@rails/ujs": "^6.0.0",
     "@rails/webpacker": "4.3.0",
     "axios": "^0.21.1",
+    "bootstrap": "^4.5.3",
+    "bootstrap-vue": "^2.21.2",
     "moment": "^2.29.1",
     "rails-ujs": "^5.2.4-4",
     "turbolinks": "^5.2.0",
     "vue": "^2.6.12",
+    "vue-ctk-date-time-picker": "^2.5.0",
     "vue-loader": "^15.9.6",
     "vue-template-compiler": "^2.6.12",
     "vue-turbolinks": "^2.1.0"
