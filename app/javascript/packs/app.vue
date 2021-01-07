@@ -10,15 +10,18 @@
 import ManagementIndex from './components/ManagementIndex.vue'
 import ManagementForm from './components/ManagementForm'
 
+
 export default {
   components: {
     ManagementIndex,
-    ManagementForm
+    ManagementForm,
+
   }
 }
 </script>
 
 <style scoped>
+
 #managementContainer{
   padding-top: 155px;
   min-width: 450px;
