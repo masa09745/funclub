@@ -6,7 +6,8 @@
 // All it does is render <div>Hello Vue</div> at the bottom of the page.
 
 import Vue from 'vue'
-import App from './app.vue'
+import App from './App.vue'
+import Router from '../router/router.js'
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
@@ -16,6 +17,7 @@ Vue.use(IconsPlugin)
 
 document.addEventListener('DOMContentLoaded', () => {
   const app = new Vue({
+    router: Router,
     render: h => h(App)
   }).$mount()
   document.body.appendChild(app.$el)

@@ -39,9 +39,8 @@ export default {
   },
   methods:{
     createSchedule(){
-      const reroad = ref(false)
       axios.post('/api/v1/schedules', {schedule: this.schedule}).then(res => {
-        
+        this.$router.push({ path: '/'});
       })
     }
   }
