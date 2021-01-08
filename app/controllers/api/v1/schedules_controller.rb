@@ -5,8 +5,11 @@ class Api::V1::SchedulesController < ApplicationController
   end
 
   def create
+    @schedule = Schedule.new(schedule_params)
+    @schedule.save
+    head :no_content
   end
-  
+
 
   def show
     stock = Stock.where(schedule_id: params[:id])
@@ -17,6 +20,11 @@ class Api::V1::SchedulesController < ApplicationController
     schedule = Schedule.find(params[:id])
     schedule.destroy
     head :no_content
+  end
+
+  private
+  def schedule_params
+    params.require(:schedule).permit(:match_date, :match_time, :opponent)
   end
 
 end

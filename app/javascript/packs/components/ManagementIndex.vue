@@ -54,7 +54,7 @@ export default {
   methods:{
     fetchSchedules(){
       axios.get('/api/v1/schedules.json').then(res => {
-        this.schedules = res.data
+        this.schedules = res.data;
       });
     },
     stockDetails(id){

@@ -13,7 +13,7 @@
           <b-form-select v-model="schedule.opponent" :options="opponents">
           </b-form-select>
         </b-form-group>
-        <b-button variant="primary">作成</b-button>
+        <b-button variant="primary" @click="createSchedule">作成</b-button>
 
       </b-form>
     </div>
@@ -37,9 +37,12 @@ export default {
       opponents: [{text: '対戦相手を選んでください', value: null}, 'チームA','チームB','チームC','チームD','チームE']
     }
   },
-  method:{
-    onSubmit(){
-
+  methods:{
+    createSchedule(){
+      const reroad = ref(false)
+      axios.post('/api/v1/schedules', {schedule: this.schedule}).then(res => {
+        
+      })
     }
   }
 }
