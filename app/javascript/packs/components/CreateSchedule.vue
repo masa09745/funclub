@@ -14,7 +14,6 @@
           </b-form-select>
         </b-form-group>
         <b-button variant="primary" @click="createSchedule">作成</b-button>
-
       </b-form>
     </div>
   </div>
