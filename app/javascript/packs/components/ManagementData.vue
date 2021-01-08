@@ -2,7 +2,7 @@
   <div class="managementIndex">
     <div class="matchIndex">
       <h1 class="title">スケジュール一覧</h1>
-      <div class="matchIndex__text">スケジュールを追加する</div>
+      <router-link to="/create" class="matchIndex__text">スケジュールを追加する</router-link>
       <ul class="matchList" v-if="schedules.length">
         <div class="matchList__index">
           <div>試合日</div>
@@ -83,6 +83,7 @@ export default {
 }
 
 .matchIndex__text{
+  display: block;
   margin: 10px 50px;
   text-align: right;
 }

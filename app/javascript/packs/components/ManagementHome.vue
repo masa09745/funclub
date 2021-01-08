@@ -1,22 +1,18 @@
 <template>
   <div id="managementContainer">
     <management-data/>
-    <management-form/>
   </div>
 </template>
 
 <script>
 import ManagementData from './ManagementData'
-import ManagementForm from './ManagementForm'
 
 
 export default {
   name: 'ManagementHome',
   
   components: {
-    ManagementData,
-    ManagementForm,
-
+    ManagementData
   }
 }
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <div class="managementForm">
+  <div class="CreateSchedule">
     <div class="formIndex">
       <h3 class="title">スケジュール新規作成</h3>
       <b-form class="scheduleForm">
@@ -48,6 +48,13 @@ export default {
 </script>
 
 <style scoped>
+.CreateSchedule{
+  padding-top: 155px;
+  min-width: 450px;
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: #ffffff;
+}
 
 .formIndex{
   width: 500px;
