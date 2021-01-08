@@ -4,6 +4,10 @@ class Api::V1::SchedulesController < ApplicationController
     render json: schedules
   end
 
+  def create
+  end
+  
+
   def show
     stock = Stock.where(schedule_id: params[:id])
     render json: stock

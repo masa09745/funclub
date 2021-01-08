@@ -21,25 +21,28 @@
 </template>
 
 <script>
-import axios from 'axios';
+import axios from 'axios'
+import { csrfToken } from 'rails-ujs'
 
-  export default {
-    data: function() {
-      return {
-        schedule: {
-          match_date: '',
-          match_time: '',
-          opponent: 'null'
-        },
-        opponents: [{text: '対戦相手を選んでください', value: null}, 'チームA','チームB','チームC','チームD','チームE']
-      }
-    },
-    method:{
-      onSubmit(){
+axios.defaults.headers.common['X-CSRF-TOKEN'] = csrfToken()
 
-      }
+export default {
+  data: function() {
+    return {
+      schedule: {
+        match_date: '',
+        match_time: '',
+        opponent: 'null'
+      },
+      opponents: [{text: '対戦相手を選んでください', value: null}, 'チームA','チームB','チームC','チームD','チームE']
+    }
+  },
+  method:{
+    onSubmit(){
+
     }
   }
+}
 </script>
 
 <style scoped>
