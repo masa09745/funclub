@@ -14,19 +14,22 @@
       <b-form-group label="在庫量">
         <b-form-input v-model="remainComputed"></b-form-input>
       </b-form-group>
+      <div>{{schedule_id}}</div>
     </div>
-    <b-button variant="primary">作成</b-button>
+    <b-button variant="primary" @click="$emit('submit')">作成</b-button>
   </b-form>
 </template>
 
 <script>
 export default {
   props:{
+    schedule_id: Number,
     grade: String,
     price: String,
     remain: String,
-    options: Array
+    options: Array,
   },
+
   computed: {
     gradeComputed: {
       get: function() {

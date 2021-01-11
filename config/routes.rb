@@ -22,7 +22,11 @@ Rails.application.routes.draw do
 
   namespace :api, {format: 'json'} do
     namespace :v1 do
-      resources :schedules, only: [:index, :create, :show, :destroy]
+      resources :schedules, only: [:index, :create, :destroy] do
+        member do
+          resources :stocks, only: [:index, :create]
+        end
+      end
     end
   end
 

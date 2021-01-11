@@ -15,7 +15,7 @@
       </b-form-select>
     </b-form-group>
   </div>
-  <b-button variant="primary" @click="$emit('submit')">作成</b-button>
+  <b-button variant="primary" @click="$emit('submit',schedule.id)">作成</b-button>
 </b-form>
 </template>
 

@@ -10,12 +10,6 @@ class Api::V1::SchedulesController < ApplicationController
     head :no_content
   end
 
-
-  def show
-    stock = Stock.where(schedule_id: params[:id])
-    render json: stock
-  end
-
   def destroy
     schedule = Schedule.find(params[:id])
     schedule.destroy

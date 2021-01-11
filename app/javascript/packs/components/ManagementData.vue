@@ -14,7 +14,7 @@
     <div class="stockIndex" v-show="stockDetailBool">
       <h1 class="title">在庫一覧</h1>
       <div class="stockIndex__text" @click="createStock">在庫情報を追加する</div>
-      <ul class="stockList" v-if="stocks.length">
+      <ul class="stockList">
         <div class="stockList__index">
             <div>席種</div>
             <div>金額</div>
@@ -22,7 +22,7 @@
         </div>
         <StockList v-for="stock in stocks" :key="stock.id" :stock="stock" />
       </ul>
-      <StockForm v-bind.sync="stock" :options="options" @submit="createStock" v-else/>
+        <StockForm :schedule_id="id" v-bind.sync="stock" :options="options" @submit="createStock"/>
         <div>
           入力内容
             <div>
@@ -58,6 +58,7 @@ export default {
   },
   data() {
     return {
+      id: 0,
       stocks: {},
       stockDetailBool: false,
       schedules: [],
@@ -72,6 +73,7 @@ export default {
   mounted: function() {
     this.fetchSchedules();
   },
+
   methods:{
     fetchSchedules(){
       axios.get('/api/v1/schedules.json').then(res => {
@@ -79,7 +81,7 @@ export default {
       });
     },
     stockDetails(id){
-      axios.get(`/api/v1/schedules/${id}`).then(res => {
+      axios.get(`/api/v1/schedules/${id}/stocks`).then(res => {
         this.stocks = res.data;
         this.stockDetailBool = true;
       });
@@ -90,8 +92,11 @@ export default {
         this.fetchSchedules();
       })
     },
-    createStock(){
-
+    createStock(id){
+      axios.post(`/api/v1/schedules/${id}/stocks`, {stock: this.stock}).then(res => {
+        console.log(res.data);
+        this.$router.push({ path: '/'});
+      })
     }
   }
 }
