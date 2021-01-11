@@ -13,7 +13,7 @@
     </div>
     <div class="stockIndex" v-show="stockDetailBool">
       <h1 class="title">在庫一覧</h1>
-      <div class="stockIndex__text">スケジュールを追加する</div>
+      <div class="stockIndex__text">在庫情報を追加する</div>
       <ul class="stockList" v-if="stocks.length">
         <div class="stockList__index">
             <div>席種</div>
