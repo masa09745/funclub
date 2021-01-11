@@ -22,14 +22,17 @@
         </div>
         <StockList v-for="stock in stocks" :key="stock.id" :stock="stock" />
       </ul>
-      <StockForm v-else/>
+      <StockForm v-bind.sync="stock" :options="options" @submit="createStock" v-else/>
         <div>
           入力内容
             <div>
+              {{stock.grade}}
             </div>
             <div>
+              {{stock.price}}
             </div>
             <div>
+              {{stock.remain}}
             </div>
         </div>
     </div>
@@ -57,7 +60,13 @@ export default {
     return {
       stocks: {},
       stockDetailBool: false,
-      schedules: []
+      schedules: [],
+      stock: {
+        grade: '',
+        price: '',
+        remain: ''
+      },
+      options: [{label:"S", value:"S"},{label:"A", value:"A"},{label:"B", value:"B"},{label:"C", value:"C"}]
     }
   },
   mounted: function() {
