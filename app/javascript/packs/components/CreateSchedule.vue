@@ -2,21 +2,19 @@
   <div class="CreateSchedule">
     <div class="formIndex">
       <h3 class="title">スケジュール新規作成</h3>
-      <b-form class="scheduleForm">
-        <div class="form-row">
-          <b-form-group label="試合日" class="col">
-            <b-form-datepicker v-model="schedule.match_date" placeholder="----/--/--" :date-format-options="{year: 'numeric', month: '2-digit', day: '2-digit'}" today-button reset-button close-button locale="ja"></b-form-datepicker>
-          </b-form-group>
-          <b-form-group label="開始時間" class="col">
-            <b-form-timepicker v-model="schedule.match_time" placeholder="--:--" now-button reset-button locale="ja"></b-form-timepicker>
-          </b-form-group>
-          <b-form-group label="対戦相手" class="col">
-            <b-form-select v-model="schedule.opponent" :options="opponents">
-            </b-form-select>
-          </b-form-group>
+      <ScheduleForm v-bind.sync="schedule" :options="options" @submit="createSchedule"/>
+    </div>
+    <div>
+      入力内容
+        <div>
+        {{schedule.match_date}}
         </div>
-        <b-button variant="primary" @click="createSchedule">作成</b-button>
-      </b-form>
+        <div>
+        {{schedule.match_time}}
+        </div>
+        <div>
+        {{schedule.opponent}}
+        </div>
     </div>
   </div>
 </template>
@@ -24,18 +22,22 @@
 <script>
 import axios from 'axios'
 import { csrfToken } from 'rails-ujs'
+import ScheduleForm from './ScheduleForm'
 
 axios.defaults.headers.common['X-CSRF-TOKEN'] = csrfToken()
 
 export default {
-  data: function() {
+  components: {
+    ScheduleForm
+  },
+  data() {
     return {
       schedule: {
         match_date: '',
         match_time: '',
-        opponent: 'null'
+        opponent: ''
       },
-      opponents: [{text: '----', value: null}, 'チームA','チームB','チームC','チームD','チームE']
+      options: [{label:"チームA", value:"チームA"},{label:"チームB", value:"チームB"},{label:"チームC", value:"チームC"},{label:"チームD", value:"チームD"},{label:"チームE", value:"チームE"}]
     }
   },
   methods:{
