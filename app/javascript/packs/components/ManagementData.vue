@@ -23,6 +23,15 @@
         <StockList v-for="stock in stocks" :key="stock.id" :stock="stock" />
       </ul>
       <StockForm v-else/>
+        <div>
+          入力内容
+            <div>
+            </div>
+            <div>
+            </div>
+            <div>
+            </div>
+        </div>
     </div>
   </div>
 </template>

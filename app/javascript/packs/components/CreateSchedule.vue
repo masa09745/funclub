@@ -4,18 +4,6 @@
       <h3 class="title">スケジュール新規作成</h3>
       <ScheduleForm v-bind.sync="schedule" :options="options" @submit="createSchedule"/>
     </div>
-    <div>
-      入力内容
-        <div>
-        {{schedule.match_date}}
-        </div>
-        <div>
-        {{schedule.match_time}}
-        </div>
-        <div>
-        {{schedule.opponent}}
-        </div>
-    </div>
   </div>
 </template>
 
