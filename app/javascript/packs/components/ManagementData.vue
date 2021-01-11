@@ -13,7 +13,7 @@
     </div>
     <div class="stockIndex" v-show="stockDetailBool">
       <h1 class="title">在庫一覧</h1>
-      <div class="stockIndex__text">在庫情報を追加する</div>
+      <div class="stockIndex__text" @click="createStock">在庫情報を追加する</div>
       <ul class="stockList" v-if="stocks.length">
         <div class="stockList__index">
             <div>席種</div>
@@ -22,6 +22,7 @@
         </div>
         <StockList v-for="stock in stocks" :key="stock.id" :stock="stock" />
       </ul>
+      <StockForm v-else/>
     </div>
   </div>
 </template>
@@ -33,13 +34,15 @@ import { csrfToken } from 'rails-ujs'
 import moment from 'moment'
 import MatchList from './MatchList'
 import StockList from './StockList'
+import StockForm from './StockForm'
 
 axios.defaults.headers.common['X-CSRF-TOKEN'] = csrfToken()
 
 export default {
   components: {
     MatchList,
-    StockList
+    StockList,
+    StockForm
   },
   data() {
     return {
@@ -68,6 +71,9 @@ export default {
         this.schedules = [];
         this.fetchSchedules();
       })
+    },
+    createStock(){
+
     }
   }
 }
