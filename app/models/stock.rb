@@ -1,4 +1,4 @@
 class Stock < ApplicationRecord
-  belongs_to :schedule, inverse_of: :stocks
+  belongs_to :schedule
   has_many :orders
 end
