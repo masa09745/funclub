@@ -14,9 +14,9 @@
             .card-body
               .cardSchedule
                 .cardDate
-                  = schedule.match_date
+                  = l schedule.match_date, format: :day
                 .cardTime
-                  = schedule.match_time
+                  = l schedule.match_date, format: :time
                 = schedule.opponent
               =link_to "", class:"btn btn-primary cardLink" do
                 チケット購入
