@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   resources :schedules
 
   resources :stocks
+  resources :managements
 
   root to: "funclubs#index"
 
