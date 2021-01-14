@@ -2,7 +2,7 @@
   .user__child-forms.form-group.col-md-12
     %label
       カード番号
-    %input.form-control.col-md-7
+    = f.text_field :number, class: 'form-control col-md-7'
     %small.text-muted
       ハイフン(-)を除く数字のみを入力してください
   .user__child-form.form-group.col-md-12
@@ -10,14 +10,14 @@
       有効期限
     .form-row
       .col-md-4
-        %input.form-control{placeholder: "月/Month"}
+        = f.text_field :exp_month, class:'form-control',placeholder: "月/Month"
       %p.slash /
       .col-md-4
-        %input.form-control{placeholder: "年/Year"}
+        = f.text_field :exp_year, class:'form-control',placeholder: "年/Year"
   .user__child-form.form-group.col-md-12
     %label
       CVC
-    %input.form-control.col-md-4{type:"password"}
+    = f.text_field :cvc, class: 'form-control col-md-4', type: 'password'
     %small.text-muted
       カード裏面の3桁もしくは4桁の数字を入力してください
   %button.btn
