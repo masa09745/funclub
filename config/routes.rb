@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     get 'users/sign_in/menu', to: 'users/sessions#menu'
   end
 
-  resources :users, only: :show
+  resources :users, only: [:index, :show]
 
   resources :schedules
 
