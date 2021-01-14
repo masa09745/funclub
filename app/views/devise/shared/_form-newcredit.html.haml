@@ -1,4 +1,4 @@
-=form_with url:users_sign_up_step3_path, method: :get, local: true, class: 'user-forms' do |f|
+=form_with url:users_sign_up_step3_path, method: :get, local: true, id: 'credit-form', class: 'user-forms' do |f|
   .user__child-forms.form-group.col-md-12
     %label
       カード番号
@@ -10,10 +10,10 @@
       有効期限
     .form-row
       .col-md-4
-        = f.text_field :exp_month, class:'form-control',placeholder: "月/Month"
+        = f.text_field :exp_month, class:'form-control', placeholder: "月/Month"
       %p.slash /
       .col-md-4
-        = f.text_field :exp_year, class:'form-control',placeholder: "年/Year"
+        = f.text_field :exp_year, class:'form-control', placeholder: "年/Year"
   .user__child-form.form-group.col-md-12
     %label
       CVC
@@ -21,4 +21,4 @@
     %small.text-muted
       カード裏面の3桁もしくは4桁の数字を入力してください
   %button.btn
-    =f.submit "次へ"
+    =f.submit "次へ", id:'token-submit'
