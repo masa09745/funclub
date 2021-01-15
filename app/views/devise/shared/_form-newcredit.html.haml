@@ -1,4 +1,4 @@
-=form_with url:users_sign_up_step3_path, method: :get, local: true, id: 'credit-form', class: 'user-forms' do |f|
+=form_with model:@user, url:users_sign_up_final_path, local: true, id: 'credit-form', class: 'user-forms' do |f|
   .user__child-forms.form-group.col-md-12
     %label
       カード番号
@@ -16,4 +16,4 @@
     %small.text-muted
       カード裏面の3桁もしくは4桁の数字を入力してください
   %button#token.btn
-    =f.submit "次へ", id:'token-submit'
+    =f.submit "登録", id:'token-submit'
