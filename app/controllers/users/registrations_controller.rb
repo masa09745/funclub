@@ -35,10 +35,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
       card: @customer.default_card
     )
     if @user.save!
+      user = @user
       session.clear
       session[:id] = @user.id
       sign_in User.find(session[:id]) unless user_signed_in?
-      session[:user].clear
     end
   end
 

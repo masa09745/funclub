@@ -19,12 +19,11 @@ $(document).on('turbolinks:load', function() {
         regist_card.prop('disabled', false)
       }
       else{
-        alert('登録完了')
-        $('#token').append(
+        $('#credit-form').append(
           `<input type="hidden" name="payjp_token" value=${r.id}>
             <input type="hidden" name="card_token" value=${r.card.id}>`
           );
-          $('#credit_form')[0].submit();
+          $('#credit-form')[0].submit();
         　 //  ↑↑　ここでtype='hidden'にしてsubmitにtokenを乗せています
 
           $("#number").removeAttr("name");
