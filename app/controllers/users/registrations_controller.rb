@@ -8,12 +8,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def step2
     session[:user] = user_params
     @user = User.new
-  end
 
-  def step3
-  end
-
-  def final
     Payjp.api_key = Rails.application.credentials.dig(:payjp, :secret_access_key)
 
     if params[:payjp_token].present?
@@ -23,8 +18,15 @@ class Users::RegistrationsController < Devise::RegistrationsController
         card: params[:payjp_token]
       )
     else
-      render :step3
+      render :step2
     end
+  end
+
+
+  def step3
+  end
+
+  def final
 
     @user = User.new(session[:user])
     @user.cards.build(
