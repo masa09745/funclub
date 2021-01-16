@@ -1,8 +1,6 @@
 .mypageMenu
-  %ul.mypageMenu__inner.list-group
-    %li.mypageMenu__child-inner.list-group-item
+  .mypageMenu__inner.list-group
+    = link_to user_path(current_user.id), class: "mypageMenu__child-inner list-group-item" do
       ユーザー情報
-    %li.mypageMenu__child-inner.list-group-item
-      保有チケット
-    %li.mypageMenu__child-inner.list-group-item
+    = link_to cards_path(current_user.id), class: "mypageMenu__child-inner list-group-item" do
       クレジットカード

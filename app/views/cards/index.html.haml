@@ -1,0 +1,8 @@
+.card-wrapper
+  = render 'shared/header-main'
+  .cardIndex
+    .mypageMenu
+      =render 'shared/menu-mypage'
+    .cardList
+      = link_to new_card_path(current_user.id) do
+        クレジットカード登録
