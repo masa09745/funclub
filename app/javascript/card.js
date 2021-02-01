@@ -1,5 +1,5 @@
 $(document).on('turbolinks:load', function() {
-  if(document.URL.match(/step2/)||document.URL.match(/new/)){
+  if(document.URL.match(/step3/)||document.URL.match(/new/)){
     const payjp = Payjp('pk_test_0f209ec3d7c9a45a8d950a55');
 
     var elements = payjp.elements();

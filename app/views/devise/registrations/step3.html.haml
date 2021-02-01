@@ -3,5 +3,8 @@
   .user-new
     %h1.title
       %p.user-title クレジットカード登録
-  =render "devise/shared/form-newcredit"
+    =form_with model:@user, url:users_sign_up_final_path, local: true, id: 'credit-form', class: 'user-forms' do |f|
+      =render "devise/shared/form-newcredit"
+      %button.btn
+        =f.submit "登録", id:'token-submit'
   =render "shared/footer-main"

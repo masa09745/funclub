@@ -1,19 +1,16 @@
-=form_with model:@user, url:users_sign_up_final_path, local: true, id: 'credit-form', class: 'user-forms' do |f|
-  .user__child-forms.form-group.col-md-12
-    %label
-      カード番号
-    #number.form-control.col-md-7
-    %small.text-muted
-      ハイフン(-)を除く数字のみを入力してください
-  .user__child-form.form-group.col-md-12
-    %label
-      有効期限
-    #exp.form-control.col-md-4
-  .user__child-form.form-group.col-md-12
-    %label
-      CVC
-    #cvc.form-control.col-md-4
-    %small.text-muted
-      カード裏面の3桁もしくは4桁の数字を入力してください
-  %button.btn
-    =f.submit "登録", id:'token-submit'
+.user__child-forms.form-group.col-md-12
+  %label
+    カード番号
+  #number.form-control.col-md-7
+  %small.text-muted
+    ハイフン(-)を除く数字のみを入力してください
+.user__child-form.form-group.col-md-12
+  %label
+    有効期限
+  #exp.form-control.col-md-4
+.user__child-form.form-group.col-md-12
+  %label
+    CVC
+  #cvc.form-control.col-md-4
+  %small.text-muted
+    カード裏面の3桁もしくは4桁の数字を入力してください
