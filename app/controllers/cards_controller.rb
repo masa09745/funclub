@@ -9,9 +9,12 @@ class CardsController < ApplicationController
   end
 
   def new
+    
   end
 
   def create
+    Payjp.api_key = Rails.application.credentials.dig(:payjp, :secret_access_key)
+
   end
 
 end

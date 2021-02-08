@@ -4,4 +4,7 @@
     .mypageMenu
       =render 'shared/menu-mypage'
     .cardForm
-      =render  'devise/shared/form-newcredit'
+      =form_with model: @card, id: 'credit-form' do |f|
+        =render  'devise/shared/form-newcredit'
+        %button.btn
+          =f.submit  "登録", id:'token-submit'
