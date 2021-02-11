@@ -13,10 +13,11 @@ class CardsController < ApplicationController
   end
 
   def create
+    @cards = Card.find_by(user_id: current_user.id)
     Payjp.api_key = Rails.application.credentials.dig(:payjp, :secret_access_key)
-    customer = Payjp::Customer.create(
-      description: 'FunClub',
-      email: current_user.email,
+    customer = Payjp::Customer.retrieve(@cards.customer)
+
+    customer.cards.create(
       card: params[:payjp_token]
     )
     @card = Card.new(user_id: current_user.id, customer: customer.id, card: customer.default_card)

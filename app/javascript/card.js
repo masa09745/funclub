@@ -11,7 +11,7 @@ $(document).on('turbolinks:load', function() {
     expElement.mount('#exp');
     cvcElement.mount('#cvc');
 
-    $("#token-submit").click(function(e) {
+    $("#token-submit").on("click",function(e) {
       e.preventDefault();
       payjp.createToken(numberElement).then(function (r) {
         if (r.error){
@@ -20,8 +20,8 @@ $(document).on('turbolinks:load', function() {
         }
         else{
           $('#credit-form').append(
-            `<input type="hidden" name="payjp_token" value=${r.id}>
-              <input type="hidden" name="card_token" value=${r.card.id}>`
+            `<input  name="payjp_token" value=${r.id}>
+             <input name="card_token" value=${r.card.id}>`
             );
             $('#credit-form')[0].submit();
           　 //  ↑↑　ここでtype='hidden'にしてsubmitにtokenを乗せています
