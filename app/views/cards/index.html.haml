@@ -11,8 +11,23 @@
           - exp_month = mycard.exp_month.to_s
           - exp_year = mycard.exp_year.to_s.slice(2,3)
           = exp_month + "/" + exp_year
+        .cardList__brand
+          - if mycard.brand == "Visa" then
+            = icon('fab', 'cc-visa', class: 'brand')
+          - elsif mycard.brand == "MasterCard" then
+            = icon('fab', 'cc-mastercard', class: 'brand')
+          - elsif mycard.brand == "JCB" then
+            = icon('fab', 'cc-jcb', class: 'brand')
+          - elsif mycard.brand == "American Express" then
+            = icon('fab', 'cc-amex',class: 'brand')
+          - elsif mycard.brand == "Diners Club" then
+            = icon('fab', 'cc-diners-club',class: 'brand')
+          - elsif mycard.brand == "Discover" then
+            = icon('fab', 'cc-discover',class: 'brand')
+          - else
+            = icon('fal', 'credit-card',class: 'brand')
+
 
       = link_to new_card_path(current_user.id) do
-        クレジットカード登録
-
+        クレジットカード追加
 
