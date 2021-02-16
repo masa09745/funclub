@@ -25,7 +25,7 @@
               - else
                 = icon('fal', 'credit-card',class: 'brand')
             .myCard__data--exp
-              %label 有効期限
+              %label 有効期限(MM/YY)
               - month = mycard.exp_month
               - exp_year = mycard.exp_year.to_s.slice(2,3)
               - if month < 10 then
