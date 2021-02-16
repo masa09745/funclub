@@ -5,32 +5,39 @@
       =render 'shared/menu-mypage'
     .cardList
       - @mycards.each do |mycard|
-        .cardList__number
-          ="**** **** **** " + mycard.last4
-        .cardList__exp
-          - month = mycard.exp_month
-          - exp_year = mycard.exp_year.to_s.slice(2,3)
-          - if month < 10 then
-            = "0" + month.to_s + "/" + exp_year
-          - else
-            = month.to_s + "/" + exp_year
-        .cardList__brand
-          - if mycard.brand == "Visa" then
-            = icon('fab', 'cc-visa', class: 'brand')
-          - elsif mycard.brand == "MasterCard" then
-            = icon('fab', 'cc-mastercard', class: 'brand')
-          - elsif mycard.brand == "JCB" then
-            = icon('fab', 'cc-jcb', class: 'brand')
-          - elsif mycard.brand == "American Express" then
-            = icon('fab', 'cc-amex',class: 'brand')
-          - elsif mycard.brand == "Diners Club" then
-            = icon('fab', 'cc-diners-club',class: 'brand')
-          - elsif mycard.brand == "Discover" then
-            = icon('fab', 'cc-discover',class: 'brand')
-          - else
-            = icon('fal', 'credit-card',class: 'brand')
+        .myCard
+          .myCard__data
+            .myCard__data--number
+              ="**** **** **** " + mycard.last4
+            .myCard__data--brand
+              - if mycard.brand == "Visa" then
+                = icon('fab', 'cc-visa', class: 'brand')
+              - elsif mycard.brand == "MasterCard" then
+                = icon('fab', 'cc-mastercard', class: 'brand')
+              - elsif mycard.brand == "JCB" then
+                = icon('fab', 'cc-jcb', class: 'brand')
+              - elsif mycard.brand == "American Express" then
+                = icon('fab', 'cc-amex',class: 'brand')
+              - elsif mycard.brand == "Diners Club" then
+                = icon('fab', 'cc-diners-club',class: 'brand')
+              - elsif mycard.brand == "Discover" then
+                = icon('fab', 'cc-discover',class: 'brand')
+              - else
+                = icon('fal', 'credit-card',class: 'brand')
+            .myCard__data--exp
+              %label 有効期限
+              - month = mycard.exp_month
+              - exp_year = mycard.exp_year.to_s.slice(2,3)
+              - if month < 10 then
+                = "0" + month.to_s + "/" + exp_year
+              - else
+                = month.to_s + "/" + exp_year
+          .myCard__links
+            = link_to "#" do
+              編集
+            = link_to "#" do
+              削除
 
-
-      = link_to new_card_path(current_user.id) do
-        クレジットカード追加
+  = link_to new_card_path(current_user.id) do
+    クレジットカード追加
 
