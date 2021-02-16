@@ -37,6 +37,11 @@ class CardsController < ApplicationController
     card = customer.cards.retrieve(@cards.card)
     card.delete
 
+    @card = Card.find_by(card: @cards.card)
+    @card.delete
+
+    redirect_to action: 'index'
+
   end
 
 
