@@ -27,10 +27,10 @@
             = "0" + month.to_s + "/" + exp_year
           - else
             = month.to_s + "/" + exp_year
-      .myCard__links
-        = link_to "#" do
+      %button.btn.myCard__links
+        = link_to "#", class: "btn btn-secondary myCard__links--edit"  do
           編集
-        = link_to card_path, method: :delete do
+        = link_to card_path, method: :delete, class: "btn btn-danger" do
           削除
 - else
   %span クレジットカードを登録してください

@@ -3,8 +3,10 @@
   .myPage
     =render 'shared/menu-mypage'
     .cardIndex
+      %h2.title 登録済みクレジットカード
       .cardList
         =render 'cardList'
-      = link_to new_card_path(current_user.id) do
-        クレジットカード追加
+      %button.btn.addCredit
+        = link_to new_card_path(current_user.id), class: "btn btn-primary" do
+          クレジットカード追加
 
