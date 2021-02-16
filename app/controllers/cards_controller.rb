@@ -4,9 +4,12 @@ class CardsController < ApplicationController
   def index
     @cards =Card.find_by(user_id: current_user.id)
 
-    Payjp.api_key = Rails.application.credentials.dig(:payjp, :secret_access_key)
-    customer = Payjp::Customer.retrieve(@cards.customer)
-    @mycards = customer.cards.all
+    if @cards.present?
+      Payjp.api_key = Rails.application.credentials.dig(:payjp, :secret_access_key)
+      customer = Payjp::Customer.retrieve(@cards.customer)
+      @mycards = customer.cards.all
+    end
+
   end
 
   def new
@@ -16,13 +19,23 @@ class CardsController < ApplicationController
   def create
     @cards = Card.find_by(user_id: current_user.id)
 
-    Payjp.api_key = Rails.application.credentials.dig(:payjp, :secret_access_key)
-    customer = Payjp::Customer.retrieve(@cards.customer)
-    customer.cards.create(
-      card: params[:payjp_token]
-    )
+    if @cards.present?
+      Payjp.api_key = Rails.application.credentials.dig(:payjp, :secret_access_key)
+      customer = Payjp::Customer.retrieve(@cards.customer)
+      customer.cards.create(
+        card: params[:payjp_token]
+      )
+    else
+      Payjp.api_key = Rails.application.credentials.dig(:payjp, :secret_access_key)
+      @customer = Payjp::Customer.create(
+        description: 'FunClub',
+        email: current_user.email,
+        card: params[:payjp_token]
+      )
+    end
 
-    @card = Card.new(user_id: current_user.id, customer: customer.id, card: params[:card_token])
+      @card = Card.new(user_id: current_user.id, customer: customer.id, card: params[:card_token])
+
     if @card.save!
       redirect_to action: 'index'
     end
