@@ -1,6 +1,7 @@
 .cardIndex{
-  max-width: 1000px;
-  margin: 0 auto;
+  min-width: 300px;
+  max-width: 850px;
+  flex: auto;
 }
 
 .cardList{
@@ -39,6 +40,7 @@
 }
 
 .cardForm{
- width: 800px;
-
+  min-width: 400px;
+  max-width: 800px;
+  margin: 0 auto;
 }

@@ -1,5 +1,6 @@
 .myPage{
-  padding: 155px 50px 0;
+  padding-top: 155px;
+  max-width: 1080px;
   margin: 0 auto;
   background-color: #ffffff;
   display: flex;
@@ -7,11 +8,19 @@
 }
 
 .mypageMenu{
-  width: 200px;
+  min-width: 200px;
+  margin-right: 30px;
 }
 
 .mypageIndex{
+  min-width: 500px;
+  max-width: 850px;
+  flex: auto;
+}
+
+.mypageCredit{
   min-width: 300px;
-  max-width: 1000px;
+  max-width: 500px;
+  flex: auto;
   margin: 0 auto;
 }

@@ -1,11 +1,10 @@
 .card-wrapper
   = render 'shared/header-main'
   .myPage
-    .mypageMenu
-      =render 'shared/menu-mypage'
+    =render 'shared/menu-mypage'
     .cardIndex
       .cardList
         =render 'cardList'
-  = link_to new_card_path(current_user.id) do
-    クレジットカード追加
+      = link_to new_card_path(current_user.id) do
+        クレジットカード追加
 
