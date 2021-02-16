@@ -1,0 +1,36 @@
+- if @mycards.present?
+  - @mycards.each do |mycard|
+    .myCard
+      .myCard__data
+        .myCard__data--number
+          ="**** **** **** " + mycard.last4
+        .myCard__data--brand
+          - if mycard.brand == "Visa" then
+            = icon('fab', 'cc-visa', class: 'brand')
+          - elsif mycard.brand == "MasterCard" then
+            = icon('fab', 'cc-mastercard', class: 'brand')
+          - elsif mycard.brand == "JCB" then
+            = icon('fab', 'cc-jcb', class: 'brand')
+          - elsif mycard.brand == "American Express" then
+            = icon('fab', 'cc-amex',class: 'brand')
+          - elsif mycard.brand == "Diners Club" then
+            = icon('fab', 'cc-diners-club',class: 'brand')
+          - elsif mycard.brand == "Discover" then
+            = icon('fab', 'cc-discover',class: 'brand')
+          - else
+            = icon('fal', 'credit-card',class: 'brand')
+        .myCard__data--exp
+          %label 有効期限(MM/YY)
+          - month = mycard.exp_month
+          - exp_year = mycard.exp_year.to_s.slice(2,3)
+          - if month < 10 then
+            = "0" + month.to_s + "/" + exp_year
+          - else
+            = month.to_s + "/" + exp_year
+      .myCard__links
+        = link_to "#" do
+          編集
+        = link_to card_path, method: :delete do
+          削除
+- else
+  %span クレジットカードを登録してください
