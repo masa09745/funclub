@@ -7,7 +7,7 @@ class CardsController < ApplicationController
     Payjp.api_key = Rails.application.credentials.dig(:payjp, :secret_access_key)
     customer = Payjp::Customer.retrieve(@cards.customer)
     @mycards = customer.cards.all
-    @default_card = customer.default_card
+    @count = @mycards.count
   end
 
   def new
