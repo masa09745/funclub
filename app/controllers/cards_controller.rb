@@ -4,12 +4,10 @@ class CardsController < ApplicationController
   def index
     @cards =Card.find_by(user_id: current_user.id)
 
-    if @cards.present?
-      Payjp.api_key = Rails.application.credentials.dig(:payjp, :secret_access_key)
-      customer = Payjp::Customer.retrieve(@cards.customer)
-      @mycards = customer.cards.all
-    end
-
+    Payjp.api_key = Rails.application.credentials.dig(:payjp, :secret_access_key)
+    customer = Payjp::Customer.retrieve(@cards.customer)
+    @mycards = customer.cards.all
+    @default_card = customer.default_card
   end
 
   def new
