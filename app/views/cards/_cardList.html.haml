@@ -29,10 +29,10 @@
             = month.to_s + "/" + exp_year
       %button.btn.myCard__links
         - if @default_card == mycard.id
-          %span 支払い設定中
+          %span 使用中
         - else
           = link_to "#", class: "btn btn-dark myCard__links--change" do
-            使用カード変更
+            支払い変更
         - if @count > 1 then
           = link_to card_path, method: :delete, class: "btn btn-danger" do
             削除
