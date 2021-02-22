@@ -3,7 +3,7 @@ class CreateCards < ActiveRecord::Migration[6.0]
     create_table :cards do |t|
       t.string     :customer, null: false
       t.string     :card,     null: false
-      t.references :user,     null: false, foreign_key: true
+      t.belongs_to :user,     null: false, foreign_key: true
 
       t.timestamps
     end

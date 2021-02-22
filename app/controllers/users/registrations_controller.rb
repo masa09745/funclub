@@ -29,7 +29,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     end
 
     @user = User.new(session[:user])
-    @user.cards.build(
+    @user.build_card(
       user_id: @user.id,
       customer: @customer.id,
       card: @customer.default_card
