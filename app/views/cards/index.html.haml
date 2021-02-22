@@ -6,8 +6,4 @@
       %h2.title 登録済みクレジットカード
       .cardList
         =render 'cardList'
-      -if @count < 3 then
-        %button.btn.addCredit
-          = link_to new_card_path(current_user.id), class: "btn btn-primary" do
-            クレジットカード追加
 

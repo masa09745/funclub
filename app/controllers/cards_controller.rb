@@ -1,14 +1,16 @@
 class CardsController < ApplicationController
+  before_action :find_card
   require "payjp"
 
   def index
-    @cards =Card.find_by(user_id: current_user.id)
-
-    Payjp.api_key = Rails.application.credentials.dig(:payjp, :secret_access_key)
-    customer = Payjp::Customer.retrieve(@cards.customer)
-    @mycards = customer.cards.all
-    @default_card = customer.default_card
-    @count = @mycards.count
+    if @card.present?
+      Payjp.api_key = Rails.application.credentials.dig(:payjp, :secret_access_key)
+      customer = Payjp::Customer.retrieve(@card.customer)
+      @card_data = customer.cards.retrieve(@card.card)
+      @default_card = customer.default_card
+    else
+      redirect_to action: 'new'
+    end
   end
 
   def new
@@ -16,24 +18,14 @@ class CardsController < ApplicationController
   end
 
   def create
-    @cards = Card.find_by(user_id: current_user.id)
+    Payjp.api_key = Rails.application.credentials.dig(:payjp, :secret_access_key)
+    @customer = Payjp::Customer.create(
+      description: 'FunClub',
+      email: current_user.email,
+      card: params[:payjp_token]
+    )
 
-    if @cards.present?
-      Payjp.api_key = Rails.application.credentials.dig(:payjp, :secret_access_key)
-      customer = Payjp::Customer.retrieve(@cards.customer)
-      customer.cards.create(
-        card: params[:payjp_token]
-      )
-    else
-      Payjp.api_key = Rails.application.credentials.dig(:payjp, :secret_access_key)
-      @customer = Payjp::Customer.create(
-        description: 'FunClub',
-        email: current_user.email,
-        card: params[:payjp_token]
-      )
-    end
-
-      @card = Card.new(user_id: current_user.id, customer: customer.id, card: params[:card_token])
+    @card = Card.new(user_id: current_user.id, customer: @customer.id, card: params[:card_token])
 
     if @card.save!
       redirect_to action: 'index'
@@ -42,18 +34,21 @@ class CardsController < ApplicationController
   end
 
   def destroy
-    @cards =Card.find_by(user_id: current_user.id)
+    if @card.present?
+      Payjp.api_key = Rails.application.credentials.dig(:payjp, :secret_access_key)
+      customer = Payjp::Customer.retrieve(@card.customer)
+      customer.delete
 
-    Payjp.api_key = Rails.application.credentials.dig(:payjp, :secret_access_key)
-    customer = Payjp::Customer.retrieve(@cards.customer)
-    card = customer.cards.retrieve(@cards.card)
-    card.delete
-
-    @card = Card.find_by(card: @cards.card)
-    @card.delete
-
+      @card = Card.find_by(card: @card.card)
+      @card.delete
+    end
     redirect_to action: 'index'
 
   end
+
+  private
+    def find_card
+      @card =Card.find_by(user_id: current_user.id)
+    end
 
 end
