@@ -1,48 +1,45 @@
-.cardIndex{
-  min-width: 500px;
-  max-width: 850px;
+.creditIndex{
+  min-width: 300px;
+  max-width: 500px;
   flex: auto;
-
 }
 
-.cardList{
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0 50px 0;
+.myCredit{
+  width: 250px;
+  margin: 0 auto;
+}
+
+.creditData{
+  margin: 0 auto 0;
   padding: 15px;
 
 }
 
-.myCard{
-  margin: 0 15px 20px 0;
-}
-
-.myCard__data{
-  width: 220px;
+.myCredit__data{
   padding: 20px 10px 10px;
   border: solid;
   border-radius: 1rem;
 }
 
-.myCard__data--number{
+.myCredit__data--number{
   font-size: 20px;
   text-align: center;
 }
 
-.myCard__data--brand{
+.myCredit__data--brand{
   font-size: 40px;
 }
 
-.myCard__data--exp{
+.myCredit__data--exp{
   text-align: right;
   font-size: small;
 }
 
-.myCard__links{
+.myCredit__links{
   margin-top: 5px;
 }
 
-.myCard__links--edit{
+.myCredit__links--edit{
   margin-right: 10px;
 }
 

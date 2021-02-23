@@ -1,8 +1,8 @@
-.myCard
-  .myCard__data
-    .myCard__data--number
+.myCredit
+  .myCredit__data
+    .myCredit__data--number
       ="**** **** **** " + @card_data.last4
-    .myCard__data--brand
+    .myCredit__data--brand
       - if @card_data.brand == "Visa" then
         = icon('fab', 'cc-visa', class: 'brand')
       - elsif @card_data.brand == "MasterCard" then
@@ -17,7 +17,7 @@
         = icon('fab', 'cc-discover',class: 'brand')
       - else
         = icon('fal', 'credit-card',class: 'brand')
-    .myCard__data--exp
+    .myCredit__data--exp
       %label 有効期限(MM/YY)
       - month = @card_data.exp_month
       - exp_year = @card_data.exp_year.to_s.slice(2,3)
@@ -25,10 +25,10 @@
         = "0" + month.to_s + "/" + exp_year
       - else
         = month.to_s + "/" + exp_year
-  %button.btn.myCard__links
+  %button.btn.myCredit__links
     - if @default_card == @card_data.id
       %span 使用中
-      = link_to edit_card_path(@card), class: "btn btn-secondary myCard__links--edit" do
+      = link_to edit_card_path(@card), class: "btn btn-secondary myCredit__links--edit" do
         編集
       = link_to card_path, method: :delete, class: "btn btn-danger" do
         削除
