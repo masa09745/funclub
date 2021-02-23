@@ -1,8 +1,8 @@
-= form_with model:@user, url:users_sign_up_final_path, local: true, class: 'user-forms' do |f|
+= form_with url:users_sign_up_step3_path, method: :get, local: true, class: 'user-forms' do |f|
   .user__child-forms
     %p.user-text
-      登録内容に間違いがなければ登録ボタンを押してください
-  =f.submit "登録"
+      登録内容に間違いがなければクレジットカード登録へ進みます
+  =f.submit "次へ"
 
 
 

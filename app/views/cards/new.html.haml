@@ -1,0 +1,11 @@
+.card-wrapper
+  = render 'shared/header-main'
+  .myPage
+    =render 'shared/menu-mypage'
+    .newCredit
+      %h2.title クレジットカード新規登録
+      .cardForm
+        =form_with model: @card, id: 'credit-form' do |f|
+          =render  'devise/shared/form-newcredit'
+          %button.btn
+            =f.submit  "登録", id:'token-submit'

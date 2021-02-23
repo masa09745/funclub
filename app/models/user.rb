@@ -6,5 +6,5 @@ class User < ApplicationRecord
   has_many :orders
   has_many :tickets
   has_many :sns_credentials, dependent: :destroy
-  has_many :cards
+  has_one :card
 end

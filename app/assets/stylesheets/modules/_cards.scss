@@ -1,0 +1,54 @@
+.creditIndex{
+  min-width: 300px;
+  max-width: 500px;
+  flex: auto;
+}
+
+.myCredit{
+  width: 250px;
+  margin: 0 auto;
+}
+
+.creditData{
+  margin: 0 auto 0;
+  padding: 15px;
+
+}
+
+.myCredit__data{
+  padding: 20px 10px 10px;
+  border: solid;
+  border-radius: 1rem;
+}
+
+.myCredit__data--number{
+  font-size: 20px;
+  text-align: center;
+}
+
+.myCredit__data--brand{
+  font-size: 40px;
+}
+
+.myCredit__data--exp{
+  text-align: right;
+  font-size: small;
+}
+
+.myCredit__links{
+  margin-top: 5px;
+}
+
+.myCredit__links--edit{
+  margin-right: 10px;
+}
+
+.addCredit{
+  float: right;
+}
+
+.cardForm{
+  min-width: 400px;
+  max-width: 800px;
+  margin: 0 auto;
+}

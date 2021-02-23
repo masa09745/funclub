@@ -7,7 +7,7 @@
       - if user_signed_in?
         .headerMain__child-item
           %buton.btn
-            =link_to "#", class:"btn btn-dark header__child-mypage" do
+            =link_to user_path(current_user.id), class:"btn btn-dark header__child-mypage" do
               マイページ
             =link_to destroy_user_session_path, method: :delete,  class:"btn btn-danger header__child-logout" do
               ログアウト

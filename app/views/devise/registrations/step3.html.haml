@@ -2,25 +2,9 @@
   =render "devise/shared/header-user"
   .user-new
     %h1.title
-      %p.user-title 登録内容確認
-    .user-inputs
-      .user__child-inputs
-        %label
-          氏名
-        .user__child-input
-          = "#{session[:user]["name"]}"
-      .user__child-inputs
-        %label
-          氏名(カナ)
-        .user__child-input
-          = "#{session[:user]["name_kana"]}"
-      .user__child-inputs
-        %label
-          メールアドレス
-        .user__child-input
-          = "#{session[:user]["email"]}"
-      .user__child-inputs
-        %p.user-text
-          ※パスワードは個人情報のため表示しておりません。
-    =render "devise/shared/form-confirmation"
+      %p.user-title クレジットカード登録
+    =form_with model:@user, url:users_sign_up_final_path, local: true, id: 'credit-form', class: 'user-forms' do |f|
+      =render "devise/shared/form-newcredit"
+      %button.btn
+        =f.submit "登録", id:'token-submit'
   =render "shared/footer-main"
