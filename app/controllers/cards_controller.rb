@@ -32,17 +32,25 @@ class CardsController < ApplicationController
     end
   end
 
-  def destroy
-    if @card.present?
-      Payjp.api_key = Rails.application.credentials.dig(:payjp, :secret_access_key)
-      customer = Payjp::Customer.retrieve(@card.customer)
-      customer.delete
+  def edit
+    @card = Card.find_by(id:params[:id])
+  end
 
-      @card = Card.find_by(card: @card.card)
-      @card.delete
-    end
+  def update
+    @card = Card.find_by(id:params[:id])
+
+    Payjp.api_key = Rails.application.credentials.dig(:payjp, :secret_access_key)
+    customer = Payjp::Customer.retrieve(@card.customer)
+    card = customer.cards.retrieve(@card.card)
+    card.delete
+
+    customer.cards.create(
+      card: params[:payjp_token]
+    )
+
+    @card.update(card: params[:card_token])
+
     redirect_to action: 'index'
-
   end
 
   private

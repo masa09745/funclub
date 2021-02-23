@@ -27,8 +27,6 @@
         = month.to_s + "/" + exp_year
   %button.btn.myCredit__links
     - if @default_card == @card_data.id
-      %span 使用中
+      %span.btn.btn-danger 使用中
       = link_to edit_card_path(@card), class: "btn btn-secondary myCredit__links--edit" do
         編集
-      = link_to card_path, method: :delete, class: "btn btn-danger" do
-        削除
