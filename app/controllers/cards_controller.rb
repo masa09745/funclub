@@ -30,7 +30,6 @@ class CardsController < ApplicationController
     if @card.save!
       redirect_to action: 'index'
     end
-
   end
 
   def destroy
