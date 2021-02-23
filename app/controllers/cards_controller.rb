@@ -33,11 +33,10 @@ class CardsController < ApplicationController
   end
 
   def edit
-    @card = Card.find_by(id:params[:id])
+
   end
 
   def update
-    @card = Card.find_by(id:params[:id])
 
     Payjp.api_key = Rails.application.credentials.dig(:payjp, :secret_access_key)
     customer = Payjp::Customer.retrieve(@card.customer)
