@@ -1,0 +1,10 @@
+.myPage-wrapper
+  = render "shared/header-main"
+  = render "shared/navbar"
+  .myPage
+    = render "shared/menu-mypage"
+    .mypageLogout
+      %button.btn.btn-danger
+        =link_to destroy_user_session_path, method: :delete do
+          ログアウト
+  =render "shared/footer-main"
