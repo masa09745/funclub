@@ -1,11 +1,52 @@
-.user-exist{
-  min-width: 300px;
-  max-width: 500px;
+.user-wrapper{
+  background-color: #eeeeee;
+}
+
+.userExist{
+  max-width: 980px;
   margin: 0 auto;
+  padding: 30px 60px;
 
 }
 
-.ExistUser-main__index{
+.userExist_contents{
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+
+}
+
+.userEmail{
+  padding: 20px;
+  border-right: solid 1px #666666;
+}
+
+.userEmail_index{
+  width: 200px;
   border-bottom: solid 2px #666666;
-  padding-bottom: 2px;
 }
+
+.userSns{
+  padding: 20px;
+}
+
+.userSns_index{
+  width: 150px;
+  border-bottom: solid 2px #666666;
+}
+
+.userSns_inner{
+  height: 200px;
+  padding: 30px 20px;
+  text-align: center;
+}
+
+.userSns_google{
+  margin-bottom: 20px;
+}
+
+
+

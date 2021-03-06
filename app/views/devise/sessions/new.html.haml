@@ -1,8 +1,20 @@
-.User-wrapper
+.user-wrapper
   =render "/shared/header-main"
-  .user-exist
-    %h1.title
-      %p.user-title
-        ログイン
-    =render "devise/shared/form-existuser"
-  =render "shared/footer-main"
+  .userExist
+    .userExist_index
+      %h4 ログイン
+    .userExist_contents
+      .userEmail
+        %p.userEmail_index
+          メールアドレスでログイン
+        =render "devise/shared/form-login"
+      .userSns
+        %p.userSns_index
+          他のIDでログイン
+        .userSns_inner
+          =link_to "#", class: "btn btn-danger userSns_google" do
+            Googleアカウントでログイン
+          =link_to "#", class: "btn btn-primary userSns_twitter" do
+            Twitterアカウントでログイン
+  .footer
+    =render "shared/footer-main"
