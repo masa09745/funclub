@@ -1,15 +1,40 @@
 .header{
   width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background-color: #FFFFFF;
-  z-index: 100;
+
 }
 
 .headerMain{
-  padding: 0 50px;
-  margin-bottom: 30px;
+  height: 48px;
+}
+
+.logo{
+  font-size: 2rem;
+  color: #ffffff;
+}
+
+.headerMain_items{
+  max-width: 980px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.headerMain_item-logo{
+  width: 200px;
+  text-align: center;
+}
+
+.headerMain_item-auth{
+  width: 150px;
+  text-align: center;
+  line-height: 48px;
+}
+
+ color: #ffffff;
+}
+
+.headerMain_item-login{
+  color: #ffffff;
 }
 
 .headerUser{
@@ -18,47 +43,3 @@
   line-height: 100px;
   text-align: center;
 }
-
-.headerMain__items{
-  height: 80px;
-  padding: 10px;
-  border-bottom: solid 2px #666;
-  display: flex;
-  justify-content: space-between;
-}
-
-.headerMain__child-items{
-  width: 300px;
-  line-height: 58px;
-  text-align: center;
-}
-
-.headerMain__child-new{
-  margin-right: 20px;
-}
-
-.header__child-mypage{
-  margin-right: 20px;
-}
-
-.headerMain__menus{
-  height: 45px;
-  width: 650px;
-  margin: 0 auto;
-  padding: 0 50px;
-}
-
-.headerMain__child-menus{
-  font-size: 20px;
-  line-height: 45px;
-  display: flex;
-  justify-content: space-between;
-  padding: 0;
-  margin: 0;
-}
-
-.logo{
-  font-size: 45px;
-}
-
-

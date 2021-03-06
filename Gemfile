@@ -67,9 +67,6 @@ end
 
 gem "haml-rails", "~> 2.0"
 gem 'devise'
-gem 'bootstrap', '~> 4.5.0'
-gem 'jquery-rails'
-gem 'font-awesome-sass', '~> 5.13.0'
 gem 'cancancan'
 gem 'payjp'
 gem 'pry-rails'
