@@ -4,3 +4,5 @@
       ユーザー情報
     = link_to cards_path(current_user.id), class: "mypageMenu__child-inner list-group-item" do
       クレジットカード
+    = link_to logout_user_path(current_user.id), class: "mypageMenu__child-inner list-group-item" do
+      ログアウト

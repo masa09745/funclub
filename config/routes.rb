@@ -16,6 +16,7 @@ Rails.application.routes.draw do
 
   resources :users, only: :show do
     member do
+      get 'logout', to: 'users#logout'
       resources :cards
     end
   end
