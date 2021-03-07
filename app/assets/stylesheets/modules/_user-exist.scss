@@ -12,14 +12,14 @@
 .userExist_contents{
   max-width: 800px;
   margin: 0 auto;
-  padding: 30px;
+  padding: 20px 0;
   background-color: #ffffff;
   display: flex;
   justify-content: center;
-
 }
 
 .userEmail{
+  width: 380px;
   padding: 20px;
   border-right: solid 1px #666666;
 }
@@ -30,6 +30,7 @@
 }
 
 .userSns{
+  width: 320px;
   padding: 20px;
 }
 
@@ -47,6 +48,27 @@
 .userSns_google{
   margin-bottom: 20px;
 }
+
+@media(max-width:900px){
+  .userExist_contents{
+    display: block;
+  }
+  .userEmail{
+    border-right: 0;
+    margin: 0 auto 25px;
+    padding: 15px;
+  }
+  .userSns{
+    width: 380px;
+    margin: 0 auto;
+    padding: 15px;
+  }
+  .userSns_inner{
+    height: 150px;
+    padding: 20px 10px;
+  }
+}
+
 
 
 

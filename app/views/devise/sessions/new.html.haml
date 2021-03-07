@@ -7,7 +7,20 @@
       .userEmail
         %p.userEmail_index
           メールアドレスでログイン
-        =render "devise/shared/form-login"
+        = form_with model: @user,  url: new_user_session_path, local: true, class: 'loginForm' do |f|
+          .form-group.col-12
+            %label
+              メールアドレス
+            = f.email_field :email, class: "form-control"
+          .form-group.col-12
+            %label
+              パスワード
+            = f.password_field :password, class: "form-control"
+          .formLinks
+            %button.btn
+              =f.submit "ログイン"
+            =link_to users_sign_up_step1_path, class:"formLinks_newuser" do
+              新規登録はこちら
       .userSns
         %p.userSns_index
           他のIDでログイン
