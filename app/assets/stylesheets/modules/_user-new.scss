@@ -1,14 +1,42 @@
-.user-new{
-  min-width: 300px;
-  max-width: 500px;
+.userNew{
+  max-width: 980px;
   margin: 0 auto;
-
 }
-.user-forms{
-  width: 400px;
+
+.signupForm{
+  max-width: 700px;
   margin: 30px auto;
+  padding: 20px 50px;
+  background-color: #ffffff;
 }
 
+.signupForm_input{
+  border-bottom: dashed 1px #666666;
+  height: 75px;
+}
+
+.signupForm_index{
+  font-size: 20px;
+}
+
+.signupForm-label{
+  margin-right: 10px;
+}
+
+.signupForm-must{
+  color: red;
+}
+
+.text-muted{
+  padding-left: 15px;
+}
+
+@media(max-width:576px){
+  .signupForm_input{
+    border-bottom: dashed 1px #666666;
+    height: 100px;
+  }
+}
 
 .slash{
   line-height: 38px;

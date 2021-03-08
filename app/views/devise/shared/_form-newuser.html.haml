@@ -1,19 +1,37 @@
-= form_with model: @user, url: users_sign_up_step2_path, method: :get, local: true, class:'user-forms' do |f|
-  .user__child-forms.form-group.col-md-6
-    %label
-      氏名
-    = f.text_field :name, class: "form-control"
-  .user__child-forms.form-group.col-md-8
-    %label
-      氏名(カナ)
-    = f.text_field :name_kana, class: "form-control"
-  .user__child-forms.form-group.col-md-7
-    %label
-      メールアドレス
-    = f.email_field :email, class: "form-control"
-  .user__child-forms.form-group.col-md-5
-    %label
-      パスワード
-    = f.password_field :password, class: "form-control"
+= form_with model: @user, url: users_sign_up_step2_path, method: :get, local: true, class:'signupForm' do |f|
+  .signupForm_index
+    %p ユーザー情報
+  .form-group.row.signupForm_input
+    %label.col-sm-4.col-form-label.col-form-label-sm
+      %span.signupForm-label 氏名
+      %span.signupForm-must 必須
+    .col-sm-4
+      = f.text_field :name, class: "form-control form-control-sm"
+    %small.form-text.text-muted
+      性と名の間は詰めて入力してください
+  .form-group.row.signupForm_input
+    %label.col-sm-4.col-form-label.col-form-label-sm
+      %span.signupForm-label 氏名(カナ)
+      %span.signupForm-must 必須
+    .col-sm-5
+      = f.text_field :name_kana, class: "form-control form-control-sm"
+    %small.form-text.text-muted
+      全角カタカナで入力してください
+  .form-group.row.signupForm_input
+    %label.col-sm-4.col-form-label.col-form-label-sm
+      %span.signupForm-label メールアドレス
+      %span.signupForm-must 必須
+    .col-sm-6
+      = f.email_field :email, class: "form-control form-control-sm"
+    %small.form-text.text-muted
+      @funclubからのメールの受信設定をご確認ください
+  .form-group.row.signupForm_input
+    %label.col-sm-4.col-form-label.col-form-label-sm
+      %span.signupForm-label パスワード
+      %span.signupForm-must 必須
+    .col-sm-4
+      = f.password_field :password, class: "form-control inputPassword form-control-sm"
+    %small.form-text.text-muted
+      6文字以上の半角英数字で入力してください
   %button.btn
     =f.submit "次へ"
