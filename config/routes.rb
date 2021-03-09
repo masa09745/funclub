@@ -9,7 +9,6 @@ Rails.application.routes.draw do
     get 'users/sign_up/step2', to: 'users/registrations#step2'
     get 'users/sign_up/step3', to: 'users/registrations#step3'
     post 'users/sign_up/final', to: 'users/registrations#final'
-    get 'users/sign_up/final', to: 'users/registrations#final'
   end
 
   resources :users, only: :show do

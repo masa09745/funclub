@@ -10,17 +10,8 @@
   background-color: #ffffff;
 }
 
-.signupForm_input{
-  border-bottom: dashed 1px #666666;
-  height: 75px;
-}
-
 .signupForm_index{
   font-size: 20px;
-}
-
-.signupForm-label{
-  margin-right: 10px;
 }
 
 .signupForm-must{
@@ -40,11 +31,4 @@
 
 .userNew_complete-index{
   font-size: 20px;
-}
-
-@media(max-width:576px){
-  .signupForm_input{
-    border-bottom: dashed 1px #666666;
-    height: 100px;
-  }
 }
