@@ -1,8 +1,13 @@
 .user-wrapper
-  =render "devise/shared/header-user"
-  .user-new
-    .user-text
-      登録が完了しました。
-    = link_to root_path do
-      トップページへ
+  =render "shared/header-main"
+  .userNew
+    .userNew_index
+      %h4 新規ユーザー登録
+    .userNew_complete
+      .userNew_complete-index
+        %p 登録完了
+      .userNew_complete-text
+      %p ユーザー情報と支払い方法の登録が完了しました。
+      = link_to root_path, class: "btn btn-dark userNew_complete-link" do
+        トップページへ
   =render "shared/footer-main"
