@@ -4,19 +4,19 @@
       ="**** **** **** " + @card_data.last4
     .myCredit__data--brand
       - if @card_data.brand == "Visa" then
-        = icon('fab', 'cc-visa', class: 'brand')
+        %i.fab.fa-cc-visa
       - elsif @card_data.brand == "MasterCard" then
-        = icon('fab', 'cc-mastercard', class: 'brand')
+        %i.fab.fa-cc-mastercard
       - elsif @card_data.brand == "JCB" then
-        = icon('fab', 'cc-jcb', class: 'brand')
+        %i.fab.fa-cc-jcb
       - elsif @card_data.brand == "American Express" then
-        = icon('fab', 'cc-amex',class: 'brand')
+        %i.fab.fa-cc-amex
       - elsif @card_data.brand == "Diners Club" then
-        = icon('fab', 'cc-diners-club',class: 'brand')
+        %i.fab.fa-cc-diners-club
       - elsif @card_data.brand == "Discover" then
-        = icon('fab', 'cc-discover',class: 'brand')
+        %i.fab.fa-cc-discover
       - else
-        = icon('fal', 'credit-card',class: 'brand')
+        %i.far.fa-credit-card
     .myCredit__data--exp
       %label 有効期限(MM/YY)
       - month = @card_data.exp_month
