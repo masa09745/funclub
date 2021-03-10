@@ -3,5 +3,8 @@
   = render "shared/navbar"
   .myPage
     = render "shared/menu-mypage"
-    .mypageIndex
+    .mypageLogout
+      %button.btn.btn-danger
+        =link_to destroy_user_session_path, method: :delete do
+          ログアウト
   =render "shared/footer-main"

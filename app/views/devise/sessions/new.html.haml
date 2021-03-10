@@ -1,8 +1,33 @@
-.User-wrapper
-  =render "devise/shared/header-user"
-  .user-exist
-    %h1.title
-      %p.user-title
-        ログイン
-    =render "devise/shared/form-existuser"
-  =render "shared/footer-main"
+.user-wrapper
+  =render "/shared/header-main"
+  .userExist
+    .userExist_index
+      %h4 ログイン
+    .userExist_contents
+      .userEmail
+        %p.userEmail_index
+          メールアドレスでログイン
+        = form_with model: @user,  url: new_user_session_path, local: true, class: 'loginForm' do |f|
+          .form-group.col-12
+            %label
+              メールアドレス
+            = f.email_field :email, class: "form-control"
+          .form-group.col-12
+            %label
+              パスワード
+            = f.password_field :password, class: "form-control"
+          .formLinks
+            %button.btn
+              =f.submit "ログイン"
+            =link_to users_sign_up_step1_path, class:"formLinks_newuser" do
+              新規登録はこちら
+      .userSns
+        %p.userSns_index
+          他のIDでログイン
+        .userSns_inner
+          =link_to "#", class: "btn btn-danger userSns_google" do
+            Googleアカウントでログイン
+          =link_to "#", class: "btn btn-primary userSns_twitter" do
+            Twitterアカウントでログイン
+  .footer
+    =render "shared/footer-main"

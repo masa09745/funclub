@@ -1,40 +1,14 @@
-%header.header.headerMain
-  .headerMain__items
-    .headerMain__child-items
+%header.header.headerMain.bg-dark
+  .headerMain_items
+    .headerMain_item-logo
       =link_to root_path, class: "logo" do
         FUN CLUB
-    .headerMain__child-items
+    .headerMain_item-auth
       - if user_signed_in?
-        .headerMain__child-item
-          %buton.btn
-            =link_to user_path(current_user.id), class:"btn btn-dark header__child-mypage" do
-              マイページ
-            =link_to destroy_user_session_path, method: :delete,  class:"btn btn-danger header__child-logout" do
-              ログアウト
+        =link_to user_path(current_user.id), class:"headerMain_item-mypage" do
+          マイページ
       - else
-        .headerMain__child-item
-          =link_to users_sign_up_menu_path, class:"btn btn-outline-dark headerMain__child-new", role:"button" do
-            新規登録
-          =link_to users_sign_in_menu_path, class:"btn btn-dark headerMain__child-login", role: "button" do
-            ログイン
-  .headerMain__menus
-    %ul.headerMain__child-menus
-      %li.headerMain__child-menu
-        =link_to root_path, class:"headerMain__child-home" do
-          トップページ
-      %li.headerMain__child-menu
-        =link_to schedules_path, class:"headerMain__child-schedule" do
-          スケジュール
-      %li.headerMain__child-menu
-        =link_to "#", class:"headerMain__child-member" do
-          選手一覧
-      %li.headerMain__child-menu
-        =link_to "#", class:"headerMain__child-venue" do
-          スタジアム
-      - if user_signed_in?
-        -if can? :edit, current_user
-          %li.headerMain__child-menu
-            =link_to managements_path, class:"headerMain__child-stock" do
-              管理画面
+        =link_to new_user_session_path, class:"headerMain_item-login" do
+          ログイン
 
 

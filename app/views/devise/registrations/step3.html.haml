@@ -1,9 +1,11 @@
 .user-wrapper
-  =render "devise/shared/header-user"
-  .user-new
-    %h1.title
-      %p.user-title クレジットカード登録
-    =form_with model:@user, url:users_sign_up_final_path, local: true, id: 'credit-form', class: 'user-forms' do |f|
+  =render "shared/header-main"
+  .userNew
+    .userNew_index
+      %h4 新規ユーザー登録
+    =form_with model:@user, url:users_sign_up_final_path, local: true, id: 'credit-form', class: 'signupForm' do |f|
+      .signupForm_index
+        %p クレジットカード登録
       =render "devise/shared/form-newcredit"
       %button.btn
         =f.submit "登録", id:'token-submit'

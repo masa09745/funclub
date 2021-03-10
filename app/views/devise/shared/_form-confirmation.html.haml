@@ -1,7 +1,26 @@
-= form_with url:users_sign_up_step3_path, method: :get, local: true, class: 'user-forms' do |f|
-  .user__child-forms
-    %p.user-text
-      登録内容に間違いがなければクレジットカード登録へ進みます
+= form_with url:users_sign_up_step3_path, method: :get, local: true, class: 'signupForm' do |f|
+  .signupForm_index
+    %p 登録内容確認
+  .signupForm_confirmation
+    %label
+      氏名
+    .signupForm_confirmation-input
+      = "#{session[:user]["name"]}"
+  .signupForm_confirmation
+    %label
+      氏名(カナ)
+    .signupForm_confirmation-input
+      = "#{session[:user]["name_kana"]}"
+  .signupForm_confirmation
+    %label
+      メールアドレス
+    .signupForm_confirmation-input
+      = "#{session[:user]["email"]}"
+  .signupForm_confirmation
+    %p.signupForm_confirmation-text
+      ※パスワードは個人情報のため表示しておりません。
+    %p.signupForm_confirmation-text
+      登録内容に誤りがなければクレジットカード登録へ進みます
   =f.submit "次へ"
 
 

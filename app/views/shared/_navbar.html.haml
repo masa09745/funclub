@@ -1,0 +1,17 @@
+%nav.navbar.navbar-expand-sm.navbar-light.navMain
+  %button.navbar-toggler{"type":"button", "data-toggle":"collapse", "data-target":"#navmenu", "aria-controls":"navmenu", "aria-expanded":"false", "aria-label":"Toggle navigation"}
+    %i.fas.fa-bars
+  #navmenu.collapse.navbar-collapse.justify-content-around
+    %ul.navbar-nav
+      %li.nav-item
+        =link_to root_path, class:"nav-link" do
+          トップページ
+      %li.nav-item
+        =link_to schedules_path, class:"nav-link" do
+          スケジュール
+      %li.nav-item
+        =link_to "#", class:"nav-link" do
+          選手一覧
+      %li.nav-item
+        =link_to "#", class:"nav-link" do
+          スタジアム

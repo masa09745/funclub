@@ -1,12 +1,16 @@
-@import "bootstrap";
-@import "font-awesome-sprockets";
-@import "font-awesome";
+$fa-font-path:'@fortawesome/fontawesome-free/webfonts';
+@import '@fortawesome/fontawesome-free/scss/fontawesome';
+@import '@fortawesome/fontawesome-free/scss/regular';
+@import '@fortawesome/fontawesome-free/scss/solid';
+@import '@fortawesome/fontawesome-free/scss/brands';
+
+@import 'bootstrap/scss/bootstrap';
+
 @import "config/sanitize";
 @import "modules/funclub";
 @import "modules/match";
 @import "modules/header";
 @import "modules/footer";
-@import "modules/user-menu";
 @import "modules/user-new";
 @import "modules/user-confirmation";
 @import "modules/user-exist";
@@ -15,11 +19,7 @@
 @import "modules/managements";
 @import "modules/mypage";
 @import "modules/cards";
-
-
-
-
-
+@import "modules/navbar";
 
 
 a, a:hover {
@@ -29,18 +29,4 @@ a, a:hover {
 
 li{
   list-style: none;
-}
-
-.title{
-  border-bottom: solid 3px #666666;
-  margin: 0 50px 0 ;
-  padding: 5px;
-}
-
-.user-text{
-  font-size: 15px;
-}
-
-.user__child-forms{
-  margin-bottom: 15px;
 }

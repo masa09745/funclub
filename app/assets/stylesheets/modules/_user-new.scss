@@ -1,16 +1,34 @@
-.user-new{
-  min-width: 300px;
-  max-width: 500px;
+.userNew{
+  max-width: 980px;
   margin: 0 auto;
-
 }
-.user-forms{
-  width: 400px;
+
+.signupForm{
+  max-width: 700px;
   margin: 30px auto;
+  padding: 20px 50px;
+  background-color: #ffffff;
 }
 
+.signupForm_index{
+  font-size: 20px;
+}
 
-.slash{
-  line-height: 38px;
-  margin: 0 5px;
+.signupForm-must{
+  color: red;
+}
+
+.text-muted{
+  padding-left: 15px;
+}
+
+.userNew_complete{
+  max-width: 700px;
+  margin: 30px auto;
+  padding: 20px 50px;
+  background-color: #ffffff;
+}
+
+.userNew_complete-index{
+  font-size: 20px;
 }
