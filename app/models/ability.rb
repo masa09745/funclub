@@ -8,7 +8,6 @@ class Ability
     can :read,  :all
 
     if user.admin?
-      can :access, :rails_admin
       can :manage, :all
     end
 
