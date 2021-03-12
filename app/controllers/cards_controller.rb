@@ -2,7 +2,7 @@ class CardsController < ApplicationController
   before_action :find_card
   require "payjp"
 
-  def index
+  def show
     if @card.present?
       Payjp.api_key = Rails.application.credentials.dig(:payjp, :secret_access_key)
       customer = Payjp::Customer.retrieve(@card.customer)

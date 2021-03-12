@@ -11,10 +11,10 @@ Rails.application.routes.draw do
     post 'users/sign_up/final', to: 'users/registrations#final'
   end
 
-  resources :users, only: :show do
-    member do
+  resource :user, only: :show do
+    collection do
       get 'logout', to: 'users#logout'
-      resources :cards
+      resource :card
     end
   end
 
@@ -25,7 +25,7 @@ Rails.application.routes.draw do
 
   resources :stocks
 
-  resources :admin, only: :index
+  resources :admins, only: :index
 
   root to: "funclubs#index"
 

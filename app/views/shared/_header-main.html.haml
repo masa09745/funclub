@@ -5,10 +5,10 @@
         FUN CLUB
     .headerMain_item-auth
       - if user_signed_in? && current_user.admin?
-        =link_to "#", class:"headerMain_item-admin" do
+        =link_to admins_path, class:"headerMain_item-admin" do
           管理画面
       - elsif user_signed_in?
-        =link_to user_path(current_user.id), class:"headerMain_item-mypage" do
+        =link_to user_path, class:"headerMain_item-mypage" do
           マイページ
       - else
         =link_to new_user_session_path, class:"headerMain_item-login" do
