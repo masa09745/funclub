@@ -1,4 +1,37 @@
 .admin-wrapper
   = render "shared/header-main"
   = render "shared/navbar"
-  .adminIndex
+  .adminTop
+    .adminTop_index
+      %h4 管理者メニュー
+    .adminTop_menu
+      .card
+        %i.fas.fa-users.fa-3x
+        .card-body
+          %h5.card-title
+            ユーザー管理
+          %small.card-text
+            ユーザー情報の変更、削除
+      .card
+        %i.fas.fa-calendar.fa-3x
+        .card-body
+          %h5.card-title
+            スケジュール管理
+          %small.card-text
+            スケジュールの追加、変更、削除
+      .card
+        %i.fas.fa-warehouse.fa-3x
+        .card-body
+          %h5.card-title
+            在庫管理
+          %small.card-text
+            チケット在庫の確認、設定
+      .card
+        %i.fas.fa-grip-horizontal.fa-3x
+        .card-body
+          %h5.card-title
+            スタジアム管理
+          %small.card-text
+            座席の設定
+
+

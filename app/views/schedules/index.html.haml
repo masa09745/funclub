@@ -5,9 +5,6 @@
       =l Time.current, format: :month
     .scheduleIndex-month
       - if can? :edit, current_user
-        .scheduleIndex-add
-          =link_to new_schedule_path do
-            スケジュールを追加する
       .scheduleIndex-inner
         - @schedules.each do |schedule|
           .card
