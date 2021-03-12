@@ -18,10 +18,12 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :schedules
+  resources :schedules, only: [:index, :show]
+    namespace :admin do
+      resources :schedules
+    end
 
   resources :stocks
-  resources :managements
 
   root to: "funclubs#index"
 
