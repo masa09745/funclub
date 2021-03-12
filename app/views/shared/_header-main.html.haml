@@ -4,7 +4,10 @@
       =link_to root_path, class: "logo" do
         FUN CLUB
     .headerMain_item-auth
-      - if user_signed_in?
+      - if user_signed_in? && current_user.admin?
+        =link_to "#", class:"headerMain_item-admin" do
+          管理画面
+      - elsif user_signed_in?
         =link_to user_path(current_user.id), class:"headerMain_item-mypage" do
           マイページ
       - else
