@@ -25,7 +25,7 @@ Rails.application.routes.draw do
 
   resources :stocks
 
-  resources :admins, only: :index
+  resource :admin
 
   root to: "funclubs#index"
 
