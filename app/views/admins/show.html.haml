@@ -12,13 +12,14 @@
             ユーザー管理
           %small.card-text
             ユーザー情報の変更、削除
-      .card
-        %i.fas.fa-calendar.fa-3x
-        .card-body
-          %h5.card-title
-            スケジュール管理
-          %small.card-text
-            スケジュールの追加、変更、削除
+      =link_to admin_schedules_path do
+        .card
+          %i.fas.fa-calendar.fa-3x
+          .card-body
+            %h5.card-title
+              スケジュール管理
+            %small.card-text
+              スケジュールの追加、変更、削除
       .card
         %i.fas.fa-warehouse.fa-3x
         .card-body
