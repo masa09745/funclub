@@ -7,8 +7,12 @@
         =link_to root_path, class:"nav-link" do
           トップページ
       %li.nav-item
-        =link_to schedules_path, class:"nav-link" do
-          スケジュール
+        - if current_user.admin?
+          =link_to admin_schedules_path, class:"nav-link" do
+            スケジュール
+        - else
+          =link_to schedules_path, class:"nav-link" do
+            スケジュール
       %li.nav-item
         =link_to "#", class:"nav-link" do
           選手一覧
