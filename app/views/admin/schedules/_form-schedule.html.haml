@@ -1,9 +1,9 @@
-= form_with model: @schedule, class:'schedule-forms' do |f|
+= form_with model: @schedule, class:'scheduleForm' do |f|
   .form-row
-    .form-group.col-md-6
+    .form-group.col-6
       %label 対戦日時
       = f.datetime_field :match_date, class: "form-control"
-    .form-group.col-md-6
+    .form-group.col-6
       %label 対戦相手
       = f.select :opponent,['チームA','チームB','チームC','チームD','チームE',], {prompt: '対戦相手を選んでください'}, {class:'form-control'}
   =f.fields_for :stocks do |i|
