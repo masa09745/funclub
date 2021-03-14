@@ -5,4 +5,7 @@
     %h4.newSchedule_index
       スケジュール作成
     .newSchedule_inner
-      = render "form-schedule"
+    =form_with model: [:admin, @schedule], class:'scheduleForm' do |f|
+      .form-group.col-6
+        %label CSVファイルアップロード
+        = f.file_field :file, accept: '.csv', class:"form-control-file"
