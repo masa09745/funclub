@@ -27,6 +27,7 @@ class Admin::SchedulesController < ApplicationController
 
   def import
     Schedule.import(params[:file])
+    redirect_to admin_schedules_path
   end
 
   private
