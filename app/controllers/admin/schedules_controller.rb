@@ -1,4 +1,5 @@
 class Admin::SchedulesController < ApplicationController
+
   def index
     from = Time.current.at_beginning_of_month
     to = (from + 1.month)
@@ -16,7 +17,10 @@ class Admin::SchedulesController < ApplicationController
     if @schedule.save
       redirect_to admin_schedules_path
     end
+  end
 
+  def import
+    Schedule.import(params[:file])
   end
 
   private
