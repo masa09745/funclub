@@ -12,8 +12,21 @@ class Admin::SchedulesController < ApplicationController
   end
 
   def create
+    @schedule = Schedule.new(schedule_params)
+    if @schedule.save
+      redirect_to admin_schedules_path
+    end
 
   end
+
+  private
+    def schedule_params
+      params.require(:schedule).permit(:match_date, :opponent, stocks_attributes:[
+        :grade,
+        :price,
+        :remain
+      ])
+    end
 
 
 end
