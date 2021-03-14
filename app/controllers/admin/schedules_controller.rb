@@ -19,6 +19,12 @@ class Admin::SchedulesController < ApplicationController
     end
   end
 
+  def destroy
+    schedule = Schedule.find(params[:id])
+    schedule.destroy
+    redirect_to admin_schedules_path
+  end
+
   def import
     Schedule.import(params[:file])
   end

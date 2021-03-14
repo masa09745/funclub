@@ -20,3 +20,6 @@
                 .cardTime
                   = l schedule.match_date, format: :time
                 = schedule.opponent
+                %button.btn.btn-primary
+                  =link_to admin_schedule_path(schedule), method: :delete do
+                    削除
