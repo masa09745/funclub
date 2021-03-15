@@ -4,16 +4,15 @@ class Schedule < ApplicationRecord
 
   def self.import(file)
     CSV.foreach(file.path, headers: true) do |row|
-      schedule = Schedule.new
-      row_hash = row.to_hash.slice(*CSV_HEADER.keys)
-      schedule.attributes = row_hash.transform_keys(&CSV_HEADER.method(:[]))
+      schedule = find_by(id: row["id"]) || new
+      schedule.attributes = row.to_hash.slice(*updatable_attributes)
       schedule.save
     end
   end
 
-  CSV_HEADER = {
-    "試合日" => 'match_date',
-    "対戦相手" => 'opponent'
-  }
+
+  def self.updatable_attributes
+    ["match_date", "opponent"]
+  end
 
 end
