@@ -12,14 +12,15 @@
           スケジュールを追加する
       .adminSchedule_month-inner
         - @schedules.each do |schedule|
-          .card
+          .card.schedule
             .card-body
               .cardSchedule
                 .cardDate
                   = l schedule.match_date, format: :day
                 .cardTime
                   = l schedule.match_date, format: :time
-                = schedule.opponent
-                %button.btn.btn-primary
-                  =link_to admin_schedule_path(schedule), method: :delete do
+                .cardOpponent
+                  = schedule.opponent
+                .cardLink
+                  =link_to admin_schedule_path(schedule), class:"btn btn-secondary", method: :delete do
                     削除
