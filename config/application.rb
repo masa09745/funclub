@@ -13,8 +13,10 @@ module Funclub
     config.load_defaults 6.0
 
     config.time_zone = 'Asia/Tokyo'
-
+    config.i18n.available_locales = [:en, :de, :fr, :ja]
     config.i18n.default_locale = :ja
+
+    config.beginning_of_week = :sunday
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers

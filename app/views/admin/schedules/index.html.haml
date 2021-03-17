@@ -5,5 +5,5 @@
     .adminSchedule_index
       %h4 スケジュール
     .adminSchedule_month
-      = month_calendar events: @schedules do |date, events|
+      = month_calendar do |date|
         = date.day
