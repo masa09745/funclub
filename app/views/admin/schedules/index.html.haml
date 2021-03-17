@@ -9,5 +9,10 @@
         =link_to new_admin_schedule_path do
           スケジュールを追加する
       .adminSchedule_month-calendar
-        = month_calendar do |date|
+        = month_calendar(events: @schedules) do |date, scheudles|
           = date.day
+          - scheudles.each do |schedule|
+            .time
+              = schedule.start_time.strftime("%H:%M")
+            .opponent
+              = "VS #{schedule.opponent}"
