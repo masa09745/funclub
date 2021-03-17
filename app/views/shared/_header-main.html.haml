@@ -4,7 +4,7 @@
       =link_to root_path, class: "logo" do
         FUN CLUB
     .headerMain_item-auth
-      - if current_user.admin?
+      - if  user_signed_in? && current_user.admin?
         =link_to admin_path, class:"headerMain_item-admin" do
           管理画面
       - elsif user_signed_in?

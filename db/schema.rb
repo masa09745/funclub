@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 2020_10_10_121944) do
   end
 
   create_table "schedules", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.datetime "match_date", null: false
+    t.datetime "start_time", null: false
     t.string "opponent"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
