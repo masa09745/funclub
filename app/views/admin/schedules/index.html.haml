@@ -5,5 +5,9 @@
     .adminSchedule_index
       %h4 スケジュール
     .adminSchedule_month
-      = month_calendar do |date|
-        = date.day
+      .adminSchedule_month-link
+        =link_to new_admin_schedule_path do
+          スケジュールを追加する
+      .adminSchedule_month-calendar
+        = month_calendar do |date|
+          = date.day

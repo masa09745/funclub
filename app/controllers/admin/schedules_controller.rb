@@ -30,7 +30,7 @@ class Admin::SchedulesController < ApplicationController
 
   private
     def schedule_params
-      params.require(:schedule).permit(:match_date, :opponent, stocks_attributes:[
+      params.require(:schedule).permit(:start_time, :opponent, stocks_attributes:[
         :grade,
         :price,
         :remain

@@ -11,7 +11,7 @@ class Schedule < ApplicationRecord
   end
 
   def self.updatable_attributes
-    ["match_date", "opponent"]
+    ["start_time", "opponent"]
   end
 
 end
