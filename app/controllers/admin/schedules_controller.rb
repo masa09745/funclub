@@ -23,12 +23,12 @@ class Admin::SchedulesController < ApplicationController
   end
 
   def update
-    @schedule = Schedule.fin(params[:id])
+    @schedule.update(schedule_params)
+    redirect_to admin_schedules_path
   end
 
   def destroy
-    schedule = Schedule.find(params[:id])
-    schedule.destroy
+    @schedule.destroy
     redirect_to admin_schedules_path
   end
 
