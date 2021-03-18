@@ -11,7 +11,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
 
-  def step3
+  def card
   end
 
   def final
