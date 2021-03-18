@@ -6,3 +6,5 @@
       スケジュール編集
     .editSchedule_inner
       = render "form-schedule"
+      =link_to admin_schedule_path, method: :delete, class: "btn btn-sm btn-dark" do
+        削除

@@ -12,10 +12,8 @@ Rails.application.routes.draw do
   end
 
   resource :user, only: :show do
-    collection do
-      get 'logout', to: 'users#logout'
-      resource :card
-    end
+    resource :card
+    get 'logout', to: 'users#logout'
   end
 
   resources :schedules, only: [:index, :show]
@@ -23,15 +21,10 @@ Rails.application.routes.draw do
       resources :schedules, only: [:index, :new, :create, :edit, :update, :destroy] do
         collection {post :import}
       end
+      resources :stocks
     end
 
   resource :admin, only: :show
-
-
-
-  resources :stocks
-
-
 
   root to: "funclubs#index"
 

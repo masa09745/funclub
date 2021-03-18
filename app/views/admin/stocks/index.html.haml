@@ -1,0 +1,17 @@
+.adminSchedule-wrapper
+  = render "shared/header-main"
+  = render "shared/navbar"
+  .adminSchedule
+    .adminSchedule_index
+      %h4 在庫管理
+    .adminSchedule_month
+      .adminSchedule_month-calendar
+        = month_calendar(events: @schedules) do |date, scheudles|
+          = date.day
+          - scheudles.each do |schedule|
+            .matchBox
+              .matchBox_time
+                = schedule.start_time.strftime("%H:%M")
+              .matchBox_opponent
+                = "VS #{schedule.opponent}"
+              .matchBox_links
