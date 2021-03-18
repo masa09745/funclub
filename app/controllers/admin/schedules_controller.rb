@@ -17,6 +17,10 @@ class Admin::SchedulesController < ApplicationController
     end
   end
 
+  def edit
+    @schedule = Schedule.find(params[:id])
+  end
+
   def destroy
     schedule = Schedule.find(params[:id])
     schedule.destroy
