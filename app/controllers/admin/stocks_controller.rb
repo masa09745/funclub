@@ -4,6 +4,10 @@ class Admin::StocksController < ApplicationController
     @schedules = Schedule.all
   end
 
+  def new
+  end
+  
+
 
 
 end

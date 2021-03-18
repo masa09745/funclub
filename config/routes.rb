@@ -21,7 +21,7 @@ Rails.application.routes.draw do
       resources :schedules, only: [:index, :new, :create, :edit, :update, :destroy] do
         collection {post :import}
       end
-      resources :stocks
+      resources :stocks, only: [:index, :new, :create]
     end
 
   resource :admin, only: :show
