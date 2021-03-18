@@ -22,3 +22,23 @@
   text-align: right;
   margin-bottom: 10px;
 }
+
+.matchBox{
+  width: 100px;
+  margin: 0 auto;
+}
+
+.matchBox_time{
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.matchBox_opponent{
+  font-size: 17px;
+  margin-bottom: 10px;
+}
+
+.matchBox_links{
+  display: flex;
+  justify-content: space-between;
+}

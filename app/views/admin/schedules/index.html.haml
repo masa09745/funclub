@@ -12,9 +12,13 @@
         = month_calendar(events: @schedules) do |date, scheudles|
           = date.day
           - scheudles.each do |schedule|
-            =link_to edit_admin_schedule_path(schedule) do
-              .matchBox
-                .matchBox_time
-                  = schedule.start_time.strftime("%H:%M")
-                .matchBox_opponent
-                  = "VS #{schedule.opponent}"
+            .matchBox
+              .matchBox_time
+                = schedule.start_time.strftime("%H:%M")
+              .matchBox_opponent
+                = "VS #{schedule.opponent}"
+              .matchBox_links
+                =link_to edit_admin_schedule_path(schedule), class: "btn btn-sm btn-primary" do
+                  編集
+                =link_to admin_schedule_path(schedule), method: :delete, class: "btn btn-sm btn-dark" do
+                  削除

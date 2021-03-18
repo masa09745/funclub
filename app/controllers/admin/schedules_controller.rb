@@ -1,4 +1,5 @@
 class Admin::SchedulesController < ApplicationController
+  before_action  :find_schedule, only: [:edit, :update, :destroy]
 
   def index
     @schedules = Schedule.all
@@ -18,7 +19,11 @@ class Admin::SchedulesController < ApplicationController
   end
 
   def edit
-    @schedule = Schedule.find(params[:id])
+
+  end
+
+  def update
+    @schedule = Schedule.fin(params[:id])
   end
 
   def destroy
@@ -39,6 +44,10 @@ class Admin::SchedulesController < ApplicationController
         :price,
         :remain
       ])
+    end
+
+    def find_schedule
+      @schedule = Schedule.find(params[:id])
     end
 
 
