@@ -1,3 +1,11 @@
 .admin-wrapper
   = render "shared/header-main"
   = render "shared/navbar"
+  .aa
+    =@schedule.start_time
+    =@schedule.opponent
+  - @stocks.each do |stock|
+    =stock.grade
+    =stock.price
+    =stock.remain
+    
