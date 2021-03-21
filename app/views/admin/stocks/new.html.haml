@@ -1,3 +1,10 @@
 .adminStock-wrapper
   = render "shared/header-main"
   = render "shared/navbar"
+  .newStock
+    %h4.newStock_index
+      在庫追加
+    .newStock_inner
+      =form_with url:import_admin_stocks_path do |f|
+        = f.file_field :file, accept: '.csv'
+        = f.submit "アップロード"

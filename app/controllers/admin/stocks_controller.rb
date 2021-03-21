@@ -10,7 +10,11 @@ class Admin::StocksController < ApplicationController
 
   def new
   end
-  
+
+  def import
+    Stock.import(params[:file])
+    redirect_to admin_stocks_path
+  end
 
 
 
