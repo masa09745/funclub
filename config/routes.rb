@@ -17,12 +17,16 @@ Rails.application.routes.draw do
   end
 
   resources :schedules, only: [:index, :show]
-    namespace :admin do
-      resources :schedules, only: [:index, :new, :create, :edit, :update, :destroy] do
-        collection {post :import}
-      end
-      resources :stocks, only: [:index, :new, :create]
+
+  namespace :admin do
+    resources :schedules, only: [:index, :new, :create, :edit, :update, :destroy]  do
+      collection {post :import}
+      resource :stocks, only: :show
     end
+    resources :stocks, only: [:index, :new, :create] do
+      collection {post :import}
+    end
+  end
 
   resource :admin, only: :show
 

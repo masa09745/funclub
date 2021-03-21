@@ -3,12 +3,10 @@ class Admin::SchedulesController < ApplicationController
 
   def index
     @schedules = Schedule.all
-    
   end
 
   def new
     @schedule = Schedule.new
-    @schedule.stocks.build
   end
 
   def create
@@ -19,7 +17,6 @@ class Admin::SchedulesController < ApplicationController
   end
 
   def edit
-
   end
 
   def update
@@ -39,11 +36,7 @@ class Admin::SchedulesController < ApplicationController
 
   private
     def schedule_params
-      params.require(:schedule).permit(:start_time, :opponent, stocks_attributes:[
-        :grade,
-        :price,
-        :remain
-      ])
+      params.require(:schedule).permit(:start_time, :opponent)
     end
 
     def find_schedule

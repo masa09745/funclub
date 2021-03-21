@@ -4,6 +4,10 @@ class Admin::StocksController < ApplicationController
     @schedules = Schedule.all
   end
 
+  def show
+    @schedules = Schedule.find(params[:schedule_id])
+  end
+
   def new
   end
   

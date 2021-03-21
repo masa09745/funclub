@@ -1,6 +1,5 @@
 class Schedule < ApplicationRecord
   has_many :stocks, dependent: :destroy
-  accepts_nested_attributes_for :stocks
 
   def self.import(file)
     CSV.foreach(file.path, headers: true) do |row|

@@ -1,15 +1,18 @@
-.adminSchedule-wrapper
+.adminStock-wrapper
   = render "shared/header-main"
   = render "shared/navbar"
-  .adminSchedule
-    .adminSchedule_index
+  .adminStock
+    .adminStock_index
       %h4 在庫管理
-    .adminSchedule_month
-      .adminSchedule_month-calendar
+    .adminStock_month
+      .adminSchedule_month-link
+        =link_to new_admin_stock_path do
+          在庫追加
+      .adminStock_month-calendar
         = month_calendar(events: @schedules) do |date, scheudles|
           = date.day
           - scheudles.each do |schedule|
-            = link_to new_admin_stock_path do
+            = link_to admin_schedule_stocks_path(schedule) do
               .matchBox
                 .matchBox_time
                   = schedule.start_time.strftime("%H:%M")
