@@ -1,9 +1,10 @@
 class SchedulesController < ApplicationController
   def index
-    @schedules = Scheudle.all
+    @schedules = Schedule.all
   end
 
   def show
+    @schedule = Schedule.find(params[:id])
   end
 
 end
