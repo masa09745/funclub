@@ -3,42 +3,50 @@
   margin: 0 auto;
 }
 
-.newSchedule{
-  max-width: 980px;
-  margin: 0 auto;
-}
-
-.editSchedule{
-  max-width: 980px;
-  margin: 0 auto;
-}
-
-.scheduleForm{
-  width: 750px;
-  margin: 0 auto;
-  padding: 25px;
-}
-
 .calendar-title{
   font-size: 20px;
 }
-
 .adminSchedule_month-link{
   text-align: right;
   margin-bottom: 10px;
 }
-
 .matchBox{
   width: 100px;
   margin: 0 auto;
 }
-
 .matchBox_time{
   font-size: 14px;
   margin-bottom: 5px;
 }
-
 .matchBox_opponent{
   font-size: 17px;
   margin-bottom: 10px;
+}
+
+.newSchedule{
+  max-width: 980px;
+  margin: 0 auto;
+}
+.newSchedule_inner{
+  padding: 10px 25px;
+}
+.newSchedule_own{
+  margin-bottom: 20px;
+}
+.newSchedule_file{
+  margin-bottom: 20px;
+}
+.scheduleForm{
+  width: 800px;
+  margin: 0 auto;
+}
+.uploadForm{
+  width: 800px;
+  margin: 0 auto;
+}
+
+
+.editSchedule{
+  max-width: 980px;
+  margin: 0 auto;
 }

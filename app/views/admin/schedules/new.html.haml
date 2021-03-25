@@ -5,7 +5,23 @@
     %h4.newSchedule_index
       スケジュール作成
     .newSchedule_inner
-      = render "form-schedule"
-      =form_with url:import_admin_schedules_path do |f|
-        = f.file_field :file, accept: '.csv'
-        = f.submit "アップロード"
+      .newSchedule_own
+        %p スケジュール個別登録
+        = form_with model: [:admin, @schedule], class:'scheduleForm' do |f|
+          .form-row
+            .form-group.col-6
+              %label 対戦日時
+              = f.datetime_field :start_time, class: "form-control"
+            .form-group.col-6
+              %label 対戦相手
+              = f.select :opponent,['チームA','チームB','チームC','チームD','チームE',], {prompt: '対戦相手を選んでください'}, {class:'form-control'}
+          = f.submit class: "btn btn-dark"
+      .newSchedule_file
+        %p スケジュール一括登録
+        =form_with url:import_admin_schedules_path, class: "uploadForm" do |f|
+          .form-group
+            = f.file_field :file, class: "form-control-file", accept: '.csv'
+          = f.submit class: "btn btn-dark"
+      .newSchedule_link
+        = link_to admin_schedules_path do
+          スケジュール一覧へ戻る

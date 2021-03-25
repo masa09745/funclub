@@ -1,9 +1,0 @@
-= form_with model: [:admin, @schedule], class:'scheduleForm' do |f|
-  .form-row
-    .form-group.col-6
-      %label 対戦日時
-      = f.datetime_field :start_time, class: "form-control"
-    .form-group.col-6
-      %label 対戦相手
-      = f.select :opponent,['チームA','チームB','チームC','チームD','チームE',], {prompt: '対戦相手を選んでください'}, {class:'form-control'}
-  = f.submit "作成"
