@@ -14,5 +14,3 @@
             %label 対戦相手
             = f.select :opponent,['チームA','チームB','チームC','チームD','チームE',], {prompt: '対戦相手を選んでください'}, {class:'form-control'}
           = f.submit "作成"
-      =link_to admin_schedule_path, method: :delete, class: "btn btn-sm btn-dark" do
-        削除
