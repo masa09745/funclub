@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   resources :schedules, only: [:index, :show]
 
   namespace :admin do
-    resources :schedules, only: [:index, :new, :create, :edit, :update, :destroy]  do
+    resources :schedules do
       collection {post :import}
     end
   end

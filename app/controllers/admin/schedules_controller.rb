@@ -1,5 +1,5 @@
 class Admin::SchedulesController < ApplicationController
-  before_action  :find_schedule, only: [:edit, :update, :destroy]
+  before_action  :find_schedule, only: [:show, :edit, :update, :destroy]
 
   def index
     @schedules = Schedule.all
@@ -14,6 +14,9 @@ class Admin::SchedulesController < ApplicationController
     if @schedule.save
       redirect_to admin_schedules_path
     end
+  end
+
+  def show
   end
 
   def edit

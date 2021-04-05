@@ -12,15 +12,12 @@
 }
 
 .matchBox_time{
-  font-size: 17px;
+  font-size: 15px;
   margin-bottom: 5px;
 }
 .matchBox_opponent{
-  font-size: 19px;
+  font-size: 17px;
   margin-bottom: 5px;
-}
-.matchBox_links-edit{
-  margin-right: 5px;
 }
 
 .newSchedule{
@@ -45,6 +42,13 @@
   margin: 0 auto;
 }
 
+.showSchedule{
+  max-width: 980px;
+  margin: 0 auto;
+}
+.showSchedule_inner{
+  display: flex;
+}
 
 .editSchedule{
   max-width: 980px;
