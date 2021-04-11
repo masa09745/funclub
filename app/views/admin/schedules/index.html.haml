@@ -12,7 +12,7 @@
         = month_calendar(events: @schedules) do |date, scheudles|
           = date.day
           - scheudles.each do |schedule|
-            = link_to admin_schedule_path(schedule) do
+            = link_to edit_admin_schedule_path(schedule) do
               .matchBox
                 .matchBox_time
                   = schedule.start_time.strftime("%H:%M")

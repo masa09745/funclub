@@ -6,14 +6,14 @@
       %h4 スケジュール詳細
     .showSchedule_inner
       .showSchedule_inner-date
-        %p 試合日時
+        %span 試合日時
         = @schedule.start_time.strftime("%m/%d %H:%M")
       .showSchedule_inner-opponent
-        %p 対戦相手
+        %span 対戦相手
         = @schedule.opponent
-    .showSchedule_inner-links
-      = link_to edit_admin_schedule_path(@schedule) do
-        編集
-      = link_to admin_schedule_path(@schedule), method: :delete, class: "btn btn-sm btn-danger" do
-        削除
-      
+      .showSchedule_inner-links
+        = link_to edit_admin_schedule_path(@schedule), class: "btn btn-sm btn-primary" do
+          編集
+        = link_to admin_schedule_path(@schedule), method: :delete, class: "btn btn-sm btn-danger" do
+          削除
+        
