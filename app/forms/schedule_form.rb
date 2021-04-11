@@ -30,7 +30,7 @@ class ScheduleForm
     return false if invalid?
 
     schedule.assign_attributes(schedule_params)
-    build_asscociations
+    build_associations
 
     if schedule.save
       true
@@ -48,8 +48,8 @@ class ScheduleForm
     }
   end
 
-  def build_asscociations
-    schedule.stocks << stocks if stocks[:grade, :price, :remain].present?
+  def build_associations
+    schedule.stocks << stocks
   end
 
 end

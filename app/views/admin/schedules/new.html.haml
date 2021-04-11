@@ -7,7 +7,7 @@
     .newSchedule_inner
       .newSchedule_own
         %p スケジュール個別登録
-        = form_with model: [:admin, @schedule], class:'scheduleForm' do |f|
+        = form_with model: [:admin, @schedule], url: admin_schedules_path, class:'scheduleForm' do |f|
           .form-row
             .form-group.col-6
               %label 対戦日時
@@ -15,6 +15,17 @@
             .form-group.col-6
               %label 対戦相手
               = f.select :opponent,['チームA','チームB','チームC','チームD','チームE',], {prompt: '対戦相手を選んでください'}, {class:'form-control'}
+          =f.fields_for :stocks do |i|
+            .form-row
+              .form-group.col-md-4
+                %label 席種
+                = i. select :grade, ['S','A','B','C'], {prompt: '席種を選んでください'}, {class: 'form-control'}
+              .form-group.col-md-4
+                %label 金額
+                = i.text_field :price, class: 'form-control'
+              .form-group.col-md-4
+                %label 設定座席数
+                = i.text_field :remain, class: 'form-control'
           = f.submit class: "btn btn-dark"
       .newSchedule_file
         %p スケジュール一括登録
