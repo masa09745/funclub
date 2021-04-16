@@ -3,29 +3,37 @@
   = render "shared/navbar"
   .newSchedule
     %h4.newSchedule_index
-      スケジュール作成
+      スケジュール追加
     .newSchedule_inner
       .newSchedule_own
-        %p スケジュール個別登録
+        %p スケジュール・チケット在庫登録
         = form_with model: [:admin, @schedule], url: admin_schedules_path, class:'scheduleForm' do |f|
-          .form-row
-            .form-group.col-6
-              %label 対戦日時
-              = f.datetime_field :start_time, class: "form-control"
-            .form-group.col-6
-              %label 対戦相手
-              = f.select :opponent,['チームA','チームB','チームC','チームD','チームE',], {prompt: '対戦相手を選んでください'}, {class:'form-control'}
-          =f.fields_for :stocks do |i|
-            .form-row
-              .form-group.col-md-4
-                %label 席種
-                = i. select :grade, ['S','A','B','C'], {prompt: '席種を選んでください'}, {class: 'form-control'}
-              .form-group.col-md-4
-                %label 金額
-                = i.text_field :price, class: 'form-control'
-              .form-group.col-md-4
-                %label 設定座席数
-                = i.text_field :remain, class: 'form-control'
+          %table.table.table-borderless
+            %thread
+              %tr
+                %th{scope:"col"} 対戦日時
+                %th{scope:"col"} 対戦相手
+            %tbody
+              %tr
+                %td
+                  = f.datetime_field :start_time, class: "form-control"
+                %td
+                  = f.select :opponent,['チームA','チームB','チームC','チームD','チームE',], {prompt: '対戦相手を選んでください'}, {class:'form-control'}
+          %table.table.table-borderless
+            %thread
+              %tr
+                %th{scope:"col"} 席種
+                %th{scope:"col"} 金額
+                %th{scope:"col"} チケット在庫数
+            %tbody
+              =f.fields_for :stocks do |i|
+                %tr
+                  %td
+                    = i. select :grade, ['S','A','B','C'], {prompt: '席種を選んでください'}, {class: 'form-control'}
+                  %td
+                    = i.text_field :price, class: 'form-control'
+                  %td
+                    = i.text_field :remain, class: 'form-control'
           = f.submit class: "btn btn-dark"
       .newSchedule_file
         %p スケジュール一括登録
