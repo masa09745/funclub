@@ -1,5 +1,6 @@
 class ScheduleForm
   include ActiveModel::Model
+  FORM_COUNT = 4
 
   concerning :ScheduleBuilder do
     def schedule
@@ -13,18 +14,17 @@ class ScheduleForm
 
 
   concerning :StocksBuilder do
-    attr_reader :stocks_attributes
+    attr_accessor :stocks
 
-    def stocks
-      @stocks_attributes ||= Stock.new
+    def initialize(attributes = {})
+      super attributes
+      self.stocks  = FORM_COUNT.times.map {Stock.new() } unless self.stocks.present?
     end
 
     def stocks_attributes=(attributes)
-      @stocks_attributes = Stock.new(attributes)
+      self.stocks = attributes.map { |_, v| Stock.new(v) }
     end
   end
-
-  attr_accessor :grade, :price, :remain
 
   def save
     return false if invalid?
