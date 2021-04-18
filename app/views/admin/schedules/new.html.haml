@@ -7,7 +7,7 @@
     .newSchedule_inner
       .newSchedule_own
         %p スケジュール・チケット在庫登録
-        = form_with model: [:admin, @schedule], url: admin_schedules_path, class:'scheduleForm' do |f|
+        = form_with model: [:admin, @schedule_form], class:'scheduleForm' do |f|
           %table.table.table-borderless
             %thread
               %tr

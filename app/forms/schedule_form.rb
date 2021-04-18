@@ -2,16 +2,18 @@ class ScheduleForm
   include ActiveModel::Model
   FORM_COUNT = 4
 
-  concerning :ScheduleBuilder do
-    def schedule
-      @schedule ||= Schedule.new
-    end
-  end
-
   attr_accessor :start_time, :opponent
+
   validates :start_time, presence: true
   validates :opponent, presence: true
 
+  delegate :persisted?, to: :schedule
+
+  def initialize(attributes = nil, schedule: Schedule.new)
+    @schedule = schedule
+    attributes ||= default_attributes
+    super(attributes)
+  end
 
   concerning :StocksBuilder do
     attr_accessor :stocks
@@ -39,7 +41,21 @@ class ScheduleForm
     end
   end
 
+  def to_model
+    schedule
+  end
+  
+
   private
+  
+  attr_reader :schedule
+
+  def default_attributes
+    {
+      start_time: schedule.start_time,
+      opponent: schedule.opponent
+    }
+  end
 
   def schedule_params
     {
