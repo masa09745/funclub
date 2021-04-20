@@ -1,5 +1,5 @@
 class Admin::SchedulesController < ApplicationController
-  before_action  :load_schedule, only:[:edit, :update, :destroy]
+  before_action  :load_schedule, only:[ :update, :destroy]
 
   def index
     @schedules = Schedule.all
@@ -17,6 +17,7 @@ class Admin::SchedulesController < ApplicationController
   end
 
   def edit
+    @schedule = Schedule.includes(:stocks).find(params[:id])
   end
 
   def update
