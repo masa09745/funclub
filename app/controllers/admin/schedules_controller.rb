@@ -39,6 +39,10 @@ class Admin::SchedulesController < ApplicationController
       params.require(:schedule_form).permit(:start_time, :opponent, stocks_attributes: [:grade, :price, :remain])
     end
 
+    def schedule_params
+      params.require(:schedule).permit(:start_time, :opponent)
+    end
+
     def load_schedule
       @schedule = Schedule.find(params[:id])
     end
