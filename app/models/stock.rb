@@ -14,3 +14,4 @@ class Stock < ApplicationRecord
     ["grade", "price", "remain", "schedule_id"]
   end
 end
+
