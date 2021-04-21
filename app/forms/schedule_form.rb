@@ -2,28 +2,32 @@ class ScheduleForm
   include ActiveModel::Model
   FORM_COUNT = 4
 
-  concerning :ScheduleBuilder do
-    attr_accessor :start_time, :opponent
+  delegate :persisted?, to: :schedule
 
-    def schedule
-      @schedule ||= Schedule.new
+  concerning :ScheduleBuilder do
+    def initialize(attributes = nil, schedule: Schedule.new)
+      @schedule = schedule
+      attributes ||= default_attributes
+      super(attributes)
     end
   end
 
   concerning :StocksBuilder do
-    attr_accessor :stocks
+    attr_reader :stocks_attributes
 
-    def initialize(attributes = {})
-      super attributes
-      self.stocks  = FORM_COUNT.times.map {Stock.new() } unless self.stocks.present?
+    def stocks
+      @stocks_attributes ||= Stock.new
     end
 
     def stocks_attributes=(attributes)
-      self.stocks = attributes.map { |_, v| Stock.new(v) }
+      @stocks_attributes = Stock.new(attributes)
     end
   end
 
+  attr_accessor :start_time, :opponent, :grade, :price, :remain
+
   def save
+
     return false if invalid?
 
     schedule.assign_attributes(schedule_params)
@@ -36,7 +40,13 @@ class ScheduleForm
     end
   end
 
+  def to_model
+    schedule
+  end
+
   private
+
+  attr_reader :schedule
 
   def schedule_params
     {
@@ -45,10 +55,16 @@ class ScheduleForm
     }
   end
 
+  def default_attributes
+    {
+      start_time: schedule.start_time,
+      opponent: schedule.opponent
+    }
+  end
+
   def build_associations
     schedule.stocks << stocks
   end
-
 end
 
 

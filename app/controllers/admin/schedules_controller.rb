@@ -10,18 +10,22 @@ class Admin::SchedulesController < ApplicationController
   end
 
   def create
-    @schedule_form = ScheduleForm.new(schedule_form_params)
+    @schedule_form = ScheduleForm.new(schedule_params)
     if @schedule_form.save
       redirect_to admin_schedules_path
     end
   end
 
   def edit
+    @schedule_form = ScheduleForm.new(schedule: @schedule)
   end
 
   def update
-    @schedule.update(schedule_params)
-    redirect_to admin_schedules_path
+    if @schedule.update(schedule_params)
+      redirect_to admin_schedules_path
+    else
+      render :edit
+    end
   end
 
   def destroy
@@ -35,12 +39,8 @@ class Admin::SchedulesController < ApplicationController
   end
 
   private
-    def schedule_form_params
-      params.require(:schedule_form).permit(:start_time, :opponent, stocks_attributes: [:grade, :price, :remain])
-    end
-
     def schedule_params
-      params.require(:schedule).permit(:start_time, :opponent)
+      params.require(:schedule).permit(:start_time, :opponent, stocks_attributes: [:grade, :price, :remain])
     end
 
     def load_schedule
