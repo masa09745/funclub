@@ -13,15 +13,17 @@ class ScheduleForm
   end
 
   concerning :StocksBuilder do
-    attr_reader :stocks_attributes
+    attr_accessor :stocks
 
-    def stocks
-      @stocks_attributes ||= Stock.new
+    def initialize(attributes ={})
+      super attributes
+      @stocks ||= FORM_COUNT.times.map {Stock.new()}
     end
 
     def stocks_attributes=(attributes)
-      @stocks_attributes = Stock.new(attributes)
+      @stocks = attributes.map{ |_, v| Stock.new(v)}
     end
+
   end
 
   attr_accessor :start_time, :opponent, :grade, :price, :remain
