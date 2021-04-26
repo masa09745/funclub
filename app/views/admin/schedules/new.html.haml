@@ -7,7 +7,7 @@
     .newSchedule_inner
       .newSchedule_own
         %p スケジュール・チケット在庫登録
-        = form_with model: [:admin, @schedule_form], class:'scheduleForm' do |f|
+        = form_with model: [:admin, @schedule], url: admin_schedules_path,  class:'scheduleForm' do |f|
           %table.table.table-borderless
             %thread
               %tr
@@ -26,14 +26,13 @@
                 %th{scope:"col"} 金額
                 %th{scope:"col"} チケット在庫数
             %tbody
-              =f.fields_for :stocks do |i|
-                %tr
-                  %td
-                    = i. select :grade, ['S','A','B','C'], {prompt: '席種を選んでください'}, {class: 'form-control'}
-                  %td
-                    = i.text_field :price, class: 'form-control'
-                  %td
-                    = i.text_field :remain, class: 'form-control'
+              %tr
+                %td
+                  = f. select :grade, ['S','A','B','C'], {prompt: '席種を選んでください'}, {class: 'form-control'}
+                %td
+                  = f.text_field :price, class: 'form-control'
+                %td
+                  = f.text_field :remain, class: 'form-control'
           = f.submit class: "btn btn-dark"
       .newSchedule_file
         %p スケジュール一括登録
