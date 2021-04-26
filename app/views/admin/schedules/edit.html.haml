@@ -17,6 +17,21 @@
                 = f.datetime_field :start_time, class: "form-control"
               %td
                 = f.select :opponent,['チームA','チームB','チームC','チームD','チームE',], {prompt: '対戦相手を選んでください'}, {class:'form-control'}
+        %table.table.table-borderless
+          %thread
+            %tr
+              %th{scope:"col"} 席種
+              %th{scope:"col"} 金額
+              %th{scope:"col"} チケット在庫数
+          %tbody
+            =f.fields_for :stocks do |i|
+              %tr
+                %td
+                  = i. select :grade, ['S','A','B','C'], {prompt: '席種を選んでください'}, {class: 'form-control'}
+                %td
+                  = i.text_field :price, class: 'form-control'
+                %td
+                  = i.text_field :remain, class: 'form-control'
         = f.submit "更新"
       .tesr
         =link_to admin_schedule_path, method: :delete, class: "btn btn-sm btn-dark" do
