@@ -17,7 +17,10 @@
                 = f.datetime_field :start_time, class: "form-control"
               %td
                 = f.select :opponent,['チームA','チームB','チームC','チームD','チームE',], {prompt: '対戦相手を選んでください'}, {class:'form-control'}
-        = f.submit "更新"
-      .tesr
+            %tr
+              %td
+                =link_to "" do
+                  在庫編集はこちらから
+        = f.submit "更新", class: "btn btn-sm btn-primary"
         =link_to admin_schedule_path, method: :delete, class: "btn btn-sm btn-dark" do
           スケジュールを削除する
