@@ -29,7 +29,7 @@
               = f.fields_for :stocks, {} do |i|
                 %tr
                   %td
-                    = i. select :grade, ['S','A','B','C'], {prompt: '席種を選んでください'}, {class: 'form-control'}
+                    = i.select :grade, ['S','A','B','C'], {prompt: '席種を選んでください'}, {class: 'form-control'}
                   %td
                     = i.text_field :price, class: 'form-control'
                   %td

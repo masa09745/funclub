@@ -1,10 +1,10 @@
-.adminStocks-wrapper
+.adminStock-wrapper
   = render "shared/header-main"
   = render "shared/navbar"
-  .editSchedule
-    %h4.editSchedule_index
-      スケジュール編集
-    .editSchedule_inner
+  .editStock
+    %h4.editStock_index
+      在庫編集
+    .editStock_inner
       %table.table.table-borderless
         %thread
           %tr
@@ -31,4 +31,4 @@
                 = stock.price
               %td
                 = stock.remain
-              
+            
