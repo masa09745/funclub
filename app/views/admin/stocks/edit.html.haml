@@ -23,7 +23,7 @@
             %th{scope:"col"} 金額
             %th{scope:"col"} 在庫数
         %tbody
-          - @schedule.stocks.each do |stock|
+          - @stocks.each do |stock|
             %tr
               %td
                 = stock.grade

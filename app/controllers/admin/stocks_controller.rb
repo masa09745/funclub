@@ -6,9 +6,10 @@ class Admin::StocksController < ApplicationController
 
   def edit
     @schedule = Schedule.find(params[:schedule_id])
+    @stocks = @schedule.stocks
   end
 
-  def new
+  def update
   end
 
   def import
