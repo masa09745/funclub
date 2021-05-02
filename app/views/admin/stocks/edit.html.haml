@@ -1,0 +1,34 @@
+.adminStocks-wrapper
+  = render "shared/header-main"
+  = render "shared/navbar"
+  .editSchedule
+    %h4.editSchedule_index
+      スケジュール編集
+    .editSchedule_inner
+      %table.table.table-borderless
+        %thread
+          %tr
+            %th{scope:"col"} 対戦日時
+            %th{scope:"col"} 対戦相手
+        %tbody
+          %tr
+            %td
+              = @schedule.start_time.strftime("%m/%d %H:%M")
+            %td
+              = @schedule.opponent
+      %table.table.table-borderless
+        %thread
+          %tr
+            %th{scope:"col"} 席種
+            %th{scope:"col"} 金額
+            %th{scope:"col"} 在庫数
+        %tbody
+          - @schedule.stocks.each do |stock|
+            %tr
+              %td
+                = stock.grade
+              %td
+                = stock.price
+              %td
+                = stock.remain
+              
