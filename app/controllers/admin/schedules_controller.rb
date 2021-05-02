@@ -20,13 +20,13 @@ class Admin::SchedulesController < ApplicationController
     load_schedule
   end
 
-  # def update
-  #   if @schedule.update(schedule_params)
-  #     redirect_to admin_schedules_path
-  #   else
-  #     render :edit
-  #   end
-  # end
+  def update
+    if @schedule.update(schedule_params)
+      redirect_to admin_schedules_path
+    else
+      render :edit
+    end
+  end
 
   def destroy
     @schedule.destroy
