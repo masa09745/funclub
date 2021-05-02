@@ -4,9 +4,8 @@ class Admin::StocksController < ApplicationController
     @schedules = Schedule.all
   end
 
-  def show
+  def edit
     @schedule = Schedule.find(params[:schedule_id])
-    @stocks = @schedule.stocks
   end
 
   def new

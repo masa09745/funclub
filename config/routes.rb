@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :schedules do
       collection {post :import}
+      resource :stocks
     end
   end
 

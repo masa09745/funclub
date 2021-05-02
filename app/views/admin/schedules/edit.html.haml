@@ -19,7 +19,7 @@
                 = f.select :opponent,['チームA','チームB','チームC','チームD','チームE',], {prompt: '対戦相手を選んでください'}, {class:'form-control'}
             %tr
               %td
-                =link_to "" do
+                =link_to edit_admin_schedule_stocks_path(@schedule) do
                   在庫編集はこちらから
         = f.submit "更新", class: "btn btn-sm btn-primary"
         =link_to admin_schedule_path, method: :delete, class: "btn btn-sm btn-dark" do
